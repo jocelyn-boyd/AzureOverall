@@ -14,22 +14,23 @@ class BrowseViewController: UIViewController {
     let sb = UISearchBar()
     return sb
   }()
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
       view.backgroundColor = UIColor.green
-        // Do any additional setup after loading the view.
+      constrainUIElements()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  func constrainUIElements() {
+    view.addSubview(searchBar)
+    searchBar.translatesAutoresizingMaskIntoConstraints = false
+    
+    NSLayoutConstraint.activate([
+      searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+    ])
+  }
 
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D81C557124C0BEC70093A5A5 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C557024C0BEC70093A5A5 /* BrowseViewController.swift */; };
+		D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837CCB924C2267C00BE1F1B /* RecipeCell.swift */; };
 		D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */; };
 		D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */; };
 		D8C12EDE24C0BBB3006F98C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		D81C557024C0BEC70093A5A5 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		D837CCB924C2267C00BE1F1B /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		D8C12ED124C0BBB2006F98C1 /* AzureOverall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AzureOverall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D837CCB824C2265800BE1F1B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D837CCB924C2267C00BE1F1B /* RecipeCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D8C12EC824C0BBB2006F98C1 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				D81C557024C0BEC70093A5A5 /* BrowseViewController.swift */,
+				D837CCB824C2265800BE1F1B /* Cells */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -215,6 +226,7 @@
 				D81C557124C0BEC70093A5A5 /* BrowseViewController.swift in Sources */,
 				D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */,
 				D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */,
+				D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

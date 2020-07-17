@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D81C557124C0BEC70093A5A5 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C557024C0BEC70093A5A5 /* BrowseViewController.swift */; };
 		D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */; };
 		D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */; };
-		D8C12ED924C0BBB2006F98C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED824C0BBB2006F98C1 /* ViewController.swift */; };
-		D8C12EDC24C0BBB2006F98C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDA24C0BBB2006F98C1 /* Main.storyboard */; };
 		D8C12EDE24C0BBB3006F98C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */; };
 		D8C12EE124C0BBB3006F98C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDF24C0BBB3006F98C1 /* LaunchScreen.storyboard */; };
 		D8C12EEC24C0BBB4006F98C1 /* AzureOverallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12EEB24C0BBB4006F98C1 /* AzureOverallTests.swift */; };
@@ -27,11 +26,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D81C557024C0BEC70093A5A5 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		D8C12ED124C0BBB2006F98C1 /* AzureOverall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AzureOverall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D8C12ED824C0BBB2006F98C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D8C12EDB24C0BBB2006F98C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8C12EE024C0BBB3006F98C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8C12EE224C0BBB3006F98C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,12 +77,10 @@
 		D8C12ED324C0BBB2006F98C1 /* AzureOverall */ = {
 			isa = PBXGroup;
 			children = (
+				D8C12EF624C0BD87006F98C1 /* Supporting */,
+				D8C12EF724C0BDA3006F98C1 /* Screens */,
 				D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */,
 				D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */,
-				D8C12ED824C0BBB2006F98C1 /* ViewController.swift */,
-				D8C12EDA24C0BBB2006F98C1 /* Main.storyboard */,
-				D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */,
-				D8C12EDF24C0BBB3006F98C1 /* LaunchScreen.storyboard */,
 				D8C12EE224C0BBB3006F98C1 /* Info.plist */,
 			);
 			path = AzureOverall;
@@ -97,6 +93,23 @@
 				D8C12EED24C0BBB4006F98C1 /* Info.plist */,
 			);
 			path = AzureOverallTests;
+			sourceTree = "<group>";
+		};
+		D8C12EF624C0BD87006F98C1 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */,
+				D8C12EDF24C0BBB3006F98C1 /* LaunchScreen.storyboard */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		D8C12EF724C0BDA3006F98C1 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D81C557024C0BEC70093A5A5 /* BrowseViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +195,6 @@
 			files = (
 				D8C12EE124C0BBB3006F98C1 /* LaunchScreen.storyboard in Resources */,
 				D8C12EDE24C0BBB3006F98C1 /* Assets.xcassets in Resources */,
-				D8C12EDC24C0BBB2006F98C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8C12ED924C0BBB2006F98C1 /* ViewController.swift in Sources */,
+				D81C557124C0BEC70093A5A5 /* BrowseViewController.swift in Sources */,
 				D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */,
 				D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */,
 			);
@@ -225,14 +237,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D8C12EDA24C0BBB2006F98C1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D8C12EDB24C0BBB2006F98C1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D8C12EDF24C0BBB3006F98C1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -372,7 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jocelynboyd.AzureOverall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -390,7 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jocelynboyd.AzureOverall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

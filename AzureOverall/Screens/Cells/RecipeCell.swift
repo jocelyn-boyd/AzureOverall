@@ -21,28 +21,36 @@ class RecipeCell: UICollectionViewCell {
     let label = UILabel()
     label.textAlignment = .center
     label.backgroundColor = .cyan
+    label.layer.borderColor = UIColor.blue.cgColor
+    label.layer.borderWidth = 1
     return label
   }()
   
   lazy var prepTimeLabel: UILabel = {
     let label = UILabel()
-    label.text = "Prep Time"
-    label.backgroundColor = .blue
+    label.text = "Prep Time: 30 mins"
+    label.backgroundColor = .brown
+    label.textAlignment = .center
+    label.layer.borderColor = UIColor.black.cgColor
+    label.layer.borderWidth = 1
     return label
   }()
   
   lazy var servingsLabel: UILabel = {
     let label = UILabel()
-    label.text = "Servings"
+    label.text = "Servings: 4"
     label.backgroundColor = .brown
     label.textAlignment = .right
+    label.textAlignment = .center
+    label.layer.borderColor = UIColor.black.cgColor
+    label.layer.borderWidth = 1
     return label
   }()
   
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    contentView.backgroundColor = .purple
+    contentView.backgroundColor = .systemBackground
     configure()
   }
   
@@ -63,7 +71,6 @@ class RecipeCell: UICollectionViewCell {
     servingsLabel.translatesAutoresizingMaskIntoConstraints = false
 
     NSLayoutConstraint.activate([
-      
       recipeTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
       recipeTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
       recipeTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
@@ -79,13 +86,11 @@ class RecipeCell: UICollectionViewCell {
       prepTimeLabel.trailingAnchor.constraint(equalTo: servingsLabel.leadingAnchor),
       prepTimeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
       prepTimeLabel.widthAnchor.constraint(equalToConstant: contentView.bounds.width / 2),
-      
+
       servingsLabel.topAnchor.constraint(equalTo: dishImageView.bottomAnchor),
       servingsLabel.leadingAnchor.constraint(equalTo: prepTimeLabel.trailingAnchor),
       servingsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      servingsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-      
-
+      servingsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
     ])
   }
 }

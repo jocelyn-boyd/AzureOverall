@@ -21,20 +21,20 @@ class BrowseViewController: UIViewController {
   lazy var recipeCollectionView: UICollectionView = {
     let cv = UICollectionView(frame: view.bounds, collectionViewLayout: configureLayout())
     cv.register(RecipeCell.self, forCellWithReuseIdentifier: RecipeCell.reuseIdentifier)
-    cv.backgroundColor = UIColor.systemPink
+    cv.backgroundColor = .systemBackground
     return cv
   }()
   
   var dataSource: UICollectionViewDiffableDataSource<Section, Int>!
+  var recipes = [Recipe]()
 
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      view.backgroundColor = UIColor.green
+      view.backgroundColor = .systemBackground
       constrainUIElements()
       configureDataSource()
     }
-    
   
   func configureLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.9))
@@ -54,6 +54,7 @@ class BrowseViewController: UIViewController {
       guard let cell = self.recipeCollectionView.dequeueReusableCell(withReuseIdentifier: RecipeCell.reuseIdentifier, for: indexPath) as? RecipeCell else {return UICollectionViewCell() }
       
       cell.recipeTitleLabel.text = number.description
+      
       return cell
     }
     
@@ -79,7 +80,7 @@ class BrowseViewController: UIViewController {
       recipeCollectionView.topAnchor.constraint(equalTo: recipeSearchBar.bottomAnchor),
       recipeCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
       recipeCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      recipeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+      recipeCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
   }
 }

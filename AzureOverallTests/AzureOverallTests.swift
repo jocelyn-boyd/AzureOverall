@@ -18,17 +18,37 @@ class AzureOverallTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+  
+  private func getTestRecipeJSONData() -> Data {
+    guard let pathToData = Bundle.main.path(forResource: "Recipes", ofType: "json") else {
+      fatalError("Recipes.json file not found")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    let internalUrl = URL(fileURLWithPath: pathToData)
+    
+    do {
+      let data = try Data(contentsOf: internalUrl)
+      return data
+    } catch  {
+      fatalError("An error occured: \(error)")
     }
-
+  }
+  
+  func testLoadRecipes() {
+    //Arrange
+    let recipeData = getTestRecipeJSONData()
+    
+    //Act
+    var sampleRecipes = [Recipe]()
+    
+    do {
+      sampleRecipes = try RecipeWrapper.getallRecipes(from: recipeData)
+      print(sampleRecipes)
+    } catch {
+      print(error)
+    }
+    
+    //Assert
+    XCTAssertTrue(sampleRecipes.count != 0, "There are \(sampleRecipes.count) recipes found.")
+  }
 }

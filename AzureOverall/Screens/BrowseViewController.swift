@@ -44,7 +44,26 @@ class BrowseViewController: UIViewController {
     }
   
   func loadData() {
-    recipes = RecipeFetchingService.manager.getRecipes()
+    //    recipes = RecipeFetchingService.manager.getRecipes()
+    
+    RecipeFetchingService.manager.getRecipes { [weak self] (result) in
+      guard let self = self else { return }
+      
+      DispatchQueue.main.async {
+        switch result {
+        case  let .success(fetchedRecipes):
+          self.recipes = fetchedRecipes
+        case let .failure(error):
+          let alertVC = UIAlertController(title: "Error",
+                                          message: "An error fetching recipes occured: \(error.description)",
+                                          preferredStyle: .alert)
+          alertVC.addAction(UIAlertAction(title: "OK",
+                                          style: .default,
+                                          handler: nil))
+          self.present(alertVC, animated:  true, completion: nil)
+        }
+      }
+    }
   }
   
   func configureLayout() -> UICollectionViewCompositionalLayout {

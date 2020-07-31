@@ -10,6 +10,7 @@
 		D81C557124C0BEC70093A5A5 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C557024C0BEC70093A5A5 /* BrowseViewController.swift */; };
 		D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837CCB924C2267C00BE1F1B /* RecipeCell.swift */; };
 		D838BF5724CB7E3D009B056E /* RecipeFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */; };
+		D8AD611124D450A8007CDE9E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD611024D450A8007CDE9E /* Secret.swift */; };
 		D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */; };
 		D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */; };
 		D8C12EDE24C0BBB3006F98C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		D81C557024C0BEC70093A5A5 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		D837CCB924C2267C00BE1F1B /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFetchingService.swift; sourceTree = "<group>"; };
+		D8AD611024D450A8007CDE9E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		D8C12ED124C0BBB2006F98C1 /* AzureOverall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AzureOverall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				D8D3A07524C267AF00AA8D26 /* Model */,
 				D8C12EF724C0BDA3006F98C1 /* Screens */,
 				D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */,
+				D8AD611024D450A8007CDE9E /* Secret.swift */,
 			);
 			path = AzureOverall;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81C557124C0BEC70093A5A5 /* BrowseViewController.swift in Sources */,
+				D8AD611124D450A8007CDE9E /* Secret.swift in Sources */,
 				D838BF5724CB7E3D009B056E /* RecipeFetchingService.swift in Sources */,
 				D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */,
 				D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */,

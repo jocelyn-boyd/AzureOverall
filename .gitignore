@@ -1,4 +1,4 @@
 Pods/
 xcuserdata/
 .DS_Store
-Secrets.swift
+Secret.swift

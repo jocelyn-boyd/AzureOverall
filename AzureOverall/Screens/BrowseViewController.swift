@@ -13,10 +13,12 @@ class BrowseViewController: UIViewController {
     case main
   }
   
+  
   lazy var recipeSearchBar: UISearchBar = {
     let sb = UISearchBar()
     return sb
   }()
+  
   
   lazy var recipeCollectionView: UICollectionView = {
     let cv = UICollectionView(frame: view.bounds, collectionViewLayout: configureLayout())
@@ -25,16 +27,25 @@ class BrowseViewController: UIViewController {
     return cv
   }()
   
-  var dataSource: UICollectionViewDiffableDataSource<Section, Int>!
-  var recipes = [Recipe]()
-
+  
+  var dataSource: UICollectionViewDiffableDataSource<Section, Recipe>!
+  var recipes = [Recipe]() {
+    didSet {
+      updateDataSource(with: recipes)
+    }
+  }
   
     override func viewDidLoad() {
         super.viewDidLoad()
       view.backgroundColor = .systemBackground
       constrainUIElements()
       configureDataSource()
+      loadData()
     }
+  
+  func loadData() {
+    recipes = RecipeFetchingService.manager.getRecipes()
+  }
   
   func configureLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.9))
@@ -47,23 +58,25 @@ class BrowseViewController: UIViewController {
     let section = NSCollectionLayoutSection(group: group)
     return UICollectionViewCompositionalLayout(section: section)
   }
-  
-  
+ 
   func configureDataSource() {
-    dataSource = UICollectionViewDiffableDataSource<Section, Int>(collectionView: recipeCollectionView) { (collectionView, indexPath, number) -> UICollectionViewCell? in
+    dataSource = UICollectionViewDiffableDataSource<Section, Recipe>(collectionView: recipeCollectionView) { (collectionView, indexPath, recipe) -> UICollectionViewCell? in
       guard let cell = self.recipeCollectionView.dequeueReusableCell(withReuseIdentifier: RecipeCell.reuseIdentifier, for: indexPath) as? RecipeCell else {return UICollectionViewCell() }
       
-      cell.recipeTitleLabel.text = number.description
-      
+      let cellData = self.recipes[indexPath.row]
+      cell.recipeTitleLabel.text = cellData.title
+      cell.prepTimeLabel.text = cellData.readyInMinutes.description
+      cell.servingsLabel.text = cellData.servings.description
       return cell
     }
-    
-   var initialSnapshot = NSDiffableDataSourceSnapshot<Section, Int>()
-    initialSnapshot.appendSections([.main])
-    initialSnapshot.appendItems(Array(1...10))
-    dataSource.apply(initialSnapshot, animatingDifferences: true)
   }
   
+  func updateDataSource(with recipes: [Recipe]) {
+    var snapshot = NSDiffableDataSourceSnapshot<Section, Recipe>()
+     snapshot.appendSections([.main])
+     snapshot.appendItems(recipes)
+     dataSource.apply(snapshot, animatingDifferences: true)
+  }
   
   func constrainUIElements() {
     view.addSubview(recipeSearchBar)

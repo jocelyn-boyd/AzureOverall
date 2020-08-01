@@ -6,4 +6,32 @@
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ImageFetchingService {
+  
+  static let manager = ImageFetchingService()
+  
+  // MARK: - Private Properties and Initializers
+  private let baseURL = "https://spoonacular.com/recipeImages/"
+  private init() {}
+
+  func getImage(from recipeID: Int, completionHandler: @escaping (Result<UIImage, NetworkError>) -> Void) {
+    
+    let endpoint = baseURL + "\(recipeID)-556x370.jpg"
+    
+    NetworkHelper.manager.getData(from: endpoint) { (result) in
+      switch result {
+      case let .success(data):
+        guard let onlineImage = UIImage(data: data) else {
+          completionHandler(.failure(.notAnImage))
+          return
+        }
+        completionHandler(.success(onlineImage))
+        
+      case let .failure(error):
+        completionHandler(.failure(error))
+      }
+    }
+  }
+}

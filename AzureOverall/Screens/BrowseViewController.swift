@@ -9,17 +9,17 @@
 import UIKit
 
 class BrowseViewController: UIViewController {
+  
+  // MARK: - Properties
   enum Section {
     case main
   }
-  
   
   lazy var recipeSearchBar: UISearchBar = {
     let sb = UISearchBar()
     return sb
   }()
-  
-  
+
   lazy var recipeCollectionView: UICollectionView = {
     let cv = UICollectionView(frame: view.bounds, collectionViewLayout: configureLayout())
     cv.register(RecipeCell.self, forCellWithReuseIdentifier: RecipeCell.reuseIdentifier)
@@ -27,14 +27,16 @@ class BrowseViewController: UIViewController {
     return cv
   }()
   
-  
   var dataSource: UICollectionViewDiffableDataSource<Section, Recipe>!
+  
   var recipes = [Recipe]() {
     didSet {
       updateDataSource(with: recipes)
     }
   }
   
+  
+  // MARK: - Lifecyle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
       view.backgroundColor = .systemBackground
@@ -43,7 +45,9 @@ class BrowseViewController: UIViewController {
       loadData()
     }
   
-  func loadData() {
+  
+  // MARK: - Private Methods
+ private func loadData() {
     //    recipes = RecipeFetchingService.manager.getRecipes()
     
     RecipeFetchingService.manager.getRecipes { [weak self] (result) in
@@ -66,7 +70,8 @@ class BrowseViewController: UIViewController {
     }
   }
   
-  func configureLayout() -> UICollectionViewCompositionalLayout {
+  
+ private func configureLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.9))
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
     item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
@@ -78,26 +83,41 @@ class BrowseViewController: UIViewController {
     return UICollectionViewCompositionalLayout(section: section)
   }
  
-  func configureDataSource() {
+  
+ private func configureDataSource() {
     dataSource = UICollectionViewDiffableDataSource<Section, Recipe>(collectionView: recipeCollectionView) { (collectionView, indexPath, recipe) -> UICollectionViewCell? in
       guard let cell = self.recipeCollectionView.dequeueReusableCell(withReuseIdentifier: RecipeCell.reuseIdentifier, for: indexPath) as? RecipeCell else {return UICollectionViewCell() }
       
       let cellData = self.recipes[indexPath.row]
       cell.recipeTitleLabel.text = cellData.title
-      cell.prepTimeLabel.text = cellData.readyInMinutes.description
-      cell.servingsLabel.text = cellData.servings.description
+      cell.prepTimeLabel.text = "Prep Time: \(cellData.readyInMinutes.description) mins"
+      cell.servingsLabel.text = "Servings: \(cellData.servings.description)"
+      
+      ImageFetchingService.manager.getImage(from: cellData.id) { [weak self ](result) in
+        guard let _ = self else { return }
+        DispatchQueue.main.async {
+          switch result {
+          case let .success(image):
+            cell.recipeImageView.image = image
+          case let .failure(error):
+            print(error)
+          }
+        }
+      }
       return cell
     }
   }
   
-  func updateDataSource(with recipes: [Recipe]) {
+  
+ private func updateDataSource(with recipes: [Recipe]) {
     var snapshot = NSDiffableDataSourceSnapshot<Section, Recipe>()
      snapshot.appendSections([.main])
      snapshot.appendItems(recipes)
      dataSource.apply(snapshot, animatingDifferences: true)
   }
   
-  func constrainUIElements() {
+  
+ private func constrainUIElements() {
     view.addSubview(recipeSearchBar)
     view.addSubview(recipeCollectionView)
     

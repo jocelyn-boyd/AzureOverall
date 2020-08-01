@@ -11,9 +11,11 @@
 		D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837CCB924C2267C00BE1F1B /* RecipeCell.swift */; };
 		D838BF5724CB7E3D009B056E /* RecipeFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */; };
 		D8A180E724D4A273006C086F /* RecipeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A180E624D4A273006C086F /* RecipeError.swift */; };
+		D8A180E924D4FF44006C086F /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A180E824D4FF44006C086F /* ImageHelper.swift */; };
 		D8AD611124D450A8007CDE9E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD611024D450A8007CDE9E /* Secret.swift */; };
 		D8AD611D24D45B6C007CDE9E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD611C24D45B6C007CDE9E /* NetworkError.swift */; };
 		D8AD612224D45DC2007CDE9E /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD612124D45DC2007CDE9E /* NetworkHelper.swift */; };
+		D8B6316D24D50C7400CF6DF7 /* ImageFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6316C24D50C7400CF6DF7 /* ImageFetchingService.swift */; };
 		D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */; };
 		D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */; };
 		D8C12EDE24C0BBB3006F98C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */; };
@@ -38,9 +40,11 @@
 		D837CCB924C2267C00BE1F1B /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFetchingService.swift; sourceTree = "<group>"; };
 		D8A180E624D4A273006C086F /* RecipeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeError.swift; sourceTree = "<group>"; };
+		D8A180E824D4FF44006C086F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		D8AD611024D450A8007CDE9E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Secret.swift; path = ../Secret.swift; sourceTree = "<group>"; };
 		D8AD611C24D45B6C007CDE9E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D8AD612124D45DC2007CDE9E /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		D8B6316C24D50C7400CF6DF7 /* ImageFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchingService.swift; sourceTree = "<group>"; };
 		D8C12ED124C0BBB2006F98C1 /* AzureOverall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AzureOverall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */,
+				D8B6316C24D50C7400CF6DF7 /* ImageFetchingService.swift */,
 				D8AD612124D45DC2007CDE9E /* NetworkHelper.swift */,
+				D8A180E824D4FF44006C086F /* ImageHelper.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -286,7 +292,9 @@
 				D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */,
 				D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */,
 				D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */,
+				D8B6316D24D50C7400CF6DF7 /* ImageFetchingService.swift in Sources */,
 				D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */,
+				D8A180E924D4FF44006C086F /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

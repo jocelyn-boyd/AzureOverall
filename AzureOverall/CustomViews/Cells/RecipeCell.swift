@@ -11,9 +11,10 @@ import UIKit
 class RecipeCell: UICollectionViewCell {
   static let reuseIdentifier = String(describing: RecipeCell.self)
   
-  lazy var dishImageView: UIImageView = {
+  lazy var recipeImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.backgroundColor = .darkGray
+    imageView.contentMode = .scaleToFill
     return imageView
   }()
   
@@ -61,11 +62,11 @@ class RecipeCell: UICollectionViewCell {
   
   private func configure() {
     addSubview(recipeTitleLabel)
-    addSubview(dishImageView)
+    addSubview(recipeImageView)
     addSubview(prepTimeLabel)
     addSubview(servingsLabel)
     
-    dishImageView.translatesAutoresizingMaskIntoConstraints = false
+    recipeImageView.translatesAutoresizingMaskIntoConstraints = false
     recipeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
     prepTimeLabel.translatesAutoresizingMaskIntoConstraints = false
     servingsLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -74,20 +75,22 @@ class RecipeCell: UICollectionViewCell {
       recipeTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
       recipeTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
       recipeTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      recipeTitleLabel.bottomAnchor.constraint(equalTo: dishImageView.topAnchor),
+      recipeTitleLabel.bottomAnchor.constraint(equalTo: recipeImageView.topAnchor),
+      recipeTitleLabel.heightAnchor.constraint(equalToConstant: 40),
       
-      dishImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50),
-      dishImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-      dishImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      dishImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50),
+      recipeImageView.topAnchor.constraint(equalTo: recipeTitleLabel.bottomAnchor),
+      recipeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      recipeImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+      recipeImageView.bottomAnchor.constraint(equalTo: prepTimeLabel.topAnchor),
       
-      prepTimeLabel.topAnchor.constraint(equalTo: dishImageView.bottomAnchor),
+      prepTimeLabel.topAnchor.constraint(equalTo: recipeImageView.bottomAnchor),
       prepTimeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
       prepTimeLabel.trailingAnchor.constraint(equalTo: servingsLabel.leadingAnchor),
       prepTimeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
       prepTimeLabel.widthAnchor.constraint(equalToConstant: contentView.bounds.width / 2),
+      prepTimeLabel.heightAnchor.constraint(equalToConstant: 40),
 
-      servingsLabel.topAnchor.constraint(equalTo: dishImageView.bottomAnchor),
+      servingsLabel.topAnchor.constraint(equalTo: recipeImageView.bottomAnchor),
       servingsLabel.leadingAnchor.constraint(equalTo: prepTimeLabel.trailingAnchor),
       servingsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       servingsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),

@@ -14,7 +14,6 @@ enum JSONError: Error {
 
 struct RecipeWrapper: Codable, Hashable {
 let results: [Recipe]
-// let baseUri: String
  
  static func getAllRecipes(from JSONData: Data) throws -> [Recipe] {
    do {

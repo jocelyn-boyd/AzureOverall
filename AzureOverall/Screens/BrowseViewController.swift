@@ -74,11 +74,11 @@ class BrowseViewController: UIViewController {
  private func configureLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.9))
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+    item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10)
     
     let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(350.0))
     let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-    
+  
     let section = NSCollectionLayoutSection(group: group)
     return UICollectionViewCompositionalLayout(section: section)
   }
@@ -90,9 +90,9 @@ class BrowseViewController: UIViewController {
       
       let cellData = self.recipes[indexPath.row]
       cell.recipeTitleLabel.text = cellData.title
-      cell.prepTimeLabel.text = "Prep Time: \(cellData.readyInMinutes.description) mins"
-      cell.servingsLabel.text = "Servings: \(cellData.servings.description)"
-      
+      cell.prepTimeLabel.text = "\(cellData.readyInMinutes.description) mins"
+      cell.servingsLabel.text = "For \(cellData.servings.description) people"
+            
       ImageFetchingService.manager.getImage(from: cellData.id) { [weak self ](result) in
         guard let _ = self else { return }
         DispatchQueue.main.async {

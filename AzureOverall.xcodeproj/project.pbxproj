@@ -10,7 +10,10 @@
 		D81C557124C0BEC70093A5A5 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C557024C0BEC70093A5A5 /* BrowseViewController.swift */; };
 		D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837CCB924C2267C00BE1F1B /* RecipeCell.swift */; };
 		D838BF5724CB7E3D009B056E /* RecipeFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */; };
+		D8A180E724D4A273006C086F /* RecipeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A180E624D4A273006C086F /* RecipeError.swift */; };
 		D8AD611124D450A8007CDE9E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD611024D450A8007CDE9E /* Secret.swift */; };
+		D8AD611D24D45B6C007CDE9E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD611C24D45B6C007CDE9E /* NetworkError.swift */; };
+		D8AD612224D45DC2007CDE9E /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD612124D45DC2007CDE9E /* NetworkHelper.swift */; };
 		D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */; };
 		D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */; };
 		D8C12EDE24C0BBB3006F98C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */; };
@@ -34,7 +37,10 @@
 		D81C557024C0BEC70093A5A5 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		D837CCB924C2267C00BE1F1B /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFetchingService.swift; sourceTree = "<group>"; };
-		D8AD611024D450A8007CDE9E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		D8A180E624D4A273006C086F /* RecipeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeError.swift; sourceTree = "<group>"; };
+		D8AD611024D450A8007CDE9E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Secret.swift; path = ../Secret.swift; sourceTree = "<group>"; };
+		D8AD611C24D45B6C007CDE9E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		D8AD612124D45DC2007CDE9E /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		D8C12ED124C0BBB2006F98C1 /* AzureOverall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AzureOverall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,11 +80,37 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		D8AD611E24D45BAB007CDE9E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D8AD611024D450A8007CDE9E /* Secret.swift */,
+				D8AD611C24D45B6C007CDE9E /* NetworkError.swift */,
+				D8A180E624D4A273006C086F /* RecipeError.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D8AD611F24D45BDB007CDE9E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				D837CCB824C2265800BE1F1B /* Cells */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		D8AD612024D45C08007CDE9E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */,
+				D8AD612124D45DC2007CDE9E /* NetworkHelper.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		D8C12EC824C0BBB2006F98C1 = {
 			isa = PBXGroup;
 			children = (
 				D8C12ED324C0BBB2006F98C1 /* AzureOverall */,
-				D8C12EF624C0BD87006F98C1 /* Supporting */,
 				D8C12EEA24C0BBB4006F98C1 /* AzureOverallTests */,
 				D8C12ED224C0BBB2006F98C1 /* Products */,
 			);
@@ -96,13 +128,13 @@
 		D8C12ED324C0BBB2006F98C1 /* AzureOverall */ = {
 			isa = PBXGroup;
 			children = (
-				D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */,
-				D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */,
-				D8C12EE224C0BBB3006F98C1 /* Info.plist */,
+				D8AD611E24D45BAB007CDE9E /* Utilities */,
+				D8AD612024D45C08007CDE9E /* Managers */,
 				D8D3A07524C267AF00AA8D26 /* Model */,
+				D8AD611F24D45BDB007CDE9E /* CustomViews */,
 				D8C12EF724C0BDA3006F98C1 /* Screens */,
-				D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */,
-				D8AD611024D450A8007CDE9E /* Secret.swift */,
+				D8C12EF624C0BD87006F98C1 /* Support */,
+				D8C12EE224C0BBB3006F98C1 /* Info.plist */,
 			);
 			path = AzureOverall;
 			sourceTree = "<group>";
@@ -117,20 +149,21 @@
 			path = AzureOverallTests;
 			sourceTree = "<group>";
 		};
-		D8C12EF624C0BD87006F98C1 /* Supporting */ = {
+		D8C12EF624C0BD87006F98C1 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */,
+				D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */,
 				D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */,
 				D8C12EDF24C0BBB3006F98C1 /* LaunchScreen.storyboard */,
 			);
-			path = Supporting;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		D8C12EF724C0BDA3006F98C1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				D81C557024C0BEC70093A5A5 /* BrowseViewController.swift */,
-				D837CCB824C2265800BE1F1B /* Cells */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -244,8 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A180E724D4A273006C086F /* RecipeError.swift in Sources */,
 				D81C557124C0BEC70093A5A5 /* BrowseViewController.swift in Sources */,
+				D8AD612224D45DC2007CDE9E /* NetworkHelper.swift in Sources */,
 				D8AD611124D450A8007CDE9E /* Secret.swift in Sources */,
+				D8AD611D24D45B6C007CDE9E /* NetworkError.swift in Sources */,
 				D838BF5724CB7E3D009B056E /* RecipeFetchingService.swift in Sources */,
 				D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */,
 				D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */,

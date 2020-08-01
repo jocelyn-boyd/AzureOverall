@@ -42,7 +42,7 @@ class AzureOverallTests: XCTestCase {
     var sampleRecipes = [Recipe]()
     
     do {
-      sampleRecipes = try RecipeWrapper.getallRecipes(from: recipeData)
+      sampleRecipes = try RecipeWrapper.getAllRecipes(from: recipeData)
       print(sampleRecipes)
     } catch {
       print(error)

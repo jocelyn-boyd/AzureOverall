@@ -16,7 +16,7 @@ struct RecipeWrapper: Codable, Hashable {
 let results: [Recipe]
  let baseUri: String
  
- static func getallRecipes(from JSONData: Data) throws -> [Recipe] {
+ static func getAllRecipes(from JSONData: Data) throws -> [Recipe] {
    do {
      let recipeWrapper = try JSONDecoder().decode(RecipeWrapper.self, from: JSONData)
     return recipeWrapper.results

@@ -92,6 +92,7 @@ class BrowseViewController: UIViewController {
       cell.recipeTitleLabel.text = cellData.title
       cell.prepTimeLabel.text = "\(cellData.readyInMinutes.description) mins"
       cell.servingsLabel.text = "For \(cellData.servings.description) people"
+      
             
       ImageFetchingService.manager.getImage(from: cellData.id) { [weak self ](result) in
         guard let _ = self else { return }

@@ -17,7 +17,6 @@ class ImageFetchingService {
   private init() {}
 
   func getImage(from recipeID: Int, completionHandler: @escaping (Result<UIImage, NetworkError>) -> Void) {
-    
     let endpoint = baseURL + "\(recipeID)-556x370.jpg"
     
     NetworkHelper.manager.getData(from: endpoint) { (result) in

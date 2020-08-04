@@ -17,6 +17,7 @@
 		D877735024D8ED26001C8FF7 /* AOSubheadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877734F24D8ED26001C8FF7 /* AOSubheadingLabel.swift */; };
 		D877735824D8F384001C8FF7 /* AOImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877735724D8F384001C8FF7 /* AOImageView.swift */; };
 		D877735A24D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877735924D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift */; };
+		D877735C24D8FB56001C8FF7 /* AOLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877735B24D8FB56001C8FF7 /* AOLabel.swift */; };
 		D88BC64E24D779BD00F3E5BF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88BC64D24D779BD00F3E5BF /* DetailViewController.swift */; };
 		D8A180E724D4A273006C086F /* RecipeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A180E624D4A273006C086F /* RecipeError.swift */; };
 		D8A180E924D4FF44006C086F /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A180E824D4FF44006C086F /* ImageHelper.swift */; };
@@ -54,6 +55,7 @@
 		D877734F24D8ED26001C8FF7 /* AOSubheadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOSubheadingLabel.swift; sourceTree = "<group>"; };
 		D877735724D8F384001C8FF7 /* AOImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOImageView.swift; sourceTree = "<group>"; };
 		D877735924D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		D877735B24D8FB56001C8FF7 /* AOLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOLabel.swift; sourceTree = "<group>"; };
 		D88BC64D24D779BD00F3E5BF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D8A180E624D4A273006C086F /* RecipeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeError.swift; sourceTree = "<group>"; };
 		D8A180E824D4FF44006C086F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				D877734D24D8EA56001C8FF7 /* AOTitleLabel.swift */,
 				D877734F24D8ED26001C8FF7 /* AOSubheadingLabel.swift */,
 				D877735924D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift */,
+				D877735B24D8FB56001C8FF7 /* AOLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				D877735824D8F384001C8FF7 /* AOImageView.swift in Sources */,
 				D877735A24D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift in Sources */,
 				D8A180E924D4FF44006C086F /* ImageHelper.swift in Sources */,
+				D877735C24D8FB56001C8FF7 /* AOLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

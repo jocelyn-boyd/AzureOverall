@@ -11,11 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
   var recipeDetails: Recipe?
-  
-  lazy var recipeImageView: UIImageView = {
-    let image = UIImageView()
-    return image
-  }()
+  let recipeImageView = AOImageView()
   
     override func viewDidLoad() {
         super.viewDidLoad()

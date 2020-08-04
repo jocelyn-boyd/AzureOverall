@@ -23,7 +23,7 @@ class BrowseViewController: UIViewController {
   lazy var recipeCollectionView: UICollectionView = {
     let cv = UICollectionView(frame: view.bounds, collectionViewLayout: configurePortraitLayout())
     cv.register(RecipeCell.self, forCellWithReuseIdentifier: RecipeCell.reuseIdentifier)
-    
+    cv.delegate = self
     cv.backgroundColor = .systemBackground
     return cv
   }()
@@ -40,8 +40,7 @@ class BrowseViewController: UIViewController {
   // MARK: - Lifecyle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-      view.backgroundColor = .systemBackground
-      recipeCollectionView.delegate = self
+      configureBackground()
       constrainUIElements()
       configureDataSource()
       loadData()
@@ -49,12 +48,12 @@ class BrowseViewController: UIViewController {
   
   
   // MARK: - Private Methods
- private func loadData() {
-    //    recipes = RecipeFetchingService.manager.getRecipes()
-    
-    RecipeFetchingService.manager.getRecipes { [weak self] (result) in
+  private func configureBackground() { view.backgroundColor = .systemBackground }
+  
+  
+  private func loadData() {
+    RecipeFetchingService.manager.getAllRecipes(from: "burger") { [weak self] (result) in
       guard let self = self else { return }
-      
       DispatchQueue.main.async {
         switch result {
         case  let .success(fetchedRecipes):
@@ -62,11 +61,12 @@ class BrowseViewController: UIViewController {
         case let .failure(error):
           let alertVC = UIAlertController(title: "Error",
                                           message: "An error fetching recipes occured: \(error.description)",
-                                          preferredStyle: .alert)
+            preferredStyle: .alert)
           alertVC.addAction(UIAlertAction(title: "OK",
                                           style: .default,
                                           handler: nil))
           self.present(alertVC, animated:  true, completion: nil)
+          print(error)
         }
       }
     }

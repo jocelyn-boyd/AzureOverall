@@ -19,7 +19,7 @@ class NetworkHelper {
   func getData(from urlString: String, completionHandler: @escaping (Result<Data, NetworkError>) -> Void) {
     
     guard let url = URL(string: urlString) else {
-      completionHandler(.failure(.badURL))
+      completionHandler(.failure(.unableToComplete))
       return
     }
     
@@ -43,7 +43,7 @@ class NetworkHelper {
       switch urlResponse.statusCode {
       case 200...299: break
       default:
-        completionHandler(.failure(.badURLResponse))
+        completionHandler(.failure(.invalidResponse))
         return
       }
       completionHandler(.success(data))

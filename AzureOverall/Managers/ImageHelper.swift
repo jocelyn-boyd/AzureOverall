@@ -22,7 +22,7 @@ class ImageHelper {
         completionHandler(.failure(error))
       case let .success(data):
         guard let onlineImage = UIImage(data: data) else {
-          completionHandler(.failure(.notAnImage))
+          completionHandler(.failure(.unableToComplete))
           return
         }
         completionHandler(.success(onlineImage))

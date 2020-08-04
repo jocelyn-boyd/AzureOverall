@@ -11,18 +11,21 @@ import UIKit
 class DetailViewController: UIViewController {
 
   var recipeDetails: Recipe?
+  let recipeTitleLabel = AOTitleLabel(textAlignment: .center, fontSize: 20)
   let recipeImageView = AOImageView()
+  
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      loadRecipeDetails()
+      view.backgroundColor = .systemBackground
       configureUI()
+      loadDetails()
+      loadImage()
     }
 
   
-  private func loadRecipeDetails() {
+  private func loadImage() {
     guard let recipeDetails = recipeDetails else { return }
-    
     ImageFetchingService.manager.getImage(from: recipeDetails.id) { [weak self] (result) in
       guard let self = self else { return }
       DispatchQueue.main.async {
@@ -36,16 +39,37 @@ class DetailViewController: UIViewController {
     }
   }
   
+  private func loadDetails() {
+    guard let recipeDetails = recipeDetails else { return }
+    RecipeFetchingService.manager.getSingleRecipe(from: recipeDetails.id) { [weak self ](result) in
+      guard let self = self else { return }
+      DispatchQueue.main.async {
+        switch result {
+        case .success:
+          self.recipeTitleLabel.text = recipeDetails.title
+        case let .failure(error):
+          print(error)
+          
+        }
+      }
+    }
+  }
+  
   
   private func configureUI() {
+    view.addSubview(recipeTitleLabel)
     view.addSubview(recipeImageView)
-    recipeImageView.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-      recipeImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      recipeImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      recipeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      recipeImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+      recipeTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+      recipeTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      recipeTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      recipeTitleLabel.bottomAnchor.constraint(equalTo: recipeImageView.topAnchor),
+      
+      recipeImageView.topAnchor.constraint(equalTo: recipeTitleLabel.bottomAnchor),
+      recipeImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+      recipeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+      recipeImageView.heightAnchor.constraint(equalToConstant: 200)
     ])
   }
   

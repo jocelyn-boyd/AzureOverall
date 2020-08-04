@@ -13,17 +13,17 @@ class ImageFetchingService {
   static let manager = ImageFetchingService()
   
   // MARK: - Private Properties and Initializers
-  private let baseURL = "https://spoonacular.com/recipeImages/"
+  private let baseURL = "https://spoonacular.com/recipeImages"
   private init() {}
 
   func getImage(from recipeID: Int, completionHandler: @escaping (Result<UIImage, NetworkError>) -> Void) {
-    let endpoint = baseURL + "\(recipeID)-556x370.jpg"
+    let endpoint = baseURL + "/\(recipeID)-556x370.jpg"
     
     NetworkHelper.manager.getData(from: endpoint) { (result) in
       switch result {
       case let .success(data):
         guard let onlineImage = UIImage(data: data) else {
-          completionHandler(.failure(.notAnImage))
+          completionHandler(.failure(.couldNotDecode))
           return
         }
         completionHandler(.success(onlineImage))

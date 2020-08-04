@@ -39,7 +39,7 @@ struct RecipeInformation: Codable {
       let recipeInformation = try JSONDecoder().decode(RecipeInformation.self, from: JSONData)
      return recipeInformation
     } catch {
-      throw NetworkError.decodingError
+      throw NetworkError.couldNotDecode
     }
   }
 }

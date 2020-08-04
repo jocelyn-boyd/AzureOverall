@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubheadingLabel: UILabel {
+class AOSubheadingLabel: UILabel {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -28,7 +28,7 @@ class SubheadingLabel: UILabel {
   }
   
   
-  private func configure() {
+  func configure() {
   textColor = UIColor(displayP3Red: 83 / 255, green: 179 / 255, blue: 203 / 255, alpha: 1)
   numberOfLines = 0
   lineBreakMode = .byWordWrapping

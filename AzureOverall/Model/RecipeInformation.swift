@@ -8,7 +8,15 @@
 
 import Foundation
 
+enum JSONError: Error {
+  case decodingError(Error)
+}
+
 struct RecipeInformation: Codable {
+  let vegetarian: Bool
+  let vegan: Bool
+  let dairyFree: Bool
+  
   let preparationMinutes: Int
   let cookingMinutes: Int
   let sourceName: String
@@ -31,7 +39,7 @@ struct RecipeInformation: Codable {
       let recipeInformation = try JSONDecoder().decode(RecipeInformation.self, from: JSONData)
      return recipeInformation
     } catch {
-      throw JSONError.decodingError(error)
+      throw NetworkError.decodingError
     }
   }
 }

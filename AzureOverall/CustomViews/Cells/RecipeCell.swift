@@ -10,28 +10,15 @@ import UIKit
 
 class RecipeCell: UICollectionViewCell {
   static let reuseIdentifier = String(describing: RecipeCell.self)
-  let recipeTitleLabel = TitleLabel(textAlignment: .left, fontSize: 20)
-  let prepTimeLabel = SubheadingLabel(textAlignment: .left, fontSize: 18)
   
-  lazy var recipeImageView: UIImageView = {
-    let imageView = UIImageView()
-    imageView.contentMode = .scaleToFill
-    imageView.layer.cornerRadius = 10
-    imageView.layer.masksToBounds = true
-    return imageView
-  }()
+  let recipeImageView = AOImageView()
+  let recipeTitleLabel = AOTitleLabel(textAlignment: .left, fontSize: 20)
+  let prepTimeLabel = AOSubheadingLabel(textAlignment: .left, fontSize: 18)
+  let servingsLabel = AOSecondaryTitleLabel(textAlignment: .right, fontSize: 18)
   
-  
-  lazy var servingsLabel: UILabel = {
-    let label = UILabel()
-    label.textColor = .secondaryLabel
-    label.font = UIFont(descriptor: .preferredFontDescriptor(withTextStyle: .subheadline), size: 18)
-    return label
-  }()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    contentView.backgroundColor = .systemBackground
     configure()
   }
   
@@ -42,17 +29,11 @@ class RecipeCell: UICollectionViewCell {
   
   
   private func configure() {
-    addSubview(recipeTitleLabel)
-    addSubview(recipeImageView)
-    addSubview(prepTimeLabel)
-    addSubview(servingsLabel)
-    
-    recipeImageView.translatesAutoresizingMaskIntoConstraints = false
-    servingsLabel.translatesAutoresizingMaskIntoConstraints = false
+    [recipeImageView, recipeTitleLabel, prepTimeLabel, servingsLabel].forEach { addSubview($0)
+    }
     
     let padding: CGFloat = 20
     NSLayoutConstraint.activate([
-    
       
       recipeImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
       recipeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -63,7 +44,7 @@ class RecipeCell: UICollectionViewCell {
       recipeTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
       recipeTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       recipeTitleLabel.bottomAnchor.constraint(equalTo: prepTimeLabel.topAnchor),
-    
+      
       prepTimeLabel.topAnchor.constraint(equalTo: recipeTitleLabel.bottomAnchor),
       prepTimeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
       prepTimeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding / 2),

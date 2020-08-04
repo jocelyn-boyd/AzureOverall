@@ -1,5 +1,5 @@
 //
-//  SecondarySubheadingLabel.swift
+//  AOImageView.swift
 //  AzureOverall
 //
 //  Created by Jocelyn Boyd on 8/3/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondaryTitleLabel: UILabel {
+class AOImageView: UIImageView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -21,18 +21,17 @@ class SecondaryTitleLabel: UILabel {
   }
   
   
-  convenience init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
+  convenience init() {
     self.init(frame: .zero)
-    self.textAlignment = textAlignment
-    self.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
   }
   
   
-  private func configure() {
-    textColor = .secondaryLabel
-    numberOfLines = 0
-    lineBreakMode = .byWordWrapping
+  func configure() {
+    contentMode = .scaleToFill
+    layer.cornerRadius = 10
+    layer.masksToBounds = true
     translatesAutoresizingMaskIntoConstraints = false
   }
+  
   
 }

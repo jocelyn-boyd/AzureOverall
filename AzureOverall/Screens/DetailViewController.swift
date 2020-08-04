@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
   
   private func loadRecipeDetails() {
     guard let recipeDetails = recipeDetails else { return }
+    
     ImageFetchingService.manager.getImage(from: recipeDetails.id) { [weak self] (result) in
       guard let self = self else { return }
       DispatchQueue.main.async {

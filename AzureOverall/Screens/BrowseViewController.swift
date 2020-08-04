@@ -21,16 +21,16 @@ class BrowseViewController: UIViewController {
   }()
 
   lazy var recipeCollectionView: UICollectionView = {
-    let cv = UICollectionView(frame: view.bounds, collectionViewLayout: configureLayout())
+    let cv = UICollectionView(frame: view.bounds, collectionViewLayout: configurePortraitLayout())
     cv.register(RecipeCell.self, forCellWithReuseIdentifier: RecipeCell.reuseIdentifier)
     
     cv.backgroundColor = .systemBackground
     return cv
   }()
   
-  var dataSource: UICollectionViewDiffableDataSource<Section, Recipe>?
+  private var dataSource: UICollectionViewDiffableDataSource<Section, Recipe>?
   
-  var recipes = [Recipe]() {
+  private var recipes = [Recipe]() {
     didSet {
       updateDataSource(with: recipes)
     }
@@ -73,7 +73,7 @@ class BrowseViewController: UIViewController {
   }
   
   
- private func configureLayout() -> UICollectionViewCompositionalLayout {
+ private func configurePortraitLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.9))
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
     item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10)
@@ -84,6 +84,8 @@ class BrowseViewController: UIViewController {
     let section = NSCollectionLayoutSection(group: group)
     return UICollectionViewCompositionalLayout(section: section)
   }
+  
+  
  
   
  private func configureDataSource() {
@@ -92,8 +94,8 @@ class BrowseViewController: UIViewController {
       
       let cellData = self.recipes[indexPath.row]
       cell.recipeTitleLabel.text = cellData.title
-      cell.prepTimeLabel.text = "\(cellData.readyInMinutes.description) mins"
-      cell.servingsLabel.text = "For \(cellData.servings.description) people"
+      cell.prepTimeLabel.text = "\(cellData.readyInMinutes.description) Mins Prep"
+      cell.servingsLabel.text = "For \(cellData.servings.description) People"
       
             
       ImageFetchingService.manager.getImage(from: cellData.id) { [weak self ](result) in

@@ -7,27 +7,43 @@
 //
 
 import XCTest
+@testable import AzureOverall
 
 class AORecipeInformoationModelTest: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+  private func getRecipeInformationFromJSONData() -> Data {
+       guard let pathToData = Bundle.main.path(forResource: "RecipeInformation", ofType: "json") else {
+         fatalError("RecipeInformation.json file not found")
+       }
+       
+       let internalUrl = URL(fileURLWithPath: pathToData)
+       
+       do {
+         let data = try Data(contentsOf: internalUrl)
+         return data
+       } catch  {
+         fatalError("An error occured: \(error)")
+       }
+     }
+     
+  /*
+     func testLoadRecipes() {
+       //Arrange
+       let recipeData = getRecipeInformationFromJSONData()
+       
+       //Act
+      var sampleRecipe = [RecipeInformation]()
+       
+       do {
+        sampleRecipe = try RecipeInformation.getDetailedInformation(from: sampleRecipe)
+         print(sampleRecipe)
+       } catch {
+         print(error)
+       }
+       
+       //Assert
+       XCTAssertTrue(sampleRecipe.count != 0, "There are \(sampleRecipe.count) recipes found.")
+     }
+ */
+  
 }

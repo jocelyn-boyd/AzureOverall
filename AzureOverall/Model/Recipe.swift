@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum JSONError: Error {
-  case decodingError(Error)
-}
-
 struct RecipeWrapper: Codable, Hashable {
 let results: [Recipe]
  
@@ -20,7 +16,7 @@ let results: [Recipe]
      let recipeWrapper = try JSONDecoder().decode(RecipeWrapper.self, from: JSONData)
     return recipeWrapper.results
    } catch {
-     throw JSONError.decodingError(error)
+    throw NetworkError.decodingError
    }
  }
 }

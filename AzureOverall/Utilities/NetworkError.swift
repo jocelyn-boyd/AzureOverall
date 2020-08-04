@@ -25,4 +25,5 @@ enum NetworkError: Error {
   case unableToComplete
   case invalidData
   case badURLResponse
+  case decodingError
 }

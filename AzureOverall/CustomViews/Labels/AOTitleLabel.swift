@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TitleLabel: UILabel {
+class AOTitleLabel: UILabel {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -28,7 +28,7 @@ class TitleLabel: UILabel {
   }
   
   
-  private func configure() {
+  func configure() {
     textColor = UIColor(displayP3Red: 12 / 255, green: 9 / 255, blue: 13 / 255, alpha: 1)
     numberOfLines = 0
     lineBreakMode = .byWordWrapping

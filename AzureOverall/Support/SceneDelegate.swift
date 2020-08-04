@@ -1,8 +1,6 @@
 //
 //  SceneDelegate.swift
 //  AzureOverall
-//
-//  Created by Jocelyn Boyd on 7/16/20.
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
@@ -19,12 +17,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     guard let windowScene = (scene as? UIWindowScene) else { return }
     
-    window = UIWindow(frame: UIScreen.main.bounds)
+    window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
-    window?.rootViewController = BrowseViewController()
+    window?.rootViewController = AOTabBarController()
     window?.makeKeyAndVisible()
   }
+  
+  func configureNavigationBar() {
+    UINavigationBar.appearance().tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
+  }
 
+  
   func sceneDidDisconnect(_ scene: UIScene) {
     // Called as the scene is being released by the system.
     // This occurs shortly after the scene enters the background, or when its session is discarded.

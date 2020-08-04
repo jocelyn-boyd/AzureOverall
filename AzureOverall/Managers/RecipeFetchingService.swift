@@ -1,8 +1,6 @@
 //
-//  File.swift
+//  RecipeFetchingService.swift
 //  AzureOverall
-//
-//  Created by Jocelyn Boyd on 7/24/20.
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
@@ -20,7 +18,7 @@ class RecipeFetchingService {
   
 
   //MARK: - Internal Methods
-  func getAllRecipes(from query:String, completionHandler: @escaping (Result<[Recipe],RecipeError>) -> Void) {
+  func getAllRecipes(from query:String, completionHandler: @escaping (Result<[Recipe],NetworkError>) -> Void) {
     
     let endpoint = baseURL + "search?query=\(query.lowercased())&apiKey=\(Secret.apiKey.rawValue)"
     
@@ -31,19 +29,19 @@ class RecipeFetchingService {
           let recipe = try RecipeWrapper.getAllRecipes(from: data)
           completionHandler(.success(recipe))
         } catch {
-          completionHandler(.failure(.jsonDecodingError(error)))
+          completionHandler(.failure(.unableToDecodeJSON))
           print(error.localizedDescription)
         }
        
       case let .failure(error):
-        completionHandler(.failure(.jsonDecodingError(error)))
+        completionHandler(.failure(.unableToDecodeJSON))
         print(error.localizedDescription)
       }
     }
   }
   
   
-  func getSingleRecipe(from id: Int, completionHandler: @escaping (Result<RecipeInformation,RecipeError>) -> Void) {
+  func getSingleRecipe(from id: Int, completionHandler: @escaping (Result<RecipeInformation,NetworkError>) -> Void) {
     
     let endpoint = baseURL + "\(id)/information?apiKey=\(Secret.apiKey.rawValue)"
     
@@ -54,11 +52,11 @@ class RecipeFetchingService {
           let recipe = try RecipeInformation.getDetailedInformation(from: data)
           completionHandler(.success(recipe))
         } catch {
-          completionHandler(.failure(.jsonDecodingError(error)))
+          completionHandler(.failure(.unableToDecodeJSON))
         }
        
-      case let .failure(networkHelper):
-        completionHandler(.failure(.networkError(networkHelper)))
+      case .failure:
+        completionHandler(.failure(.unableToComplete))
       }
     }
   }

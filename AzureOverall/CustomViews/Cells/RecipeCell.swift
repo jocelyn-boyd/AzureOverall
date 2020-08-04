@@ -1,8 +1,6 @@
 //
 //  RecipeCell.swift
 //  AzureOverall
-//
-//  Created by Jocelyn Boyd on 7/17/20.
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
@@ -14,7 +12,7 @@ class RecipeCell: UICollectionViewCell {
   static let reuseIdentifier = String(describing: RecipeCell.self)
   
   let recipeImageView = AOImageView()
-  let recipeTitleLabel = AOTitleLabel(textAlignment: .left, fontSize: 20)
+  let recipeTitleLabel = AOTitleLabel(textAlignment: .left, fontSize: 20, numberOfLines: 1)
   let prepTimeLabel = AOSubheadingLabel(textAlignment: .left, fontSize: 18)
   let servingsLabel = AOSecondaryTitleLabel(textAlignment: .left, fontSize: 18)
   
@@ -31,11 +29,10 @@ class RecipeCell: UICollectionViewCell {
   
   //MARK: - Private Methods
   private func configure() {
-    [recipeImageView, recipeTitleLabel, prepTimeLabel, servingsLabel].forEach { addSubview($0) }
-    
-    recipeTitleLabel.numberOfLines = 1
-    recipeTitleLabel.lineBreakMode = .byTruncatingTail
     let padding: CGFloat = 5
+    let itemViews = [recipeImageView, recipeTitleLabel, prepTimeLabel, servingsLabel]
+    for itemView in itemViews { contentView.addSubview(itemView) }
+    
     
     NSLayoutConstraint.activate([
       recipeImageView.topAnchor.constraint(equalTo: contentView.topAnchor),

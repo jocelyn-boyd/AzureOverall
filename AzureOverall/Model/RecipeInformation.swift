@@ -1,8 +1,6 @@
 //
 //  RecipeInformation.swift
 //  AzureOverall
-//
-//  Created by Jocelyn Boyd on 8/3/20.
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
@@ -35,7 +33,7 @@ struct RecipeInformation: Codable {
       let recipeInformation = try JSONDecoder().decode(RecipeInformation.self, from: JSONData)
      return recipeInformation
     } catch {
-      throw RecipeError.jsonDecodingError(error)
+      throw NetworkError.unableToDecodeJSON
     }
   }
 }

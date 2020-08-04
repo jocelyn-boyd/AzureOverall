@@ -1,8 +1,6 @@
 //
 //  Recipe.swift
 //  AzureOverall
-//
-//  Created by Jocelyn Boyd on 7/18/20.
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
@@ -16,7 +14,7 @@ let results: [Recipe]
      let recipeWrapper = try JSONDecoder().decode(RecipeWrapper.self, from: JSONData)
     return recipeWrapper.results
    } catch {
-    throw RecipeError.jsonDecodingError(error)
+    throw NetworkError.unableToDecodeJSON
    }
  }
 }

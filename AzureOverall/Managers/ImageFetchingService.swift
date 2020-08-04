@@ -1,8 +1,6 @@
 //
 //  ImageFetchingService.swift
 //  AzureOverall
-//
-//  Created by Jocelyn Boyd on 7/31/20.
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
@@ -27,7 +25,7 @@ class ImageFetchingService {
       switch result {
       case let .success(data):
         guard let onlineImage = UIImage(data: data) else {
-          completionHandler(.failure(.couldNotDecode))
+          completionHandler(.failure(.unableToDecodeJSON))
           return
         }
         completionHandler(.success(onlineImage))

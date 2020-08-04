@@ -1,8 +1,6 @@
 //
-//  TitleLabel.swift
+//  AOTitleLabel.swift
 //  AzureOverall
-//
-//  Created by Jocelyn Boyd on 8/3/20.
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
@@ -21,15 +19,17 @@ class AOTitleLabel: UILabel {
   }
   
   
-  convenience init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
+  convenience init(textAlignment: NSTextAlignment, fontSize: CGFloat, numberOfLines: Int) {
     self.init(frame: .zero)
     self.textAlignment = textAlignment
     self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
+    self.numberOfLines = numberOfLines
   }
   
   
   func configure() {
     textColor = UIColor(displayP3Red: 12 / 255, green: 9 / 255, blue: 13 / 255, alpha: 1)
+    lineBreakMode = .byTruncatingTail
     translatesAutoresizingMaskIntoConstraints = false
   }
 }

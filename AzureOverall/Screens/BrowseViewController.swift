@@ -23,11 +23,12 @@ class BrowseViewController: UIViewController {
   lazy var recipeCollectionView: UICollectionView = {
     let cv = UICollectionView(frame: view.bounds, collectionViewLayout: configureLayout())
     cv.register(RecipeCell.self, forCellWithReuseIdentifier: RecipeCell.reuseIdentifier)
+    
     cv.backgroundColor = .systemBackground
     return cv
   }()
   
-  var dataSource: UICollectionViewDiffableDataSource<Section, Recipe>!
+  var dataSource: UICollectionViewDiffableDataSource<Section, Recipe>?
   
   var recipes = [Recipe]() {
     didSet {
@@ -40,6 +41,7 @@ class BrowseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       view.backgroundColor = .systemBackground
+      recipeCollectionView.delegate = self
       constrainUIElements()
       configureDataSource()
       loadData()
@@ -114,7 +116,7 @@ class BrowseViewController: UIViewController {
     var snapshot = NSDiffableDataSourceSnapshot<Section, Recipe>()
      snapshot.appendSections([.main])
      snapshot.appendItems(recipes)
-     dataSource.apply(snapshot, animatingDifferences: true)
+     dataSource?.apply(snapshot, animatingDifferences: true)
   }
   
   
@@ -136,4 +138,19 @@ class BrowseViewController: UIViewController {
       recipeCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
   }
+  
+  
+}
+
+extension BrowseViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let selectedRecipe = recipes[indexPath.row]
+    let detailVC = DetailViewController()
+    detailVC.recipeDetails = selectedRecipe
+    present(detailVC, animated: true)
+  }
+  
+ 
+  
+  
 }

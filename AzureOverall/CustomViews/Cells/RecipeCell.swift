@@ -19,15 +19,8 @@ class RecipeCell: UICollectionViewCell {
     return imageView
   }()
   
-  lazy var recipeTitleLabel: UILabel = {
-    let label = UILabel()
-    label.textAlignment = .left
-    label.numberOfLines = 0
-    label.textColor = UIColor(displayP3Red: 12 / 255, green: 9 / 255, blue: 13 / 255, alpha: 1)
-    label.font = UIFont(descriptor: .preferredFontDescriptor(withTextStyle: .headline), size: 20)
-
-    return label
-  }()
+  
+  let recipeTitleLabel = TitleLabel(textAlignment: .left, fontSize: 20)
   
   lazy var prepTimeLabel: UILabel = {
     let label = UILabel()
@@ -64,7 +57,6 @@ class RecipeCell: UICollectionViewCell {
     addSubview(servingsLabel)
     
     recipeImageView.translatesAutoresizingMaskIntoConstraints = false
-    recipeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
     prepTimeLabel.translatesAutoresizingMaskIntoConstraints = false
     servingsLabel.translatesAutoresizingMaskIntoConstraints = false
     

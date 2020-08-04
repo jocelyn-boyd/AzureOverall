@@ -10,6 +10,8 @@ import UIKit
 
 class RecipeCell: UICollectionViewCell {
   static let reuseIdentifier = String(describing: RecipeCell.self)
+  let recipeTitleLabel = TitleLabel(textAlignment: .left, fontSize: 20)
+  let prepTimeLabel = SubheadingLabel(textAlignment: .left, fontSize: 18)
   
   lazy var recipeImageView: UIImageView = {
     let imageView = UIImageView()
@@ -19,17 +21,6 @@ class RecipeCell: UICollectionViewCell {
     return imageView
   }()
   
-  
-  let recipeTitleLabel = TitleLabel(textAlignment: .left, fontSize: 20)
-  
-  lazy var prepTimeLabel: UILabel = {
-    let label = UILabel()
-    label.textAlignment = .center
-    label.numberOfLines = 0
-    label.textColor = UIColor(displayP3Red: 83 / 255, green: 179 / 255, blue: 203 / 255, alpha: 1)
-    label.font = UIFont(descriptor: .preferredFontDescriptor(withTextStyle: .subheadline), size: 18)
-    return label
-  }()
   
   lazy var servingsLabel: UILabel = {
     let label = UILabel()
@@ -57,7 +48,6 @@ class RecipeCell: UICollectionViewCell {
     addSubview(servingsLabel)
     
     recipeImageView.translatesAutoresizingMaskIntoConstraints = false
-    prepTimeLabel.translatesAutoresizingMaskIntoConstraints = false
     servingsLabel.translatesAutoresizingMaskIntoConstraints = false
     
     let padding: CGFloat = 20

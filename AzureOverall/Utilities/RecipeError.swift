@@ -15,9 +15,9 @@ enum RecipeError: Error, CustomStringConvertible {
   var description: String {
     switch self {
     case let .networkError(networkError):
-      return "Network error: \(networkError)"
+      return "Network error: \(networkError.localizedDescription)"
     case let .jsonDecodingError(decodingError):
-      return "Decoding error: \(decodingError)"
+      return "Decoding error: \(decodingError.localizedDescription)"
     }
   }
 }

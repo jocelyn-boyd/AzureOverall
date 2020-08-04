@@ -1,14 +1,14 @@
 //
-//  AOLabel.swift
+//  AOBodyLabel.swift
 //  AzureOverall
 //
-//  Created by Jocelyn Boyd on 8/3/20.
+//  Created by Jocelyn Boyd on 8/4/20.
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
 import UIKit
 
-class AOLabel: UILabel {
+class AOBodyLabel: UILabel {
   
   override init(frame: CGRect) {
     super.init(frame: frame)

@@ -10,23 +10,26 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-  var recipeDetails: Recipe?
-  let recipeTitleLabel = AOTitleLabel(textAlignment: .center, fontSize: 20)
+  var recipe: Recipe?
+  var recipeInformation = [RecipeInformation]()
+  
   let recipeImageView = AOImageView()
+  let recipeTitleLabel = AOTitleLabel(textAlignment: .center, fontSize: 20)
+  let recipeSummaryLabel = AOBodyLabel(textAlignment: .left, fontSize: 18)
   
   
     override func viewDidLoad() {
         super.viewDidLoad()
       view.backgroundColor = .systemBackground
       configureUI()
-      loadDetails()
       loadImage()
     }
 
   
   private func loadImage() {
-    guard let recipeDetails = recipeDetails else { return }
-    ImageFetchingService.manager.getImage(from: recipeDetails.id) { [weak self] (result) in
+    guard let recipe = recipe else { return }
+    
+    ImageFetchingService.manager.downloadImage(from: recipe.id) { [weak self] (result) in
       guard let self = self else { return }
       DispatchQueue.main.async {
         switch result {
@@ -37,41 +40,45 @@ class DetailViewController: UIViewController {
         }
       }
     }
-  }
-  
-  private func loadDetails() {
-    guard let recipeDetails = recipeDetails else { return }
-    RecipeFetchingService.manager.getSingleRecipe(from: recipeDetails.id) { [weak self ](result) in
+    
+    
+    RecipeFetchingService.manager.getSingleRecipe(from: recipe.id) { [weak self] (result) in
       guard let self = self else { return }
       DispatchQueue.main.async {
         switch result {
-        case .success:
-          self.recipeTitleLabel.text = recipeDetails.title
+        case let .success(data):
+          self.recipeTitleLabel.text = data.title
         case let .failure(error):
           print(error)
-          
         }
       }
     }
   }
-  
+
   
   private func configureUI() {
-    view.addSubview(recipeTitleLabel)
     view.addSubview(recipeImageView)
+    view.addSubview(recipeTitleLabel)
+    view.addSubview(recipeSummaryLabel)
+
     
     NSLayoutConstraint.activate([
-      recipeTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-      recipeTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      recipeTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      recipeTitleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+      recipeTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+      recipeTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
       recipeTitleLabel.bottomAnchor.constraint(equalTo: recipeImageView.topAnchor),
       
       recipeImageView.topAnchor.constraint(equalTo: recipeTitleLabel.bottomAnchor),
       recipeImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
       recipeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-      recipeImageView.heightAnchor.constraint(equalToConstant: 200)
+      recipeImageView.heightAnchor.constraint(equalToConstant: 200),
+      
+      recipeSummaryLabel.topAnchor.constraint(equalTo: recipeImageView.bottomAnchor),
+      recipeSummaryLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+      recipeSummaryLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
     ])
   }
   
-  
 }
+
+

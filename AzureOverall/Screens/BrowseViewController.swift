@@ -98,7 +98,7 @@ class BrowseViewController: UIViewController {
       cell.servingsLabel.text = "For \(cellData.servings.description) People"
       
             
-      ImageFetchingService.manager.getImage(from: cellData.id) { [weak self ](result) in
+      ImageFetchingService.manager.downloadImage(from: cellData.id) { [weak self ](result) in
         guard let _ = self else { return }
         DispatchQueue.main.async {
           switch result {
@@ -143,12 +143,12 @@ class BrowseViewController: UIViewController {
   
   
 }
-
+// MARK: - CollectionView Delegate
 extension BrowseViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let selectedRecipe = recipes[indexPath.row]
     let detailVC = DetailViewController()
-    detailVC.recipeDetails = selectedRecipe
+    detailVC.recipe = selectedRecipe
     present(detailVC, animated: true)
   }
   

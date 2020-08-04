@@ -11,7 +11,7 @@ import Foundation
 class RecipeFetchingService {
   
   // MARK: - Private Properties and Initializers
-  private let baseURL = "https://api.spoonacular.com/recipes/search?query="
+  private let baseURL = "https://api.spoonacular.com/recipes/"
   private init() {}
   
   
@@ -22,7 +22,7 @@ class RecipeFetchingService {
   //MARK: - Internal Methods
   func getAllRecipes(from query:String, completionHandler: @escaping (Result<[Recipe],RecipeError>) -> Void) {
     
-    let endpoint = baseURL + "\(query)&apiKey=\(Secret.apiKey.rawValue)"
+    let endpoint = baseURL + "search?query=\(query.lowercased())&apiKey=\(Secret.apiKey.rawValue)"
     
     NetworkHelper.manager.getData(from: endpoint) { (result) in
       switch result {
@@ -43,15 +43,15 @@ class RecipeFetchingService {
   }
   
   
-  func getSingleRecipe(from id: Int, completionHandler: @escaping (Result<[Recipe],RecipeError>) -> Void) {
+  func getSingleRecipe(from id: Int, completionHandler: @escaping (Result<RecipeInformation,RecipeError>) -> Void) {
     
-    let endpoint = baseURL + "\(id)&apiKey=\(Secret.apiKey.rawValue)"
+    let endpoint = baseURL + "\(id)/information?apiKey=\(Secret.apiKey.rawValue)"
     
     NetworkHelper.manager.getData(from: endpoint) { (result) in
       switch result {
       case let .success(data):
         do {
-          let recipe = try RecipeWrapper.getAllRecipes(from: data)
+          let recipe = try RecipeInformation.getDetailedInformation(from: data)
           completionHandler(.success(recipe))
         } catch {
           completionHandler(.failure(.jsonDecodingError(error)))
@@ -62,5 +62,4 @@ class RecipeFetchingService {
       }
     }
   }
-
 }

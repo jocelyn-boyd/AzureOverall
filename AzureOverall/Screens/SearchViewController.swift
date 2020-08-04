@@ -43,12 +43,13 @@ class SearchViewController: UIViewController {
     loadAllRecipesData()
   }
   
+  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
   }
   
   
-  //MARK: - Private Networking Methods
+//MARK: - Private Networking Methods
   private func loadAllRecipesData() {
     RecipeFetchingService.manager.getAllRecipes(from: "burger") { [weak self] (result) in
       guard let self = self else { return }
@@ -69,7 +70,7 @@ class SearchViewController: UIViewController {
     }
   }
   
-  
+
   // MARK: - Private Configuration Methods
   private func configurePortraitLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(0.9))
@@ -85,15 +86,9 @@ class SearchViewController: UIViewController {
   
   private func configureViewController() {
      view.backgroundColor = .systemBackground
-    
-    let addProfileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButtonTapped))
-    navigationItem.rightBarButtonItem = addProfileButton
     navigationItem.title = ""
    }
-  
-  @objc func profileButtonTapped() {
-    print("buttonTapped")
-  }
+
   
   private func configureLayoutUI() {
     let itemViews = [recipeSearchBar, recipeCollectionView]
@@ -119,13 +114,12 @@ class SearchViewController: UIViewController {
   private func configureDataSource() {
     dataSource = UICollectionViewDiffableDataSource<Section, Recipe>(collectionView: recipeCollectionView) { (collectionView, indexPath, recipe) -> UICollectionViewCell? in
       guard let cell = self.recipeCollectionView.dequeueReusableCell(withReuseIdentifier: RecipeCell.reuseIdentifier, for: indexPath) as? RecipeCell else {return UICollectionViewCell() }
+    
+//      cell.recipeTitleLabel.text = cellData.title
+//      cell.prepTimeLabel.text = "\(cellData.readyInMinutes.description) Mins Prep"
+//      cell.servingsLabel.text = "For \(cellData.servings.description) People"
       
       let cellData = self.recipes[indexPath.row]
-      cell.recipeTitleLabel.text = cellData.title
-      cell.prepTimeLabel.text = "\(cellData.readyInMinutes.description) Mins Prep"
-      cell.servingsLabel.text = "For \(cellData.servings.description) People"
-      
-      
       ImageFetchingService.manager.downloadImage(from: cellData.id) { [weak self ](result) in
         guard let _ = self else { return }
         DispatchQueue.main.async {
@@ -137,6 +131,7 @@ class SearchViewController: UIViewController {
           }
         }
       }
+      cell.set(recipe: recipe)
       return cell
     }
   }

@@ -30,6 +30,5 @@ class AOImageView: UIImageView {
     layer.masksToBounds = true
     translatesAutoresizingMaskIntoConstraints = false
   }
-  
-  
+
 }

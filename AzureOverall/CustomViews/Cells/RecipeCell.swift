@@ -7,10 +7,8 @@
 import UIKit
 
 class RecipeCell: UICollectionViewCell {
-  
-  //MARK: - Properties and Initializers
   static let reuseIdentifier = String(describing: RecipeCell.self)
-  
+
   let recipeImageView = AOImageView()
   let recipeTitleLabel = AOTitleLabel(textAlignment: .left, fontSize: 20, numberOfLines: 1)
   let prepTimeLabel = AOSubheadingLabel(textAlignment: .left, fontSize: 18)
@@ -27,7 +25,13 @@ class RecipeCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  //MARK: - Private Methods
+  
+  func set(recipe: Recipe) {
+    recipeTitleLabel.text = recipe.title
+    prepTimeLabel.text = "\(recipe.readyInMinutes.description) Mins Prep"
+    servingsLabel.text = "For \(recipe.servings.description) People"
+  }
+  
   private func configure() {
     let padding: CGFloat = 5
     let itemViews = [recipeImageView, recipeTitleLabel, prepTimeLabel, servingsLabel]

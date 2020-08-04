@@ -9,13 +9,19 @@
 import Foundation
 
 class NetworkHelper {
-  // MARK: - Static Properties
   
+  // MARK: - Static Properties
   // because there is only one instance (named manager), there's a guarantee that anywhere in the app that reads from or writes to the NetworkHelper is looking at the same place
   static let manager = NetworkHelper() // type property
   
-  // MARK: - Internal Methods
   
+  // MARK: - Private Properties and Initializers
+  private let urlSession = URLSession(configuration: .default)
+  // mark the initializer as private to only create NetworkHelper instances inside of our class
+  private init() {}
+  
+  
+  // MARK: - Internal Methods
   func getData(from urlString: String, completionHandler: @escaping (Result<Data, NetworkError>) -> Void) {
     
     guard let url = URL(string: urlString) else {
@@ -51,11 +57,4 @@ class NetworkHelper {
     // make the call to get data from the URL by using the data task's reume()
     dataTask.resume()
   }
-  // MARK: - Private Properties and Initializers
-  
-  private let urlSession = URLSession(configuration: .default)
-  
-  // mark the initializer as private to only create NetworkHelper instances inside of our class
-  private init() {}
-  
 }

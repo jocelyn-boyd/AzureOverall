@@ -113,12 +113,12 @@
 			path = Labels;
 			sourceTree = "<group>";
 		};
-		D877735624D8F349001C8FF7 /* View */ = {
+		D877735624D8F349001C8FF7 /* ImageViews */ = {
 			isa = PBXGroup;
 			children = (
 				D877735724D8F384001C8FF7 /* AOImageView.swift */,
 			);
-			path = View;
+			path = ImageViews;
 			sourceTree = "<group>";
 		};
 		D8AD611E24D45BAB007CDE9E /* Utilities */ = {
@@ -135,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				D877735324D8F194001C8FF7 /* Labels */,
-				D877735624D8F349001C8FF7 /* View */,
+				D877735624D8F349001C8FF7 /* ImageViews */,
 				D837CCB824C2265800BE1F1B /* Cells */,
 			);
 			path = CustomViews;

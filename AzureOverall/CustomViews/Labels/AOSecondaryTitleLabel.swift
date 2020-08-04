@@ -31,7 +31,7 @@ class AOSecondaryTitleLabel: UILabel {
   func configure() {
     textColor = .secondaryLabel
     numberOfLines = 0
-    lineBreakMode = .byWordWrapping
+    lineBreakMode = .byTruncatingTail
     translatesAutoresizingMaskIntoConstraints = false
   }
 }

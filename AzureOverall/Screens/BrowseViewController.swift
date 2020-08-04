@@ -9,7 +9,6 @@
 import UIKit
 
 class BrowseViewController: UIViewController {
-  
   // MARK: - Properties
   enum Section {
     case main
@@ -74,11 +73,11 @@ class BrowseViewController: UIViewController {
   
   
  private func configurePortraitLayout() -> UICollectionViewCompositionalLayout {
-    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.9))
+  let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(0.9))
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10)
+    item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 5, bottom: 0, trailing: 5)
     
-    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(350.0))
+  let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(250.0))
     let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
   
     let section = NSCollectionLayoutSection(group: group)
@@ -137,7 +136,7 @@ class BrowseViewController: UIViewController {
       recipeCollectionView.topAnchor.constraint(equalTo: recipeSearchBar.bottomAnchor),
       recipeCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
       recipeCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      recipeCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+      recipeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     ])
   }
   
@@ -151,8 +150,4 @@ extension BrowseViewController: UICollectionViewDelegate {
     detailVC.recipe = selectedRecipe
     present(detailVC, animated: true)
   }
-  
- 
-  
-  
 }

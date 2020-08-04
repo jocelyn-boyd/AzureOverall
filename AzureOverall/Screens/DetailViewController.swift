@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+  
+  //MARK: Properties
   var recipe: Recipe?
   var recipeInformation = [RecipeInformation]()
   
@@ -18,17 +20,18 @@ class DetailViewController: UIViewController {
   let recipeSummaryLabel = AOBodyLabel(textAlignment: .left, fontSize: 18)
   
   
+  //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
       view.backgroundColor = .systemBackground
       configureUI()
-      loadImage()
+      loadSingleRecipeImageAndDetails()
     }
 
-  
-  private func loadImage() {
+
+  //MARK: - Private Methods
+  private func loadSingleRecipeImageAndDetails() {
     guard let recipe = recipe else { return }
-    
     ImageFetchingService.manager.downloadImage(from: recipe.id) { [weak self] (result) in
       guard let self = self else { return }
       DispatchQueue.main.async {
@@ -57,10 +60,9 @@ class DetailViewController: UIViewController {
 
   
   private func configureUI() {
-    view.addSubview(recipeImageView)
-    view.addSubview(recipeTitleLabel)
-    view.addSubview(recipeSummaryLabel)
-
+    [recipeImageView, recipeTitleLabel, recipeSummaryLabel].forEach { view.addSubview($0) }
+    
+    recipeTitleLabel.numberOfLines = 0
     
     NSLayoutConstraint.activate([
       recipeTitleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
@@ -78,7 +80,6 @@ class DetailViewController: UIViewController {
       recipeSummaryLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
     ])
   }
-  
 }
 
 

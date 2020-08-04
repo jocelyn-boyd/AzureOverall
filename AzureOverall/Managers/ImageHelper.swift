@@ -13,9 +13,13 @@ class ImageHelper {
   // MARK: - Static Properties
   static let manager = ImageHelper()
   
+  
+  // MARK: - Private Properties and Initializers
+  private init() {}
+  
+  
   // MARK: - Internal Properties
   func getImage(from urlString: String, completionHandler: @escaping (Result<UIImage, NetworkError>) -> Void) {
-    
     NetworkHelper.manager.getData(from: urlString) { (result) in
       switch result {
       case let .failure(error):
@@ -29,7 +33,4 @@ class ImageHelper {
       }
     }
   }
-  
-  // MARK: - Private Properties and Initializers 
-  private init() {}
 }

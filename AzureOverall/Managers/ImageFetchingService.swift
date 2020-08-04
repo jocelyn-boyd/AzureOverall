@@ -10,12 +10,16 @@ import UIKit
 
 class ImageFetchingService {
   
+  //MARK: - Static Properties
   static let manager = ImageFetchingService()
+  
   
   // MARK: - Private Properties and Initializers
   private let baseURL = "https://spoonacular.com/recipeImages"
   private init() {}
 
+  
+  //MARK: - Internal Methods
   func downloadImage(from recipeID: Int, completionHandler: @escaping (Result<UIImage, NetworkError>) -> Void) {
     let endpoint = baseURL + "/\(recipeID)-556x370.jpg"
     

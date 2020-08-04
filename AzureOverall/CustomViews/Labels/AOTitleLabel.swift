@@ -30,8 +30,6 @@ class AOTitleLabel: UILabel {
   
   func configure() {
     textColor = UIColor(displayP3Red: 12 / 255, green: 9 / 255, blue: 13 / 255, alpha: 1)
-    numberOfLines = 0
-    lineBreakMode = .byWordWrapping
     translatesAutoresizingMaskIntoConstraints = false
   }
 }

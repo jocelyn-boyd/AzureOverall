@@ -10,15 +10,15 @@ import Foundation
 
 class RecipeFetchingService {
   
-  // MARK: - Private Properties and Initializers
-  private let baseURL = "https://api.spoonacular.com/recipes/"
-  private init() {}
-  
-  
   // MARK: - Static Properties
   static let manager = RecipeFetchingService()
   
   
+  // MARK: - Private Properties and Initializers
+  private let baseURL = "https://api.spoonacular.com/recipes/"
+  private init() {}
+  
+
   //MARK: - Internal Methods
   func getAllRecipes(from query:String, completionHandler: @escaping (Result<[Recipe],RecipeError>) -> Void) {
     

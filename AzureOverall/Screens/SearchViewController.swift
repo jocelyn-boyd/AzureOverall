@@ -21,7 +21,7 @@ class SearchViewController: UIViewController {
   lazy var recipeCollectionView: UICollectionView = {
     let cv = UICollectionView(frame: view.bounds, collectionViewLayout: configurePortraitLayout())
     cv.register(RecipeCell.self, forCellWithReuseIdentifier: RecipeCell.reuseIdentifier)
-//    cv.delegate = self
+    cv.delegate = self
     cv.backgroundColor = .systemBackground
     return cv
   }()
@@ -133,5 +133,6 @@ extension SearchViewController: UICollectionViewDelegate {
     let detailVC = DetailViewController()
     detailVC.recipe = selectedRecipe
     present(detailVC, animated: true, completion: nil)
+    print("button pressed")
   }
 }

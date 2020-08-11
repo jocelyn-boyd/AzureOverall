@@ -7,28 +7,47 @@ import UIKit
 
 class DetailViewController: UIViewController {
   
-  //MARK: Properties
   var recipe: Recipe?
   var recipeInformation = [RecipeInformation]()
   
-  let recipeImageView = AOImageView()
+  let recipeImageView = AOFoodImageView()
   let recipeTitleLabel = AOTitleLabel(textAlignment: .center, fontSize: 20, numberOfLines: 0)
   let recipeSummaryLabel = AOBodyLabel(textAlignment: .left, fontSize: 18)
   
   
-  //MARK: - Lifecycle Methods
   override func viewDidLoad() {
     super.viewDidLoad()
+    configureViewController()
     configureLayoutUI()
-    loadSingleRecipeImageAndDetails()
+    loadSingleRecipeDetails()
   }
   
   
-  //MARK: - Private Networking Methods
-  private func loadSingleRecipeImageAndDetails() {
+  private func loadSingleRecipeDetails() {
     guard let recipe = recipe else { return }
-    ImageFetchingService.manager.downloadImage(from: recipe.id) { [weak self] (result) in
+    recipeTitleLabel.text = recipe.title
+ 
+    RecipeFetchingService.manager.fetchSingleRecipe(from: recipe.id) { [weak self] (result) in
       guard let self = self else { return }
+      DispatchQueue.main.async {
+        switch result {
+        case let .success(data):
+          self.loadRecipeImage(from: data.image)
+          
+          if data.vegan == false {
+            self.recipeSummaryLabel.text = "Not Vegan"
+          }
+          
+        case let .failure(error):
+          print(error)
+        }
+      }
+    }
+  }
+
+  
+ private func loadRecipeImage(from urlString: String) {
+    ImageFetchingService.manager.fetchImage(from: urlString) { (result) in
       DispatchQueue.main.async {
         switch result {
         case let .success(image):
@@ -38,23 +57,10 @@ class DetailViewController: UIViewController {
         }
       }
     }
-    
-    
-    RecipeFetchingService.manager.getSingleRecipe(from: recipe.id) { [weak self] (result) in
-      guard let self = self else { return }
-      DispatchQueue.main.async {
-        switch result {
-        case let .success(data):
-          self.recipeTitleLabel.text = data.title
-        case let .failure(error):
-          print(error)
-        }
-      }
-    }
   }
   
-  // MARK: Private Configuration Methods
-  private func configureViewController() {
+
+ private func configureViewController() {
     view.backgroundColor = .systemBackground
   }
   

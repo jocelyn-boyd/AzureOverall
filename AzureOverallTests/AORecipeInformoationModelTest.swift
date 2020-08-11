@@ -26,24 +26,25 @@ class AORecipeInformoationModelTest: XCTestCase {
        }
      }
      
-  /*
+  
      func testLoadRecipes() {
        //Arrange
        let recipeData = getRecipeInformationFromJSONData()
        
        //Act
-      var sampleRecipe = [RecipeInformation]()
-       
-       do {
-        sampleRecipe = try RecipeInformation.getDetailedInformation(from: sampleRecipe)
-         print(sampleRecipe)
-       } catch {
-         print(error)
-       }
+      var sampleRecipe: RecipeInformation?
+      
+      do {
+        sampleRecipe = try RecipeInformation.getDetailedInformation(from: recipeData)
+      } catch {
+        print(error)
+      }
+     
+      XCTAssertNotNil(sampleRecipe)
        
        //Assert
-       XCTAssertTrue(sampleRecipe.count != 0, "There are \(sampleRecipe.count) recipes found.")
+       
      }
- */
+ 
   
 }

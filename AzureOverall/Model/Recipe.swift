@@ -14,7 +14,7 @@ let results: [Recipe]
      let recipeWrapper = try JSONDecoder().decode(RecipeWrapper.self, from: JSONData)
     return recipeWrapper.results
    } catch {
-    throw NetworkError.unableToDecodeJSON
+    throw NetworkError.unableToDecodeJSON(error)
    }
  }
 }

@@ -21,7 +21,7 @@ class SearchViewController: UIViewController {
   lazy var recipeCollectionView: UICollectionView = {
     let cv = UICollectionView(frame: view.bounds, collectionViewLayout: configurePortraitLayout())
     cv.register(RecipeCell.self, forCellWithReuseIdentifier: RecipeCell.reuseIdentifier)
-    cv.delegate = self
+//    cv.delegate = self
     cv.backgroundColor = .systemBackground
     return cv
   }()
@@ -44,14 +44,9 @@ class SearchViewController: UIViewController {
   }
   
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-  }
-  
-  
 //MARK: - Private Networking Methods
   private func loadAllRecipesData() {
-    RecipeFetchingService.manager.getAllRecipes(from: "burger") { [weak self] (result) in
+    RecipeFetchingService.manager.fetchAllRecipes(from: "burger") { [weak self] (result) in
       guard let self = self else { return }
       DispatchQueue.main.async {
         switch result {
@@ -75,7 +70,7 @@ class SearchViewController: UIViewController {
   private func configurePortraitLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(0.9))
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 5, bottom: 0, trailing: 5)
+    item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 4, bottom: 0, trailing: 4)
     
     let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(250.0))
     let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
@@ -113,25 +108,10 @@ class SearchViewController: UIViewController {
   // MARK: - Private DiffableDataSource Methods
   private func configureDataSource() {
     dataSource = UICollectionViewDiffableDataSource<Section, Recipe>(collectionView: recipeCollectionView) { (collectionView, indexPath, recipe) -> UICollectionViewCell? in
-      guard let cell = self.recipeCollectionView.dequeueReusableCell(withReuseIdentifier: RecipeCell.reuseIdentifier, for: indexPath) as? RecipeCell else {return UICollectionViewCell() }
-    
-//      cell.recipeTitleLabel.text = cellData.title
-//      cell.prepTimeLabel.text = "\(cellData.readyInMinutes.description) Mins Prep"
-//      cell.servingsLabel.text = "For \(cellData.servings.description) People"
       
-      let cellData = self.recipes[indexPath.row]
-      ImageFetchingService.manager.downloadImage(from: cellData.id) { [weak self ](result) in
-        guard let _ = self else { return }
-        DispatchQueue.main.async {
-          switch result {
-          case let .success(image):
-            cell.recipeImageView.image = image
-          case let .failure(error):
-            print(error)
-          }
-        }
-      }
-      cell.set(recipe: recipe)
+      guard let cell = self.recipeCollectionView.dequeueReusableCell(withReuseIdentifier: RecipeCell.reuseIdentifier, for: indexPath) as? RecipeCell else {return UICollectionViewCell() }
+      
+      cell.set(recipes: recipe)
       return cell
     }
   }
@@ -152,6 +132,6 @@ extension SearchViewController: UICollectionViewDelegate {
     let selectedRecipe = recipes[indexPath.row]
     let detailVC = DetailViewController()
     detailVC.recipe = selectedRecipe
-    navigationController?.pushViewController(detailVC, animated: true)
+    present(detailVC, animated: true, completion: nil)
   }
 }

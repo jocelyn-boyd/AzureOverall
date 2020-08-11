@@ -6,7 +6,7 @@
 
 import UIKit
 
-class AOImageView: UIImageView {
+class AOFoodImageView: UIImageView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -30,5 +30,4 @@ class AOImageView: UIImageView {
     layer.masksToBounds = true
     translatesAutoresizingMaskIntoConstraints = false
   }
-
 }

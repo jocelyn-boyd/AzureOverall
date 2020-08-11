@@ -28,7 +28,7 @@ class AOTitleLabel: UILabel {
   
   
   func configure() {
-    textColor = UIColor(displayP3Red: 12 / 255, green: 9 / 255, blue: 13 / 255, alpha: 1)
+    textColor = UIColor(red: 12 / 255, green: 9 / 255, blue: 13 / 255, alpha: 1)
     lineBreakMode = .byTruncatingTail
     translatesAutoresizingMaskIntoConstraints = false
   }

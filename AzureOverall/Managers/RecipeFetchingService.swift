@@ -4,7 +4,7 @@
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class RecipeFetchingService {
   
@@ -18,41 +18,41 @@ class RecipeFetchingService {
   
 
   //MARK: - Internal Methods
-  func getAllRecipes(from query:String, completionHandler: @escaping (Result<[Recipe],NetworkError>) -> Void) {
+  func fetchAllRecipes(from query: String, completionHandler: @escaping (Result<[Recipe],NetworkError>) -> Void) {
     
     let endpoint = baseURL + "search?query=\(query.lowercased())&apiKey=\(Secret.apiKey.rawValue)"
     
-    NetworkHelper.manager.getData(from: endpoint) { (result) in
+    NetworkManager.shared.getData(from: endpoint) { (result) in
       switch result {
       case let .success(data):
         do {
           let recipe = try RecipeWrapper.getAllRecipes(from: data)
           completionHandler(.success(recipe))
         } catch {
-          completionHandler(.failure(.unableToDecodeJSON))
+          completionHandler(.failure(.unableToDecodeJSON(error)))
           print(error.localizedDescription)
         }
        
       case let .failure(error):
-        completionHandler(.failure(.unableToDecodeJSON))
+        completionHandler(.failure(.unableToDecodeJSON(error)))
         print(error.localizedDescription)
       }
     }
   }
   
   
-  func getSingleRecipe(from id: Int, completionHandler: @escaping (Result<RecipeInformation,NetworkError>) -> Void) {
+  func fetchSingleRecipe(from recipeId: Int, completionHandler: @escaping (Result<RecipeInformation,NetworkError>) -> Void) {
     
-    let endpoint = baseURL + "\(id)/information?apiKey=\(Secret.apiKey.rawValue)"
+    let endpoint = baseURL + "\(recipeId)/information?apiKey=\(Secret.apiKey.rawValue)"
     
-    NetworkHelper.manager.getData(from: endpoint) { (result) in
+    NetworkManager.shared.getData(from: endpoint) { (result) in
       switch result {
       case let .success(data):
         do {
           let recipe = try RecipeInformation.getDetailedInformation(from: data)
           completionHandler(.success(recipe))
         } catch {
-          completionHandler(.failure(.unableToDecodeJSON))
+          completionHandler(.failure(.unableToDecodeJSON(error)))
         }
        
       case .failure:

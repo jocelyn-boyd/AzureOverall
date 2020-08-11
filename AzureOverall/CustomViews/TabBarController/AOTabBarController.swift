@@ -15,7 +15,7 @@ class AOTabBarController: UITabBarController {
   
   func configureTabBarController() {
     viewControllers = [createSearchVC(), createProfileVC()]
-    UITabBar.appearance().tintColor = UIColor(displayP3Red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
+    UITabBar.appearance().tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
   }
   
     

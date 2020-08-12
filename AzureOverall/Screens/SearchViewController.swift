@@ -107,11 +107,11 @@ class SearchViewController: UIViewController {
   
   // MARK: - Private DiffableDataSource Methods
   private func configureDataSource() {
-    dataSource = UICollectionViewDiffableDataSource<Section, Recipe>(collectionView: recipeCollectionView) { (collectionView, indexPath, recipe) -> UICollectionViewCell? in
+    dataSource = UICollectionViewDiffableDataSource<Section, Recipe>(collectionView: recipeCollectionView) { (collectionView, indexPath, recipeData) -> UICollectionViewCell? in
       
       guard let cell = self.recipeCollectionView.dequeueReusableCell(withReuseIdentifier: RecipeCell.reuseIdentifier, for: indexPath) as? RecipeCell else {return UICollectionViewCell() }
       
-      cell.set(recipes: recipe)
+      cell.setCell(with: recipeData)
       return cell
     }
   }

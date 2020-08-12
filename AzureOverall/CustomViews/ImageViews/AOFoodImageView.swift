@@ -30,4 +30,18 @@ class AOFoodImageView: UIImageView {
     layer.masksToBounds = true
     translatesAutoresizingMaskIntoConstraints = false
   }
+  
+  func downloadImage(fromURL recipeID: Int) {
+    ImageFetchingService.manager.fetchImage(using: recipeID) { [weak self] (result) in
+      guard let self = self else { return }
+      DispatchQueue.main.async {
+        switch result {
+        case let .success(image):
+          self.image = image
+        case let .failure(error):
+          print(error)
+        }
+      }
+    }
+  }
 }

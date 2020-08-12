@@ -7,6 +7,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
   
+  // MARK: Properties
   var recipe: Recipe?
   var recipeInformation = [RecipeInformation]()
   
@@ -18,15 +19,16 @@ class DetailViewController: UIViewController {
   let dairyFreeLabel = AOBodyLabel(textAlignment: .left, fontSize: 18)
   
   
+  // MARK: Lifecycle Methods
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViewController()
     configureLayoutUI()
     loadSingleRecipeDetails()
-    
   }
   
   
+  // MARK: Private Methods
   private func loadSingleRecipeDetails() {
     guard let recipe = recipe else { return }
     recipeTitleLabel.text = recipe.title
@@ -49,9 +51,8 @@ class DetailViewController: UIViewController {
             self.glutenFreeLabel.text = "Not Gluten Free"
           }
           
-          self.loadRecipeImage(from: data.image)
+          self.recipeImageView.downloadImage(fromURL: recipe.id)
       
-          
         case let .failure(error):
           print(error)
         }
@@ -59,34 +60,19 @@ class DetailViewController: UIViewController {
     }
   }
   
- private func loadRecipeImage(from urlString: String) {
-    ImageFetchingService.manager.fetchImage(from: urlString) { (result) in
-      DispatchQueue.main.async {
-        switch result {
-        case let .success(image):
-          self.recipeImageView.image = image
-        case let .failure(error):
-          print(error)
-        }
-      }
-    }
-  }
   
+  // MARK: Configuration Methods
  private func configureViewController() {
     view.backgroundColor = .systemBackground
   let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
   navigationItem.rightBarButtonItem = doneButton
   }
   
-  @objc func dismissVC() {
-    dismiss(animated: true)
-  }
   
   private func configureLayoutUI() {
     let padding: CGFloat = 20
     let itemViews = [recipeImageView, recipeTitleLabel, veganLabel, vegetarianLabel, glutenFreeLabel, dairyFreeLabel]
     for itemView in itemViews { view.addSubview(itemView) }
-    
     
     
     NSLayoutConstraint.activate([
@@ -116,7 +102,12 @@ class DetailViewController: UIViewController {
       dairyFreeLabel.topAnchor.constraint(equalTo: glutenFreeLabel.bottomAnchor),
       dairyFreeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
       dairyFreeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
-
     ])
+  }
+  
+  
+  // MARK: @objc Methods
+  @objc func dismissVC() {
+    dismiss(animated: true)
   }
 }

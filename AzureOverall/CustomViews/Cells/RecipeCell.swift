@@ -26,23 +26,13 @@ class RecipeCell: UICollectionViewCell {
   }
   
   
-  func set(recipes: Recipe) {
-    recipeTitleLabel.text = recipes.title
-    prepTimeLabel.text = "\(recipes.readyInMinutes.description) Mins Prep"
-    servingsLabel.text = "For \(recipes.servings.description) People"
-    
-    ImageFetchingService.manager.fetchImage(from: recipes.id) { [weak self ](result) in
-      guard let _ = self else { return }
-      DispatchQueue.main.async {
-        switch result {
-        case let .success(image):
-          self?.recipeImageView.image = image
-        case let .failure(error):
-          print(error)
-        }
-      }
-    }
+  func setCell(with recipe: Recipe) {
+    recipeTitleLabel.text = recipe.title
+    prepTimeLabel.text = "\(recipe.readyInMinutes.description) Mins Prep"
+    servingsLabel.text = "For \(recipe.servings.description) People"
+    recipeImageView.downloadImage(fromURL: recipe.id)
   }
+  
   
   private func configure() {
     let padding: CGFloat = 5

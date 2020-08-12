@@ -4,7 +4,7 @@
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManager {
   

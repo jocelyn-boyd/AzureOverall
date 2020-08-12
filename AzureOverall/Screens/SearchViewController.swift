@@ -130,9 +130,12 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let selectedRecipe = recipes[indexPath.row]
+    
+    
     let detailVC = DetailViewController()
     detailVC.recipe = selectedRecipe
-    present(detailVC, animated: true, completion: nil)
-    print("button pressed")
+    
+    let navController = UINavigationController(rootViewController: detailVC)
+    present(navController, animated: true)
   }
 }

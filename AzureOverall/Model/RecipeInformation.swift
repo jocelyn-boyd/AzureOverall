@@ -12,14 +12,15 @@ struct RecipeInformation: Codable {
   let glutenFree: Bool
   let dairyFree: Bool
   
+  let id: Int
   let preparationMinutes: Int?
   let cookingMinutes: Int?
   let title: String
   let readyInMinutes: Int
   let servings: Int
-  let sourceName: String
-  let sourceUrl: String
-  let image: String
+  let sourceName: String?
+  let sourceUrl: String?
+  let image: String?
   let dishTypes: [String]
   let cuisines: [String]
   let diets: [String]?

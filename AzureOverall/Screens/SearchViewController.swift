@@ -46,7 +46,7 @@ class SearchViewController: UIViewController {
   
 //MARK: - Private Networking Methods
   private func loadAllRecipesData() {
-    RecipeFetchingService.manager.fetchAllRecipes(from: "burger") { [weak self] (result) in
+    RecipeFetchingService.manager.fetchAllRecipes(from: "japanese") { [weak self] (result) in
       guard let self = self else { return }
       DispatchQueue.main.async {
         switch result {
@@ -130,12 +130,11 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let selectedRecipe = recipes[indexPath.row]
-    
-    
     let detailVC = DetailViewController()
-    detailVC.recipe = selectedRecipe
-    
+ 
     let navController = UINavigationController(rootViewController: detailVC)
+    detailVC.recipe = selectedRecipe
+
     present(navController, animated: true)
   }
 }

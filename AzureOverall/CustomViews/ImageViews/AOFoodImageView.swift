@@ -25,7 +25,7 @@ class AOFoodImageView: UIImageView {
   
   
   func configure() {
-    contentMode = .scaleToFill
+    contentMode = .scaleAspectFill
     layer.cornerRadius = 10
     layer.masksToBounds = true
     translatesAutoresizingMaskIntoConstraints = false

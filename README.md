@@ -2,7 +2,6 @@
 
 ## Overview
 - Recipes are fetched from the Spoonacular Recipe API: https://spoonacular.com/food-api
-- Search api for recipes
 - A native Swift iOS application using UIKit.
 
 ## Screens

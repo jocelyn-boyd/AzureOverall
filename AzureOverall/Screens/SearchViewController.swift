@@ -13,16 +13,6 @@ class SearchViewController: UIViewController {
   }
   
   //MARK: Private Properties and Initializers
-  lazy var recipeSearchBar: UISearchBar = {
-    let sb = UISearchBar()
-    sb.delegate = self
-    sb.autocapitalizationType = .none
-    sb.layer.borderWidth = 1
-    sb.layer.borderColor = UIColor.white.cgColor
-    sb.tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
-    return sb
-  }()
-  
   lazy var recipeCollectionView: UICollectionView = {
     let cv = UICollectionView(frame: view.bounds, collectionViewLayout: configurePortraitLayout())
     cv.register(RecipeCell.self, forCellWithReuseIdentifier: RecipeCell.reuseIdentifier)
@@ -31,16 +21,23 @@ class SearchViewController: UIViewController {
     return cv
   }()
   
+  
   private var dataSource: UICollectionViewDiffableDataSource<Section, Recipe>?
   private var recipes = [Recipe]() {
     didSet {
       updateDataSource(with: recipes)
     }
   }
-  var searchTerm: String? = "" {
+  
+  
+  let searchController = UISearchController(searchResultsController: nil)
+  var filteredRecipes = [Recipe]() {
     didSet {
-      loadAllRecipesData()
+      loadAllRecipesData(searchController.searchBar.text!)
     }
+  }
+  var isSearchBarEmpty: Bool {
+    return searchController.searchBar.text?.isEmpty ?? true
   }
   
   
@@ -48,15 +45,14 @@ class SearchViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViewController()
+    configureSearchController()
     configureLayoutUI()
     configureDataSource()
   }
   
   
   //MARK: - Private Networking Methods
-  private func loadAllRecipesData() {
-    guard let searchTerm = searchTerm else { return }
-    
+  private func loadAllRecipesData(_ searchTerm: String) {
     RecipeFetchingService.manager.fetchAllRecipes(from: searchTerm) { [weak self] (result) in
       guard let self = self else { return }
       DispatchQueue.main.async {
@@ -97,9 +93,26 @@ class SearchViewController: UIViewController {
     navigationItem.title = "Recipes"
   }
   
+  func configureSearchController() {
+    navigationItem.searchController = searchController
+    searchController.searchBar.sizeToFit()
+    searchController.searchBar.tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
+    searchController.searchResultsUpdater = self
+    searchController.obscuresBackgroundDuringPresentation = false
+    searchController.searchBar.placeholder = "Search recipes"
+    definesPresentationContext = true
+  }
+  
+  func filterContentForSearchText(_ searchText: String) {
+    filteredRecipes = recipes.filter { (recipe: Recipe) -> Bool in
+      return recipe.title.lowercased().contains(searchText.lowercased())
+    }
+    updateDataSource(with: filteredRecipes)
+  }
+  
   
   private func configureLayoutUI() {
-    let itemViews = [recipeSearchBar, recipeCollectionView]
+    let itemViews = [recipeCollectionView]
     
     for itemView in itemViews {
       view.addSubview(itemView)
@@ -107,16 +120,13 @@ class SearchViewController: UIViewController {
     }
     
     NSLayoutConstraint.activate([
-      recipeSearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      recipeSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      recipeSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      
-      recipeCollectionView.topAnchor.constraint(equalTo: recipeSearchBar.bottomAnchor),
+      recipeCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
       recipeCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
       recipeCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
       recipeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     ])
   }
+  
   
   // MARK: - Private DiffableDataSource Methods
   private func configureDataSource() {
@@ -142,19 +152,20 @@ class SearchViewController: UIViewController {
 // MARK: - CollectionView Delegate
 extension SearchViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let selectedRecipe = recipes[indexPath.row]
+    let recipe = recipes[indexPath.row]
     let detailVC = DetailViewController()
-    
     let navController = UINavigationController(rootViewController: detailVC)
-    detailVC.recipe = selectedRecipe
+    detailVC.recipe = recipe
     
     present(navController, animated: true)
   }
 }
 
-extension SearchViewController: UISearchBarDelegate {
-  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-    self.searchTerm = searchBar.text ?? ""
-    searchBar.resignFirstResponder()
+
+extension SearchViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    let searchBar = searchController.searchBar
+    filterContentForSearchText(searchBar.text!)
   }
 }
+

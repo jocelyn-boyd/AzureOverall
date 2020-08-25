@@ -14,7 +14,6 @@ class RecipeCell: UICollectionViewCell {
   let prepTimeLabel = AOSubheadingLabel(textAlignment: .left, fontSize: 15)
   let servingsLabel = AOSecondaryTitleLabel(textAlignment: .left, fontSize: 13)
   
-  
   override init(frame: CGRect) {
     super.init(frame: frame)
     configure()

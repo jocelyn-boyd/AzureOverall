@@ -15,6 +15,11 @@ class SearchViewController: UIViewController {
   //MARK: Private Properties and Initializers
   lazy var recipeSearchBar: UISearchBar = {
     let sb = UISearchBar()
+    sb.delegate = self
+    sb.autocapitalizationType = .none
+    sb.layer.borderWidth = 1
+    sb.layer.borderColor = UIColor.white.cgColor
+    sb.tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
     return sb
   }()
   
@@ -32,6 +37,11 @@ class SearchViewController: UIViewController {
       updateDataSource(with: recipes)
     }
   }
+  var searchTerm: String? = "" {
+    didSet {
+      loadAllRecipesData()
+    }
+  }
   
   
   // MARK: - Lifecyle Methods
@@ -40,13 +50,14 @@ class SearchViewController: UIViewController {
     configureViewController()
     configureLayoutUI()
     configureDataSource()
-    loadAllRecipesData()
   }
   
   
-//MARK: - Private Networking Methods
+  //MARK: - Private Networking Methods
   private func loadAllRecipesData() {
-    RecipeFetchingService.manager.fetchAllRecipes(from: "japanese") { [weak self] (result) in
+    guard let searchTerm = searchTerm else { return }
+    
+    RecipeFetchingService.manager.fetchAllRecipes(from: searchTerm) { [weak self] (result) in
       guard let self = self else { return }
       DispatchQueue.main.async {
         switch result {
@@ -65,7 +76,7 @@ class SearchViewController: UIViewController {
     }
   }
   
-
+  
   // MARK: - Private Configuration Methods
   private func configurePortraitLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(0.9))
@@ -80,10 +91,12 @@ class SearchViewController: UIViewController {
   }
   
   private func configureViewController() {
-     view.backgroundColor = .systemBackground
-    navigationItem.title = ""
-   }
-
+    view.backgroundColor = .systemBackground
+    navigationController?.isNavigationBarHidden = false
+    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationItem.title = "Recipes"
+  }
+  
   
   private func configureLayoutUI() {
     let itemViews = [recipeSearchBar, recipeCollectionView]
@@ -131,10 +144,17 @@ extension SearchViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let selectedRecipe = recipes[indexPath.row]
     let detailVC = DetailViewController()
- 
+    
     let navController = UINavigationController(rootViewController: detailVC)
     detailVC.recipe = selectedRecipe
-
+    
     present(navController, animated: true)
+  }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    self.searchTerm = searchBar.text ?? ""
+    searchBar.resignFirstResponder()
   }
 }

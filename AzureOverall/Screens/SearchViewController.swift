@@ -31,12 +31,12 @@ class SearchViewController: UIViewController {
   
   
   let searchController = UISearchController(searchResultsController: nil)
-  var filteredRecipes = [Recipe]() {
+  private var filteredRecipes = [Recipe]() {
     didSet {
       loadAllRecipesData(searchController.searchBar.text!)
     }
   }
-  var isSearchBarEmpty: Bool {
+  private var isSearchBarEmpty: Bool {
     return searchController.searchBar.text?.isEmpty ?? true
   }
   
@@ -91,9 +91,17 @@ class SearchViewController: UIViewController {
     navigationController?.isNavigationBarHidden = false
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.title = "Recipes"
+    
+    let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButtonPressed))
+    navigationItem.rightBarButtonItem = profileButton
   }
   
-  func configureSearchController() {
+  @objc private func profileButtonPressed() {
+    let profileVC = ProfileViewController()
+    present(profileVC, animated: true)
+  }
+  
+  private func configureSearchController() {
     navigationItem.searchController = searchController
     searchController.searchBar.sizeToFit()
     searchController.searchBar.tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
@@ -103,7 +111,7 @@ class SearchViewController: UIViewController {
     definesPresentationContext = true
   }
   
-  func filterContentForSearchText(_ searchText: String) {
+  private func filterContentForSearchText(_ searchText: String) {
     filteredRecipes = recipes.filter { (recipe: Recipe) -> Bool in
       return recipe.title.lowercased().contains(searchText.lowercased())
     }
@@ -165,6 +173,10 @@ extension SearchViewController: UICollectionViewDelegate {
 extension SearchViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
     let searchBar = searchController.searchBar
+    
+    // makes sure that the search bar isn't empty
+    guard let searchText = searchBar.text, !searchText.isEmpty else { return }
+    
     filterContentForSearchText(searchBar.text!)
   }
 }

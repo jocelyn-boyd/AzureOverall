@@ -15,3 +15,6 @@ Swift 5
 
 ## Tools
 XCode 11
+Firebase/Auth
+Firebase/Firestore
+Firebase/Storage

@@ -29,7 +29,7 @@ class RecipeCell: UICollectionViewCell {
   func setCell(with recipe: Recipe) {
     recipeTitleLabel.text = recipe.title
     prepTimeLabel.text = "\(recipe.readyInMinutes.description) Mins Prep"
-    servingsLabel.text = "For \(recipe.servings.description) People"
+    servingsLabel.text = "\(recipe.servings.description) serving(s)"
     recipeImageView.downloadImage(fromURL: recipe.id)
   }
   

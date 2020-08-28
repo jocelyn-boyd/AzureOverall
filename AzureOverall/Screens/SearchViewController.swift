@@ -95,6 +95,9 @@ class SearchViewController: UIViewController {
     navigationController?.isNavigationBarHidden = false
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.title = "Recipes"
+    
+    let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButtonTapped))
+    navigationItem.rightBarButtonItem = profileButton
   }
   
   
@@ -135,6 +138,12 @@ class SearchViewController: UIViewController {
     snapshot.appendSections([.main])
     snapshot.appendItems(recipes)
     dataSource?.apply(snapshot, animatingDifferences: true)
+  }
+  
+  
+  @objc func profileButtonTapped() {
+    let profileVC = ProfileViewController()
+    present(profileVC, animated: true)
   }
 }
 

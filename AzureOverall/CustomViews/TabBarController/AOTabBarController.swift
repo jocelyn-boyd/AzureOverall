@@ -14,7 +14,7 @@ class AOTabBarController: UITabBarController {
   }
   
   func configureTabBarController() {
-    viewControllers = [createSearchVC(), createFavoritesListVC()]
+    viewControllers = [createSearchVC(), createBookmarkedRecipeListVC(), createFavoritesListVC()]
     UITabBar.appearance().tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
   }
   
@@ -26,10 +26,19 @@ class AOTabBarController: UITabBarController {
     return UINavigationController(rootViewController: searchVC)
   }
   
+  
+  func createBookmarkedRecipeListVC() -> UINavigationController {
+     let bookmarkedRecipesListVC = BookmarkedRecipesListViewController()
+     bookmarkedRecipesListVC.title = "Recipes"
+     bookmarkedRecipesListVC.tabBarItem = UITabBarItem(title: "Saved", image: UIImage(systemName: "bookmark.fill"), tag: 1)
+     return UINavigationController(rootViewController: bookmarkedRecipesListVC)
+   }
+  
+  
   func createFavoritesListVC() -> UINavigationController {
     let favoritesVC = FavoritesListViewController()
     favoritesVC.title = "Favorites"
-    favoritesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+    favoritesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
     return UINavigationController(rootViewController: favoritesVC)
   }
 }

@@ -9,8 +9,9 @@ import UIKit
 class RecipeCell: UICollectionViewCell {
   static let reuseIdentifier = String(describing: RecipeCell.self)
   
+  
   let recipeImageView = AOFoodImageView()
-  let favButton = AOFavoriteButton()
+  let favButton = AOBookmarkButton()
   let recipeTitleLabel = AOTitleLabel(textAlignment: .left, fontSize: 18)
   let prepTimeLabel = AOSubheadingLabel(textAlignment: .left, fontSize: 15)
   let servingsLabel = AOSecondaryTitleLabel(textAlignment: .left, fontSize: 13)

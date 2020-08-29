@@ -8,8 +8,9 @@
 
 import UIKit
 
-class AOFavoriteButton: UIButton {
+class AOBookmarkButton: UIButton {
 
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     configure()
@@ -28,12 +29,12 @@ class AOFavoriteButton: UIButton {
     tintColor = .white
     
     let imageConfig = UIImage.SymbolConfiguration(scale: .large)
-    setImage(UIImage(systemName: "heart", withConfiguration: imageConfig), for: .normal)
+    setImage(UIImage(systemName: "bookmark", withConfiguration: imageConfig), for: .normal)
     addTarget(self, action: #selector(favButtonPressed), for: .touchUpInside)
     
   }
   
-  @objc func favButtonPressed() {
+  @objc private func favButtonPressed() {
     
   }
 

@@ -1,34 +1,32 @@
 //
-//  AOTitleLabel.swift
+//  AOButton.swift
 //  AzureOverall
+//
+//  Created by Jocelyn Boyd on 8/29/20.
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
 import UIKit
 
-class AOTitleLabel: UILabel {
-  
+class AOButton: UIButton {
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     configure()
   }
   
-  
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
-  
-  convenience init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
+  convenience init(backgroundColor: UIColor, title: String) {
     self.init(frame: .zero)
-    self.textAlignment = textAlignment
-    self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
+    self.backgroundColor = backgroundColor
+    self.setTitle(title, for: .normal)
+    configure()
   }
   
-  
   func configure() {
-    textColor = Constants.AppColorPalette.richBlackFOGRA39
-    numberOfLines = 0
     translatesAutoresizingMaskIntoConstraints = false
   }
 }

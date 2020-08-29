@@ -20,11 +20,11 @@ class ProfileViewController: UIViewController {
     
     let addSignOutButton = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(signOutButtonTapped))
     navigationItem.leftBarButtonItem = addSignOutButton
-    navigationItem.leftBarButtonItem?.tintColor = Constants.Color.uaRed
+    navigationItem.leftBarButtonItem?.tintColor = Constants.AppColorPalette.uaRed
     
     let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
     navigationItem.rightBarButtonItem = doneButton
-    navigationItem.rightBarButtonItem?.tintColor = Constants.Color.uaRed
+    navigationItem.rightBarButtonItem?.tintColor = Constants.AppColorPalette.uaRed
   }
 
   @objc func dismissVC() {

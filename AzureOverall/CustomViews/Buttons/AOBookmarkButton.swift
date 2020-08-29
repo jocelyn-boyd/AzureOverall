@@ -25,7 +25,7 @@ class AOBookmarkButton: UIButton {
     
     layer.cornerRadius = 10
     contentEdgeInsets = UIEdgeInsets(top: 2.5, left: 2.5, bottom: 2.5, right: 2.5)
-    backgroundColor = Constants.Color.maximumBlueOpacity05
+    backgroundColor = Constants.AppColorPalette.fireOpalHalfOpacity
     tintColor = .white
     
     let imageConfig = UIImage.SymbolConfiguration(scale: .large)

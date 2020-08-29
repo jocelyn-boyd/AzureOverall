@@ -33,6 +33,7 @@
 		D8C12EDE24C0BBB3006F98C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */; };
 		D8C12EE124C0BBB3006F98C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDF24C0BBB3006F98C1 /* LaunchScreen.storyboard */; };
 		D8C12EEC24C0BBB4006F98C1 /* AORecipeModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12EEB24C0BBB4006F98C1 /* AORecipeModelTest.swift */; };
+		D8CD39D824FA29570093514B /* AOButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD39D724FA29570093514B /* AOButton.swift */; };
 		D8D3A07924C2704800AA8D26 /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = D8D3A07824C2704800AA8D26 /* Recipes.json */; };
 		D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D3A07C24C359FA00AA8D26 /* Recipe.swift */; };
 		D8E8F78A24DDF54C0077E6E6 /* RecipeInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = D8E8F78924DDF54C0077E6E6 /* RecipeInformation.json */; };
@@ -85,6 +86,7 @@
 		D8C12EE724C0BBB4006F98C1 /* AzureOverallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AzureOverallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C12EEB24C0BBB4006F98C1 /* AORecipeModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AORecipeModelTest.swift; sourceTree = "<group>"; };
 		D8C12EED24C0BBB4006F98C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8CD39D724FA29570093514B /* AOButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOButton.swift; sourceTree = "<group>"; };
 		D8D3A07824C2704800AA8D26 /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
 		D8D3A07C24C359FA00AA8D26 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		D8E8F78924DDF54C0077E6E6 /* RecipeInformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipeInformation.json; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				D8FCACC524F9E739009231F4 /* AOBookmarkButton.swift */,
+				D8CD39D724FA29570093514B /* AOButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				D8B6316D24D50C7400CF6DF7 /* ImageFetchingService.swift in Sources */,
 				D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */,
 				D877735824D8F384001C8FF7 /* AOFoodImageView.swift in Sources */,
+				D8CD39D824FA29570093514B /* AOButton.swift in Sources */,
 				D877735A24D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift in Sources */,
 				D874000124D9BAAB000A19AF /* AOTabBarController.swift in Sources */,
 			);

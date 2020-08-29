@@ -27,9 +27,9 @@ class AOSubheadingLabel: UILabel {
   
   
   func configure() {
-  textColor = Constants.Color.maximumBlue
-  numberOfLines = 0
-  lineBreakMode = .byWordWrapping
-  translatesAutoresizingMaskIntoConstraints = false
+    textColor = Constants.AppColorPalette.maximumBlue
+    numberOfLines = 0
+    lineBreakMode = .byWordWrapping
+    translatesAutoresizingMaskIntoConstraints = false
   }
 }

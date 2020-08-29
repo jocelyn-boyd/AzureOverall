@@ -35,6 +35,7 @@
 		D8C12EEC24C0BBB4006F98C1 /* AORecipeModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12EEB24C0BBB4006F98C1 /* AORecipeModelTest.swift */; };
 		D8CD39D824FA29570093514B /* AOButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD39D724FA29570093514B /* AOButton.swift */; };
 		D8CD39DA24FA2B7B0093514B /* HomeAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD39D924FA2B7B0093514B /* HomeAuthViewController.swift */; };
+		D8CD39DC24FA39B50093514B /* SignupAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD39DB24FA39B50093514B /* SignupAuthViewController.swift */; };
 		D8D3A07924C2704800AA8D26 /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = D8D3A07824C2704800AA8D26 /* Recipes.json */; };
 		D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D3A07C24C359FA00AA8D26 /* Recipe.swift */; };
 		D8E8F78A24DDF54C0077E6E6 /* RecipeInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = D8E8F78924DDF54C0077E6E6 /* RecipeInformation.json */; };
@@ -89,6 +90,7 @@
 		D8C12EED24C0BBB4006F98C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8CD39D724FA29570093514B /* AOButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOButton.swift; sourceTree = "<group>"; };
 		D8CD39D924FA2B7B0093514B /* HomeAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAuthViewController.swift; sourceTree = "<group>"; };
+		D8CD39DB24FA39B50093514B /* SignupAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAuthViewController.swift; sourceTree = "<group>"; };
 		D8D3A07824C2704800AA8D26 /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
 		D8D3A07C24C359FA00AA8D26 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		D8E8F78924DDF54C0077E6E6 /* RecipeInformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipeInformation.json; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				D8FCACC124F9CE7A009231F4 /* FavoritesListViewController.swift */,
 				D805059424FA011100A239C1 /* BookmarkedRecipesListViewController.swift */,
 				D8CD39D924FA2B7B0093514B /* HomeAuthViewController.swift */,
+				D8CD39DB24FA39B50093514B /* SignupAuthViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				D8AD611124D450A8007CDE9E /* Secret.swift in Sources */,
 				D8AD611D24D45B6C007CDE9E /* NetworkError.swift in Sources */,
 				D838BF5724CB7E3D009B056E /* RecipeFetchingService.swift in Sources */,
+				D8CD39DC24FA39B50093514B /* SignupAuthViewController.swift in Sources */,
 				D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */,
 				D8FCACC224F9CE7A009231F4 /* FavoritesListViewController.swift in Sources */,
 				D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */,

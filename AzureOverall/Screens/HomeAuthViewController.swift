@@ -17,7 +17,6 @@ class HomeAuthViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .systemBackground
     configureViewController()
     configureAuthButtons()
   }
@@ -38,6 +37,7 @@ class HomeAuthViewController: UIViewController {
   
   
   private func configureViewController() {
+    view.backgroundColor = .systemBackground
     titleLabel.text = Constants.Title.AppName
     
     let itemViews = [titleLabel, signupButton, loginButton]
@@ -63,7 +63,9 @@ class HomeAuthViewController: UIViewController {
   
   
   @objc func signupButtonPressed() {
-    print("Sign up button pressed")
+    let signupVC = SignupAuthViewController()
+    let navController = UINavigationController(rootViewController: signupVC)
+    present(navController, animated: true)
   }
   
   

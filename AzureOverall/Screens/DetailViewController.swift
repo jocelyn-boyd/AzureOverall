@@ -89,7 +89,7 @@ class DetailViewController: UIViewController {
     
     let itemLabels = [veganLabel, vegetarianLabel, glutenFreeLabel, dairyFreeLabel]
     for labels in itemLabels {
-      labels.layer.borderColor = UIColor(red: 12 / 255, green: 9 / 255, blue: 13 / 255, alpha: 1).cgColor
+      labels.layer.borderColor = Constants.AppColorPalette.richBlackFOGRA39.cgColor
       labels.layer.borderWidth = 1
       labels.layer.cornerRadius = 10
     }

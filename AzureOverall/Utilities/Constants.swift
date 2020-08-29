@@ -10,6 +10,13 @@ import UIKit
 
 struct Constants {
   
+  struct Title {
+    
+    static let AppName = "My Recipe Box"
+  }
+  
+  
+  
   struct AppColorPalette {
     
     static let richBlackFOGRA39 = UIColor(red: 12 / 255, green: 9 / 255, blue: 12 / 255, alpha: 1)

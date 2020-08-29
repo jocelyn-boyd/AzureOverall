@@ -28,5 +28,4 @@ class LoginAuthViewController: UIViewController {
     @objc func dismissVC() {
       dismiss(animated: true)
     }
-
 }

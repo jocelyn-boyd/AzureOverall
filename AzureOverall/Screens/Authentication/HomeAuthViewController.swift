@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class HomeAuthViewController: UIViewController {
   
@@ -14,6 +15,8 @@ class HomeAuthViewController: UIViewController {
   let signupButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: "Sign Up")
   let loginButton = AOButton(backgroundColor: .clear, title: "Log in")
   
+  var videoPlayer: AVPlayer?
+   var videoPlayerLayer:AVPlayerLayer?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -60,8 +63,8 @@ class HomeAuthViewController: UIViewController {
       loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding)
     ])
   }
-  
-  
+
+
   @objc func signupButtonPressed() {
     let signupVC = SignupAuthViewController()
     let navController = UINavigationController(rootViewController: signupVC)

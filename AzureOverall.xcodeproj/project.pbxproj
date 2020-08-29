@@ -64,6 +64,7 @@
 		D805059424FA011100A239C1 /* BookmarkedRecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedRecipesListViewController.swift; sourceTree = "<group>"; };
 		D805059624FA19C600A239C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthViewController.swift; sourceTree = "<group>"; };
+		D8160A1F24FA42AA0042163D /* Cooking.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cooking.mp4; sourceTree = "<group>"; };
 		D81C557024C0BEC70093A5A5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D837CCB924C2267C00BE1F1B /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFetchingService.swift; sourceTree = "<group>"; };
@@ -131,6 +132,24 @@
 				65BA6195B78F2E24680627A5 /* Pods-AzureOverallTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D8160A1D24FA41410042163D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D8CD39D924FA2B7B0093514B /* HomeAuthViewController.swift */,
+				D8CD39DB24FA39B50093514B /* SignupAuthViewController.swift */,
+				D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		D8160A1E24FA429A0042163D /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				D8160A1F24FA42AA0042163D /* Cooking.mp4 */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 		D837CCB824C2265800BE1F1B /* Cells */ = {
@@ -223,6 +242,7 @@
 		D8C12ED324C0BBB2006F98C1 /* AzureOverall */ = {
 			isa = PBXGroup;
 			children = (
+				D8160A1E24FA429A0042163D /* Media */,
 				D8AD611E24D45BAB007CDE9E /* Utilities */,
 				D8AD612024D45C08007CDE9E /* Managers */,
 				D8D3A07524C267AF00AA8D26 /* Model */,
@@ -266,9 +286,7 @@
 				D83B5A6224DA07ED00B1CF4E /* ProfileViewController.swift */,
 				D8FCACC124F9CE7A009231F4 /* FavoritesListViewController.swift */,
 				D805059424FA011100A239C1 /* BookmarkedRecipesListViewController.swift */,
-				D8CD39D924FA2B7B0093514B /* HomeAuthViewController.swift */,
-				D8CD39DB24FA39B50093514B /* SignupAuthViewController.swift */,
-				D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */,
+				D8160A1D24FA41410042163D /* Authentication */,
 			);
 			path = Screens;
 			sourceTree = "<group>";

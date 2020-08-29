@@ -206,8 +206,8 @@
 				D8FCACC724F9EBBC009231F4 /* Buttons */,
 				D877735324D8F194001C8FF7 /* Labels */,
 				D877735624D8F349001C8FF7 /* ImageViews */,
+				D8BEE76B24FA697000DB77D9 /* TextFields */,
 				D837CCB824C2265800BE1F1B /* Cells */,
-				D8BEE76924FA5E9D00DB77D9 /* AOTextField.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -220,6 +220,14 @@
 				D8AD612124D45DC2007CDE9E /* NetworkManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		D8BEE76B24FA697000DB77D9 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				D8BEE76924FA5E9D00DB77D9 /* AOTextField.swift */,
+			);
+			path = TextFields;
 			sourceTree = "<group>";
 		};
 		D8C12EC824C0BBB2006F98C1 = {

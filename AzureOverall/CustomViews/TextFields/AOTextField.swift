@@ -34,7 +34,7 @@ class AOTextField: UITextField {
 
     textColor                     = .label
     tintColor                     = Constants.AppColorPalette.uaRed
-    textAlignment                 = .center
+    textAlignment                 = .left
     font                          = UIFont.preferredFont(forTextStyle: .title2)
 
     backgroundColor               = .tertiarySystemBackground

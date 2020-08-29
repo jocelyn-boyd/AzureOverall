@@ -28,5 +28,6 @@ class AOButton: UIButton {
   
   func configure() {
     translatesAutoresizingMaskIntoConstraints = false
+    layer.cornerRadius = 15
   }
 }

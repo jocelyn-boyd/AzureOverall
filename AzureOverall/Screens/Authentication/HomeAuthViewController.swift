@@ -12,7 +12,7 @@ import AVKit
 class HomeAuthViewController: UIViewController {
   
   let titleLabel = AOTitleLabel(textAlignment: .center, fontSize: 50)
-  let signupButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: "Sign Up")
+  let signupButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: Constants.SetTitle.signup)
   let loginButton = AOButton(backgroundColor: .clear, title: "Log in")
   
   var videoPlayer: AVPlayer?
@@ -31,7 +31,6 @@ class HomeAuthViewController: UIViewController {
     
     let buttons = [signupButton, loginButton]
     for item in buttons {
-      item.layer.cornerRadius = 15
       item.layer.borderWidth = 2
       item.layer.borderColor = Constants.AppColorPalette.richBlackFOGRA39.cgColor
       item.setTitleColor(Constants.AppColorPalette.richBlackFOGRA39, for: .normal)
@@ -41,7 +40,7 @@ class HomeAuthViewController: UIViewController {
   
   private func configureViewController() {
     view.backgroundColor = .systemBackground
-    titleLabel.text = Constants.Title.AppName
+    titleLabel.text = Constants.SetTitle.AppName
     
     let itemViews = [titleLabel, signupButton, loginButton]
     for itemView in itemViews { view.addSubview(itemView) }

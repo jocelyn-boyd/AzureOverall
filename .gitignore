@@ -2,3 +2,4 @@ Pods/
 xcuserdata/
 .DS_Store
 Secret.swift
+GoogleService-Info.plist

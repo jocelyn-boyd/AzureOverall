@@ -48,6 +48,7 @@ class SearchViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViewController()
+    configureNavigationBar()
     configureLayoutUI()
     configureDataSource()
   }
@@ -90,16 +91,21 @@ class SearchViewController: UIViewController {
     return UICollectionViewCompositionalLayout(section: section)
   }
   
+  
   private func configureViewController() {
     view.backgroundColor = .systemBackground
+  }
+  
+  
+  private func configureNavigationBar() {
+    let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButtonTapped))
+    navigationItem.rightBarButtonItem = profileButton
     navigationController?.isNavigationBarHidden = false
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.title = "Recipes"
     
-    let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButtonTapped))
-    navigationItem.rightBarButtonItem = profileButton
   }
-  
+ 
   
   private func configureLayoutUI() {
     let itemViews = [recipeSearchBar, recipeCollectionView]
@@ -141,6 +147,7 @@ class SearchViewController: UIViewController {
   }
   
   
+  // MARK: @objc Methods
   @objc func profileButtonTapped() {
     let profileVC = ProfileViewController()
     present(profileVC, animated: true)
@@ -160,6 +167,7 @@ extension SearchViewController: UICollectionViewDelegate {
     present(navController, animated: true)
   }
 }
+
 
 extension SearchViewController: UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

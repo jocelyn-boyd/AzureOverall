@@ -14,9 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     FirebaseApp.configure()
+    
+    configureNavigationBar()
     return true
   }
 
+  func configureNavigationBar() {
+    UINavigationBar.appearance().tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
+  }
+  
   // MARK: UISceneSession Lifecycle
 
   func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

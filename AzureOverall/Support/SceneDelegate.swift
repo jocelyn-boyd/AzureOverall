@@ -22,12 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window?.rootViewController = AOTabBarController()
     window?.makeKeyAndVisible()
     
-    configureNavigationBar()
+//    configureNavigationBar()
   }
 
-  func configureNavigationBar() {
-    UINavigationBar.appearance().tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
-  }
   
   func sceneDidDisconnect(_ scene: UIScene) {
     // Called as the scene is being released by the system.

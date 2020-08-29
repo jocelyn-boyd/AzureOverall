@@ -14,7 +14,7 @@ class AOTabBarController: UITabBarController {
   }
   
   func configureTabBarController() {
-    viewControllers = [createSearchVC()]
+    viewControllers = [createSearchVC(), createFavoritesListVC()]
     UITabBar.appearance().tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
   }
   
@@ -24,5 +24,12 @@ class AOTabBarController: UITabBarController {
     searchVC.title          = "Search"
     searchVC.tabBarItem     = UITabBarItem(tabBarSystemItem: .search, tag: 0)
     return UINavigationController(rootViewController: searchVC)
+  }
+  
+  func createFavoritesListVC() -> UINavigationController {
+    let favoritesVC = FavoritesListViewController()
+    favoritesVC.title = "Favorites"
+    favoritesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+    return UINavigationController(rootViewController: favoritesVC)
   }
 }

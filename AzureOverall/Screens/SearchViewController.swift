@@ -19,7 +19,7 @@ class SearchViewController: UIViewController {
     sb.autocapitalizationType = .none
     sb.layer.borderWidth = 1
     sb.layer.borderColor = UIColor.white.cgColor
-    sb.tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
+    sb.tintColor = Constants.Color.uaRed
     return sb
   }()
   

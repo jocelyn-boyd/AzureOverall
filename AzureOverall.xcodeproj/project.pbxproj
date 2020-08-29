@@ -10,6 +10,7 @@
 		A0446812FE8F15E0DE1D21C4 /* Pods_AzureOverallTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED5C930B2C82E9B852F5AA9 /* Pods_AzureOverallTests.framework */; };
 		C1E2E602F34D1D96223F3AA5 /* Pods_AzureOverall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23E8641A026C412ED86D190 /* Pods_AzureOverall.framework */; };
 		D805059524FA011100A239C1 /* BookmarkedRecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805059424FA011100A239C1 /* BookmarkedRecipesListViewController.swift */; };
+		D805059724FA19C600A239C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805059624FA19C600A239C1 /* Constants.swift */; };
 		D81C557124C0BEC70093A5A5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C557024C0BEC70093A5A5 /* SearchViewController.swift */; };
 		D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837CCB924C2267C00BE1F1B /* RecipeCell.swift */; };
 		D838BF5724CB7E3D009B056E /* RecipeFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */; };
@@ -57,6 +58,7 @@
 		AED5C930B2C82E9B852F5AA9 /* Pods_AzureOverallTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AzureOverallTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23E8641A026C412ED86D190 /* Pods_AzureOverall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AzureOverall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D805059424FA011100A239C1 /* BookmarkedRecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedRecipesListViewController.swift; sourceTree = "<group>"; };
+		D805059624FA19C600A239C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D81C557024C0BEC70093A5A5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D837CCB924C2267C00BE1F1B /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFetchingService.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				D8AD611024D450A8007CDE9E /* Secret.swift */,
 				D8AD611C24D45B6C007CDE9E /* NetworkError.swift */,
+				D805059624FA19C600A239C1 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				D83B5A6324DA07ED00B1CF4E /* ProfileViewController.swift in Sources */,
 				D81C557124C0BEC70093A5A5 /* SearchViewController.swift in Sources */,
 				D877734E24D8EA56001C8FF7 /* AOTitleLabel.swift in Sources */,
+				D805059724FA19C600A239C1 /* Constants.swift in Sources */,
 				D8AD612224D45DC2007CDE9E /* NetworkManager.swift in Sources */,
 				D8AD611124D450A8007CDE9E /* Secret.swift in Sources */,
 				D8AD611D24D45B6C007CDE9E /* NetworkError.swift in Sources */,

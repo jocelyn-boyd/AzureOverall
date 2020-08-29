@@ -16,15 +16,15 @@ class ProfileViewController: UIViewController {
     }
     
   private func configureViewController() {
-    view.backgroundColor = .purple
+    view.backgroundColor = .systemBackground
     
     let addSignOutButton = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(signOutButtonTapped))
     navigationItem.leftBarButtonItem = addSignOutButton
-    navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
+    navigationItem.leftBarButtonItem?.tintColor = Constants.Color.uaRed
     
     let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
     navigationItem.rightBarButtonItem = doneButton
-    navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
+    navigationItem.rightBarButtonItem?.tintColor = Constants.Color.uaRed
   }
 
   @objc func dismissVC() {

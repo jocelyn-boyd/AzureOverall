@@ -27,7 +27,7 @@ class AOTitleLabel: UILabel {
   
   
   func configure() {
-    textColor = UIColor(red: 12 / 255, green: 9 / 255, blue: 13 / 255, alpha: 1)
+    textColor = Constants.Color.richBlackFOGRA39
     numberOfLines = 0
     translatesAutoresizingMaskIntoConstraints = false
   }

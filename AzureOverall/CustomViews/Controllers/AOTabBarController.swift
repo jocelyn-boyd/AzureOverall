@@ -15,7 +15,7 @@ class AOTabBarController: UITabBarController {
   
   func configureTabBarController() {
     viewControllers = [createSearchVC(), createBookmarkedRecipeListVC(), createFavoritesListVC()]
-    UITabBar.appearance().tintColor = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)
+    UITabBar.appearance().tintColor = Constants.Color.uaRed
   }
   
     

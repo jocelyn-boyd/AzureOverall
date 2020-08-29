@@ -19,17 +19,16 @@ class AOTitleLabel: UILabel {
   }
   
   
-  convenience init(textAlignment: NSTextAlignment, fontSize: CGFloat, numberOfLines: Int) {
+  convenience init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
     self.init(frame: .zero)
     self.textAlignment = textAlignment
     self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
-    self.numberOfLines = numberOfLines
   }
   
   
   func configure() {
     textColor = UIColor(red: 12 / 255, green: 9 / 255, blue: 13 / 255, alpha: 1)
-    lineBreakMode = .byTruncatingTail
+    numberOfLines = 0
     translatesAutoresizingMaskIntoConstraints = false
   }
 }

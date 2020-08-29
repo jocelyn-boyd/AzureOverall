@@ -22,7 +22,6 @@
 		D877735824D8F384001C8FF7 /* AOFoodImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877735724D8F384001C8FF7 /* AOFoodImageView.swift */; };
 		D877735A24D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877735924D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift */; };
 		D88BC64E24D779BD00F3E5BF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88BC64D24D779BD00F3E5BF /* DetailViewController.swift */; };
-		D8931E5F24F9BF81006224C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8931E5E24F9BF81006224C6 /* GoogleService-Info.plist */; };
 		D8AD611124D450A8007CDE9E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD611024D450A8007CDE9E /* Secret.swift */; };
 		D8AD611D24D45B6C007CDE9E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD611C24D45B6C007CDE9E /* NetworkError.swift */; };
 		D8AD612224D45DC2007CDE9E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD612124D45DC2007CDE9E /* NetworkManager.swift */; };
@@ -36,6 +35,8 @@
 		D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D3A07C24C359FA00AA8D26 /* Recipe.swift */; };
 		D8E8F78A24DDF54C0077E6E6 /* RecipeInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = D8E8F78924DDF54C0077E6E6 /* RecipeInformation.json */; };
 		D8FCACC224F9CE7A009231F4 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FCACC124F9CE7A009231F4 /* FavoritesListViewController.swift */; };
+		D8FCACC424F9E315009231F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8FCACC324F9E315009231F4 /* GoogleService-Info.plist */; };
+		D8FCACC624F9E739009231F4 /* AOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FCACC524F9E739009231F4 /* AOFavoriteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,6 @@
 		D877735724D8F384001C8FF7 /* AOFoodImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOFoodImageView.swift; sourceTree = "<group>"; };
 		D877735924D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		D88BC64D24D779BD00F3E5BF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		D8931E5E24F9BF81006224C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8AD611024D450A8007CDE9E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Secret.swift; path = ../Secret.swift; sourceTree = "<group>"; };
 		D8AD611C24D45B6C007CDE9E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D8AD612124D45DC2007CDE9E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -85,6 +85,8 @@
 		D8D3A07C24C359FA00AA8D26 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		D8E8F78924DDF54C0077E6E6 /* RecipeInformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipeInformation.json; sourceTree = "<group>"; };
 		D8FCACC124F9CE7A009231F4 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
+		D8FCACC324F9E315009231F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D8FCACC524F9E739009231F4 /* AOFavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOFavoriteButton.swift; sourceTree = "<group>"; };
 		F62F9D0C67601A40BD53FF04 /* Pods-AzureOverall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AzureOverall.debug.xcconfig"; path = "Target Support Files/Pods-AzureOverall/Pods-AzureOverall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 		D8AD611F24D45BDB007CDE9E /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				D8FCACC724F9EBBC009231F4 /* Buttons */,
 				D83B5A6124D9D52300B1CF4E /* TabBarController */,
 				D877735324D8F194001C8FF7 /* Labels */,
 				D877735624D8F349001C8FF7 /* ImageViews */,
@@ -214,7 +217,7 @@
 				D8C12EF724C0BDA3006F98C1 /* Screens */,
 				D8C12EF624C0BD87006F98C1 /* Support */,
 				D8C12EE224C0BBB3006F98C1 /* Info.plist */,
-				D8931E5E24F9BF81006224C6 /* GoogleService-Info.plist */,
+				D8FCACC324F9E315009231F4 /* GoogleService-Info.plist */,
 			);
 			path = AzureOverall;
 			sourceTree = "<group>";
@@ -260,6 +263,14 @@
 				D877734724D8D90A001C8FF7 /* RecipeInformation.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D8FCACC724F9EBBC009231F4 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D8FCACC524F9E739009231F4 /* AOFavoriteButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		DCC0D2B624CB80A10C85335B /* Frameworks */ = {
@@ -357,7 +368,7 @@
 			files = (
 				D8E8F78A24DDF54C0077E6E6 /* RecipeInformation.json in Resources */,
 				D8C12EE124C0BBB3006F98C1 /* LaunchScreen.storyboard in Resources */,
-				D8931E5F24F9BF81006224C6 /* GoogleService-Info.plist in Resources */,
+				D8FCACC424F9E315009231F4 /* GoogleService-Info.plist in Resources */,
 				D8D3A07924C2704800AA8D26 /* Recipes.json in Resources */,
 				D8C12EDE24C0BBB3006F98C1 /* Assets.xcassets in Resources */,
 			);
@@ -453,6 +464,7 @@
 				D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */,
 				D8FCACC224F9CE7A009231F4 /* FavoritesListViewController.swift in Sources */,
 				D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */,
+				D8FCACC624F9E739009231F4 /* AOFavoriteButton.swift in Sources */,
 				D877735024D8ED26001C8FF7 /* AOSubheadingLabel.swift in Sources */,
 				D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */,
 				D877734824D8D90A001C8FF7 /* RecipeInformation.swift in Sources */,

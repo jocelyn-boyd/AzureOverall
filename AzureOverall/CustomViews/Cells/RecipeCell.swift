@@ -10,7 +10,8 @@ class RecipeCell: UICollectionViewCell {
   static let reuseIdentifier = String(describing: RecipeCell.self)
   
   let recipeImageView = AOFoodImageView()
-  let recipeTitleLabel = AOTitleLabel(textAlignment: .left, fontSize: 18, numberOfLines: 1)
+  let favButton = AOFavoriteButton()
+  let recipeTitleLabel = AOTitleLabel(textAlignment: .left, fontSize: 18)
   let prepTimeLabel = AOSubheadingLabel(textAlignment: .left, fontSize: 15)
   let servingsLabel = AOSecondaryTitleLabel(textAlignment: .left, fontSize: 13)
   
@@ -31,6 +32,7 @@ class RecipeCell: UICollectionViewCell {
     prepTimeLabel.text = "\(recipe.readyInMinutes.description) Mins Prep"
     servingsLabel.text = "\(recipe.servings.description) serving(s)"
     recipeImageView.downloadImage(fromURL: recipe.id)
+
   }
   
   
@@ -39,8 +41,12 @@ class RecipeCell: UICollectionViewCell {
     let itemViews = [recipeImageView, recipeTitleLabel, prepTimeLabel, servingsLabel]
     for itemView in itemViews { contentView.addSubview(itemView) }
     
+    recipeImageView.addSubview(favButton)
     
     NSLayoutConstraint.activate([
+      favButton.topAnchor.constraint(equalTo: recipeImageView.topAnchor, constant: padding),
+      favButton.trailingAnchor.constraint(equalTo: recipeImageView.trailingAnchor, constant: -padding),
+      
       recipeImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
       recipeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
       recipeImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),

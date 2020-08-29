@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
   var recipeInformation = [RecipeInformation]()
   
   let recipeImageView = AOFoodImageView()
-  let recipeTitleLabel = AOTitleLabel(textAlignment: .center, fontSize: 20, numberOfLines: 0)
+  let recipeTitleLabel = AOTitleLabel(textAlignment: .center, fontSize: 20)
   let veganLabel = AOSubheadingLabel(textAlignment: .center, fontSize: 18)
   let vegetarianLabel = AOSubheadingLabel(textAlignment: .center, fontSize: 18)
   let glutenFreeLabel = AOSubheadingLabel(textAlignment: .center, fontSize: 18)

@@ -29,6 +29,7 @@
 		D8AD611D24D45B6C007CDE9E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD611C24D45B6C007CDE9E /* NetworkError.swift */; };
 		D8AD612224D45DC2007CDE9E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD612124D45DC2007CDE9E /* NetworkManager.swift */; };
 		D8B6316D24D50C7400CF6DF7 /* ImageFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6316C24D50C7400CF6DF7 /* ImageFetchingService.swift */; };
+		D8BEE76A24FA5E9D00DB77D9 /* AOTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BEE76924FA5E9D00DB77D9 /* AOTextField.swift */; };
 		D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */; };
 		D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */; };
 		D8C12EDE24C0BBB3006F98C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		D8AD611C24D45B6C007CDE9E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D8AD612124D45DC2007CDE9E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D8B6316C24D50C7400CF6DF7 /* ImageFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchingService.swift; sourceTree = "<group>"; };
+		D8BEE76924FA5E9D00DB77D9 /* AOTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOTextField.swift; sourceTree = "<group>"; };
 		D8C12ED124C0BBB2006F98C1 /* Recipe Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				D877735324D8F194001C8FF7 /* Labels */,
 				D877735624D8F349001C8FF7 /* ImageViews */,
 				D837CCB824C2265800BE1F1B /* Cells */,
+				D8BEE76924FA5E9D00DB77D9 /* AOTextField.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				D805059524FA011100A239C1 /* BookmarkedRecipesListViewController.swift in Sources */,
 				D874FFFD24D92824000A19AF /* AOBodyLabel.swift in Sources */,
 				D83B5A6324DA07ED00B1CF4E /* ProfileViewController.swift in Sources */,
+				D8BEE76A24FA5E9D00DB77D9 /* AOTextField.swift in Sources */,
 				D81C557124C0BEC70093A5A5 /* SearchViewController.swift in Sources */,
 				D877734E24D8EA56001C8FF7 /* AOTitleLabel.swift in Sources */,
 				D805059724FA19C600A239C1 /* Constants.swift in Sources */,

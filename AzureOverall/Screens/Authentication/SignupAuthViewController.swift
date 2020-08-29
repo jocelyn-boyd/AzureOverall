@@ -10,10 +10,10 @@ import UIKit
 
 class SignupAuthViewController: UIViewController {
   
-  let firstNameTextField = UITextField()
-  let lastNameTextField = UITextField()
-  let emailTextField = UITextField()
-  let passwordTextField = UITextField()
+  let firstNameTextField = AOTextField(placeholder: "First Name")
+  let lastNameTextField = AOTextField(placeholder: "Last Name")
+  let emailTextField = AOTextField(placeholder: "Email")
+  let passwordTextField = AOTextField(placeholder: "Password")
   let actionButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: "Create account")
   let padding: CGFloat = 25
 
@@ -60,16 +60,6 @@ class SignupAuthViewController: UIViewController {
   
   
   func configureTextFields() {
-    firstNameTextField.placeholder = "First Name"
-    lastNameTextField.placeholder = "Last Name"
-    emailTextField.placeholder = "Email"
-    passwordTextField.placeholder = "Password"
-    
-    let itemViews = [firstNameTextField, lastNameTextField, emailTextField, passwordTextField]
-    for item in itemViews {
-      item.borderStyle = .roundedRect
-    }
-    
     NSLayoutConstraint.activate([
       firstNameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
       lastNameTextField.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: padding),

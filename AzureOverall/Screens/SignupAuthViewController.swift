@@ -17,7 +17,7 @@ class SignupAuthViewController: UIViewController {
   }
   
   private func configureViewController() {
-    view.backgroundColor = .cyan
+    view.backgroundColor = .systemBackground
   }
 
   private func configureNavigationBar() {

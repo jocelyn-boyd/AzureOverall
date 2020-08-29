@@ -11,7 +11,7 @@ import UIKit
 class HomeAuthViewController: UIViewController {
   
   let titleLabel = AOTitleLabel(textAlignment: .center, fontSize: 50)
-  let signupButton = AOButton(backgroundColor: Constants.AppColorPalette.orangeYellow, title: "Sign Up")
+  let signupButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: "Sign Up")
   let loginButton = AOButton(backgroundColor: .clear, title: "Log in")
   
   
@@ -27,11 +27,11 @@ class HomeAuthViewController: UIViewController {
     loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
     
     let buttons = [signupButton, loginButton]
-      for item in buttons {
-        item.layer.cornerRadius = 15
-        item.layer.borderColor = Constants.AppColorPalette.richBlackFOGRA39.cgColor
-        item.layer.borderWidth = 2
-        item.setTitleColor(Constants.AppColorPalette.richBlackFOGRA39, for: .normal)
+    for item in buttons {
+      item.layer.cornerRadius = 15
+      item.layer.borderWidth = 2
+      item.layer.borderColor = Constants.AppColorPalette.richBlackFOGRA39.cgColor
+      item.setTitleColor(Constants.AppColorPalette.richBlackFOGRA39, for: .normal)
     }
   }
   
@@ -42,7 +42,7 @@ class HomeAuthViewController: UIViewController {
     
     let itemViews = [titleLabel, signupButton, loginButton]
     for itemView in itemViews { view.addSubview(itemView) }
- 
+    
     let padding: CGFloat = 50
     NSLayoutConstraint.activate([
       titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding * 4),
@@ -70,6 +70,8 @@ class HomeAuthViewController: UIViewController {
   
   
   @objc func loginButtonPressed() {
-    print("Log in button pressed")
+    let loginVC = LoginAuthViewController()
+    let navController = UINavigationController(rootViewController: loginVC)
+    present(navController, animated: true)
   }
 }

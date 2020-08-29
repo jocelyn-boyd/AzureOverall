@@ -35,7 +35,7 @@ class AOBookmarkButton: UIButton {
   }
   
   @objc private func favButtonPressed() {
-    
+    //
   }
 
 }

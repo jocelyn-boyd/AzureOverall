@@ -131,12 +131,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		D83B5A6124D9D52300B1CF4E /* TabBarController */ = {
+		D83B5A6124D9D52300B1CF4E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D874000024D9BAAB000A19AF /* AOTabBarController.swift */,
 			);
-			path = TabBarController;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		D877735324D8F194001C8FF7 /* Labels */ = {
@@ -170,8 +170,8 @@
 		D8AD611F24D45BDB007CDE9E /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				D83B5A6124D9D52300B1CF4E /* Controllers */,
 				D8FCACC724F9EBBC009231F4 /* Buttons */,
-				D83B5A6124D9D52300B1CF4E /* TabBarController */,
 				D877735324D8F194001C8FF7 /* Labels */,
 				D877735624D8F349001C8FF7 /* ImageViews */,
 				D837CCB824C2265800BE1F1B /* Cells */,

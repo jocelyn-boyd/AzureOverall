@@ -9,11 +9,15 @@
 import UIKit
 
 class FavoritesListViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
   
-
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configureViewController()
+  }
+  
+  private func configureViewController() {
+    view.backgroundColor = .systemBackground
+    navigationController?.isNavigationBarHidden = false
+    navigationController?.navigationBar.prefersLargeTitles = true
+  }
 }

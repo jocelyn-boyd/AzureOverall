@@ -29,7 +29,7 @@ class AOTabBarController: UITabBarController {
   
   func createBookmarkedRecipeListVC() -> UINavigationController {
      let bookmarkedRecipesListVC = BookmarkedRecipesListViewController()
-     bookmarkedRecipesListVC.title = "Recipes"
+     bookmarkedRecipesListVC.title = "Saved"
      bookmarkedRecipesListVC.tabBarItem = UITabBarItem(title: "Saved", image: UIImage(systemName: "bookmark.fill"), tag: 1)
      return UINavigationController(rootViewController: bookmarkedRecipesListVC)
    }

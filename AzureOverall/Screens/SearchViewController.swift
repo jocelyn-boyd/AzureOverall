@@ -150,7 +150,8 @@ class SearchViewController: UIViewController {
   // MARK: @objc Methods
   @objc func profileButtonTapped() {
     let profileVC = ProfileViewController()
-    present(profileVC, animated: true)
+    let navController = UINavigationController(rootViewController: profileVC)
+    present(navController, animated: true)
   }
 }
 

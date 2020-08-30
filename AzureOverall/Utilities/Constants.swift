@@ -11,7 +11,7 @@ import UIKit
 struct Constants {
   
   struct SetTitle {
-    static let AppName = "My Recipe Box"
+    static let AppName = "Recipe Box"
     static let firstName = "First Name"
     static let lastName = "Last Name"
     static let password = "Password"

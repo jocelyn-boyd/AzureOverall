@@ -10,11 +10,8 @@ import UIKit
 
 class SignupAuthViewController: UIViewController {
   
-  let firstNameTextField = AOTextField(placeholder: Constants.SetTitle.firstName)
-  let lastNameTextField = AOTextField(placeholder: Constants.SetTitle.lastName)
   let emailTextField = AOTextField(placeholder: Constants.SetTitle.email)
   let passwordTextField = AOTextField(placeholder: Constants.SetTitle.password)
-  
   let actionButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: Constants.SetTitle.createAccount)
   
   let padding: CGFloat = 25
@@ -40,7 +37,7 @@ class SignupAuthViewController: UIViewController {
   
   
   private func configureTextFields() {
-    let itemViews = [firstNameTextField, lastNameTextField, emailTextField, passwordTextField]
+    let itemViews = [emailTextField, passwordTextField]
     for itemView in itemViews {
       view.addSubview(itemView)
       
@@ -52,10 +49,8 @@ class SignupAuthViewController: UIViewController {
     }
     
     NSLayoutConstraint.activate([
-      firstNameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
-      lastNameTextField.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: padding),
-      emailTextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: padding),
-      passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: padding),
+      emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
+      passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: padding)
     ])
   }
   

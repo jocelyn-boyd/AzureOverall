@@ -30,10 +30,12 @@ class RecipeCell: UICollectionViewCell {
   
   func setCell(with recipe: Recipe) {
     recipeTitleLabel.text = recipe.title
+    recipeTitleLabel.numberOfLines = 2
+    recipeTitleLabel.lineBreakMode = .byTruncatingTail
+    
     prepTimeLabel.text = "\(recipe.readyInMinutes.description) Mins Prep"
     servingsLabel.text = "\(recipe.servings.description) serving(s)"
     recipeImageView.downloadImage(fromURL: recipe.id)
-
   }
   
   

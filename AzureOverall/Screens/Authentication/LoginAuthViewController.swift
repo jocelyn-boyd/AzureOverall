@@ -10,6 +10,7 @@ import UIKit
 
 class LoginAuthViewController: UIViewController {
   
+  // MARK: Properties
   let emailTextField = AOTextField(placeholder: Constants.SetTitle.email)
   let passwordTextField = AOTextField(placeholder: Constants.SetTitle.password)
   
@@ -18,6 +19,7 @@ class LoginAuthViewController: UIViewController {
   let padding: CGFloat = 25
   
   
+  // MARK: Lifecycle Methods
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViewController()
@@ -26,7 +28,10 @@ class LoginAuthViewController: UIViewController {
     configureActionButton()
   }
   
+  // MARK: Firebase Methods
   
+  
+  // MARK: Private Configuration Methods
   private func configureViewController() {
     view.backgroundColor = .systemBackground
   }
@@ -69,7 +74,7 @@ class LoginAuthViewController: UIViewController {
     ])
   }
   
-  
+  // MARK: @objc Methods
   @objc func dismissVC() {
     dismiss(animated: true)
   }

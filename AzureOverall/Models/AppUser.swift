@@ -8,7 +8,8 @@
 
 import Foundation
 import FirebaseFirestore
-import Firebase
+import FirebaseAuth
 
 struct AppUser {
+
 }

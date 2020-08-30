@@ -32,6 +32,8 @@ class DetailViewController: UIViewController {
   private func loadSingleRecipeDetails() {
     guard let recipe = recipe else { return }
     recipeTitleLabel.text = recipe.title
+    recipeTitleLabel.numberOfLines = 0
+    
     recipeImageView.downloadImage(fromURL: recipe.id)
     
     RecipeFetchingService.manager.fetchSingleRecipe(from: recipe.id) { [weak self] (result) in

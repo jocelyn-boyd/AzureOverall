@@ -1,4 +1,4 @@
-# My Recipe Box (Work in Progress)
+# My Recipe Box (MVP in Progress)
 
 ## Overview
 - Recipes are fetched from the Spoonacular Recipe API: https://spoonacular.com/food-api

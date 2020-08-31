@@ -38,7 +38,7 @@ class LoginAuthViewController: UIViewController {
   
   
   private func configureNavigationBar() {
-    let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissVC))
+    let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissLoginAuthVC))
     navigationItem.rightBarButtonItem = cancelButton
   }
   
@@ -75,7 +75,7 @@ class LoginAuthViewController: UIViewController {
   }
   
   // MARK: @objc Methods
-  @objc func dismissVC() {
+  @objc func dismissLoginAuthVC() {
     dismiss(animated: true)
   }
   

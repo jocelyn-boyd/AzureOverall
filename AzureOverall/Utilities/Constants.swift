@@ -17,7 +17,6 @@ struct Constants {
     static let password = "Password"
     static let login = "Log In"
     static let signup = "Sign Up"
-    static let createAccount = "Create Account"
   }
   
   struct AppColorPalette {

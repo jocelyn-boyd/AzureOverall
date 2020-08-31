@@ -37,9 +37,14 @@ class AOTextField: UITextField {
     textAlignment                 = .left
     font                          = UIFont.preferredFont(forTextStyle: .title2)
 
-    backgroundColor               = .tertiarySystemBackground
+    backgroundColor               = .tertiarySystemFill
     autocorrectionType            = .no
+    autocapitalizationType        = .none
     clearButtonMode               = .whileEditing
+    
+    returnKeyType                 = .done
+    keyboardType                  = .emailAddress
+    keyboardAppearance            = .light
   }
 
 }

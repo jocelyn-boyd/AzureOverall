@@ -22,12 +22,12 @@ class ProfileViewController: UIViewController {
     navigationItem.leftBarButtonItem = addSignOutButton
     navigationItem.leftBarButtonItem?.tintColor = Constants.AppColorPalette.uaRed
     
-    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissProfileVC))
     navigationItem.rightBarButtonItem = doneButton
     navigationItem.rightBarButtonItem?.tintColor = Constants.AppColorPalette.uaRed
   }
 
-  @objc func dismissVC() {
+  @objc func dismissProfileVC() {
      dismiss(animated: true)
    }
   

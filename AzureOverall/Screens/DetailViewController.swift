@@ -78,7 +78,7 @@ class DetailViewController: UIViewController {
   // MARK: Configuration Methods
   private func configureViewController() {
     view.backgroundColor = .systemBackground
-    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissDetailVC))
     navigationItem.rightBarButtonItem = doneButton
   }
   
@@ -127,7 +127,7 @@ class DetailViewController: UIViewController {
   
   
   // MARK: @objc Methods
-  @objc func dismissVC() {
+  @objc func dismissDetailVC() {
     dismiss(animated: true)
   }
 }

@@ -84,6 +84,10 @@ class SearchViewController: UIViewController {
     
     let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButtonTapped))
     navigationItem.rightBarButtonItem = profileButton
+    
+    let clearButton = UIBarButtonItem(title: "Clear", style: .done, target: self, action: #selector(clearButtonPressed))
+    navigationItem.leftBarButtonItem = clearButton
+    
     navigationController?.isNavigationBarHidden = false
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.title = "Recipes"
@@ -149,10 +153,17 @@ class SearchViewController: UIViewController {
     let navController = UINavigationController(rootViewController: profileVC)
     present(navController, animated: true)
   }
+  
+  
+  @objc func clearButtonPressed() {
+    updateDataSource(with: [])
+    recipeSearchBar.text = nil
+    recipeSearchBar.resignFirstResponder()
+  }
 }
 
 
-// MARK: - CollectionView Delegate
+// MARK: - UICollectionViewDelegate
 extension SearchViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let selectedRecipe = recipes[indexPath.row]
@@ -165,7 +176,7 @@ extension SearchViewController: UICollectionViewDelegate {
   }
 }
 
-
+// MARK: - UISearchBarDelegate
 extension SearchViewController: UISearchBarDelegate {
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
     searchBar.showsCancelButton = true
@@ -182,7 +193,6 @@ extension SearchViewController: UISearchBarDelegate {
   }
   
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-    searchBar.text = nil
     searchBar.showsCancelButton = false
     searchBar.endEditing(true)
   }

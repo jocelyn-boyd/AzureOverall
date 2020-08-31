@@ -48,7 +48,6 @@ class SearchViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViewController()
-    configureNavigationBar()
     configureLayoutUI()
     configureDataSource()
   }
@@ -79,6 +78,18 @@ class SearchViewController: UIViewController {
   
   
   // MARK: - Private Configuration Methods
+  private func configureViewController() {
+    view.backgroundColor = .systemBackground
+    recipeSearchBar.showsCancelButton = true
+    
+    let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButtonTapped))
+    navigationItem.rightBarButtonItem = profileButton
+    navigationController?.isNavigationBarHidden = false
+    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationItem.title = "Recipes"
+  }
+  
+  
   private func configurePortraitLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(0.9))
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -91,21 +102,6 @@ class SearchViewController: UIViewController {
     return UICollectionViewCompositionalLayout(section: section)
   }
   
-  
-  private func configureViewController() {
-    view.backgroundColor = .systemBackground
-  }
-  
-  
-  private func configureNavigationBar() {
-    let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButtonTapped))
-    navigationItem.rightBarButtonItem = profileButton
-    navigationController?.isNavigationBarHidden = false
-    navigationController?.navigationBar.prefersLargeTitles = true
-    navigationItem.title = "Recipes"
-    
-  }
- 
   
   private func configureLayoutUI() {
     let itemViews = [recipeSearchBar, recipeCollectionView]
@@ -171,8 +167,23 @@ extension SearchViewController: UICollectionViewDelegate {
 
 
 extension SearchViewController: UISearchBarDelegate {
+  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    searchBar.showsCancelButton = true
+  }
+  
+  func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    searchBar.showsCancelButton = true
+    searchBar.endEditing(true)
+  }
+  
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     self.searchTerm = searchBar.text ?? ""
     searchBar.resignFirstResponder()
+  }
+  
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.text = nil
+    searchBar.showsCancelButton = false
+    searchBar.endEditing(true)
   }
 }

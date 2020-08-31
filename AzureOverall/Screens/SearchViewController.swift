@@ -53,7 +53,7 @@ class SearchViewController: UIViewController {
   }
   
   
-  //MARK: - Private Networking Methods
+  //MARK: - Networking Methods
   private func loadAllRecipesData() {
     guard let searchTerm = searchTerm else { return }
     
@@ -77,7 +77,7 @@ class SearchViewController: UIViewController {
   }
   
   
-  // MARK: - Private Configuration Methods
+  // MARK: - Configuration Methods
   private func configureViewController() {
     view.backgroundColor = .systemBackground
     recipeSearchBar.showsCancelButton = true
@@ -87,7 +87,8 @@ class SearchViewController: UIViewController {
     
     let clearButton = UIBarButtonItem(title: "Clear", style: .done, target: self, action: #selector(clearButtonPressed))
     navigationItem.leftBarButtonItem = clearButton
-    
+    navigationItem.leftBarButtonItem?.isEnabled = false
+  
     navigationController?.isNavigationBarHidden = false
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.title = "Recipes"
@@ -127,7 +128,7 @@ class SearchViewController: UIViewController {
     ])
   }
   
-  // MARK: - Private DiffableDataSource Methods
+  // MARK: - DiffableDataSource Methods
   private func configureDataSource() {
     dataSource = UICollectionViewDiffableDataSource<Section, Recipe>(collectionView: recipeCollectionView) { (collectionView, indexPath, recipeData) -> UICollectionViewCell? in
       
@@ -159,6 +160,7 @@ class SearchViewController: UIViewController {
     updateDataSource(with: [])
     recipeSearchBar.text = nil
     recipeSearchBar.resignFirstResponder()
+    navigationItem.leftBarButtonItem?.isEnabled = false
   }
 }
 
@@ -180,6 +182,7 @@ extension SearchViewController: UICollectionViewDelegate {
 extension SearchViewController: UISearchBarDelegate {
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
     searchBar.showsCancelButton = true
+    navigationItem.leftBarButtonItem?.isEnabled = true //Clear button
   }
   
   func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
@@ -193,7 +196,9 @@ extension SearchViewController: UISearchBarDelegate {
   }
   
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.text = ""
     searchBar.showsCancelButton = false
     searchBar.endEditing(true)
+    navigationItem.leftBarButtonItem?.isEnabled = false //Clear button
   }
 }

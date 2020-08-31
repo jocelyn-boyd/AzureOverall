@@ -6,10 +6,25 @@
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
-import Foundation
-import FirebaseFirestore
+import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 struct AppUser {
-
+  let email: String?
+  let uid: String?
+  let dateCreated: Date?
+  
+  init(from user: User) {
+    self.email = user.email
+    self.uid = user.uid
+    self.dateCreated = user.metadata.creationDate
+  }
+  
+  var fieldsDict: [String: Any] {
+    return [
+      "email": email ?? ""
+      
+    ]
+  }
 }

@@ -25,6 +25,8 @@
 ## Future Implementations
 - Dark Mode
 - Landscape Mode
+- Create own recipe card
+- Share favorited recipes with others
 
 ## Language
 Swift 5

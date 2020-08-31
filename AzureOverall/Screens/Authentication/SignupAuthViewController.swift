@@ -10,6 +10,7 @@ import FirebaseAuth
 class SignupAuthViewController: UIViewController {
   
   // MARK: UI Element Properties
+  // TODO: Add textfield for Username
   let emailTextField = AOTextField(placeholder: Constants.SetTitle.email)
   let passwordTextField = AOTextField(placeholder: Constants.SetTitle.password)
   let actionButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: Constants.SetTitle.createAccount)

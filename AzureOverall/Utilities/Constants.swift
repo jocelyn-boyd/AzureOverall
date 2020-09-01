@@ -15,7 +15,7 @@ struct Constants {
     static let username = "Username"
     static let email = "Email"
     static let password = "Password"
-    static let login = "Log In"
+    static let login = "Login"
     static let signup = "Sign Up"
   }
   

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginAuthViewController: UIViewController {
   
@@ -18,6 +19,15 @@ class LoginAuthViewController: UIViewController {
   
   let padding: CGFloat = 25
   
+  // MARK: Private Properties
+  private var validUserCrendentials: (email: String, password: String)? {
+    guard let email = emailTextField.text,
+          let password = passwordTextField.text,
+      emailFieldIsValid() else {
+        return nil
+    }
+    return (email, password)
+  }
   
   // MARK: Lifecycle Methods
   override func viewDidLoad() {
@@ -28,8 +38,52 @@ class LoginAuthViewController: UIViewController {
     configureActionButton()
   }
   
-  // MARK: Firebase Methods
+  private func presentGenericAlert(withTitle title: String, andMessage message: String) {
+    let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+    present(alertVC, animated: true, completion: nil)
+  }
   
+  private func transitionToSearchVC() {
+    let tabBarController = AOTabBarController()
+    view.window?.rootViewController = tabBarController
+    view.window?.makeKeyAndVisible()
+  }
+  
+  // MARK: Firebase Methods
+  private func handleLoginResponse(withResult result: Result<User, Error>) {
+    let alertTitle: String
+    let alertMessage: String
+    switch result {
+    case let .success(user):
+      alertTitle = "Login Success"
+      alertMessage = "Logged in user with email \(user.email ?? "no email") and \(user.uid)"
+    case let .failure(error):
+      alertTitle = "Login Failure"
+      alertMessage = "An error occured while loggin in: \(error)"
+    }
+    presentGenericAlert(withTitle: alertTitle, andMessage: alertMessage)
+  }
+  
+  private func signinUser(_ sender: Any) {
+    guard let validCredentials = validUserCrendentials else {
+      handleInvalidFields()
+      return
+    }
+    FirebaseAuthService.manager.loginUser(withEmail: validCredentials.email,
+                                          andPassword: validCredentials.password) { [weak self ](result) in
+                                            self?.handleLoginResponse(withResult: result)
+    }
+  }
+  
+  private func handleInvalidFields() {
+    // TODO: Add implementation
+  }
+  
+  private func emailFieldIsValid() -> Bool {
+    // TODO: Add implementation
+    return true
+  }
   
   // MARK: Private Configuration Methods
   private func configureViewController() {
@@ -81,6 +135,16 @@ class LoginAuthViewController: UIViewController {
   
   
   @objc func actionButtonPressed() {
-     print("Log in button pressed")
+     print("Login button pressed")
+//    signinUser(actionButton)
+    dismissLoginAuthVC()
+    transitionToSearchVC()
    }
+}
+
+extension LoginAuthViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
 }

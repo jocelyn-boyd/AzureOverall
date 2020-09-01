@@ -20,6 +20,7 @@ class SearchViewController: UIViewController {
     sb.layer.borderWidth = 1
     sb.layer.borderColor = UIColor.white.cgColor
     sb.tintColor = Constants.AppColorPalette.uaRed
+    sb.placeholder = "search recipes"
     return sb
   }()
   

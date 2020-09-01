@@ -13,7 +13,7 @@ class HomeAuthViewController: UIViewController {
   
   let titleLabel = AOTitleLabel(textAlignment: .center, fontSize: 50)
   let signupButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: Constants.SetTitle.signup)
-  let loginButton = AOButton(backgroundColor: .clear, title: "Log in")
+  let loginButton = AOButton(backgroundColor: .clear, title: Constants.SetTitle.login)
   
   var videoPlayer: AVPlayer?
    var videoPlayerLayer:AVPlayerLayer?

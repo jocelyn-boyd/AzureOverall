@@ -21,14 +21,11 @@ class FirebaseAuthService {
   
   // MARK: Internal Properties
   var currentUser: User? {
-    // TODO: Add Implementation
     return firebaseAuth.currentUser
   }
   
-  
   // MARK: Internal Functions
   func loginUser(withEmail email: String, andPassword password: String, onCompletion: @escaping (Result<User, Error>) -> Void) {
-    //TODO: Add Implementation
     firebaseAuth.signIn(withEmail: email, password: password) { (result, error) in
       if let user = result?.user {
         onCompletion(.success(user))
@@ -40,7 +37,6 @@ class FirebaseAuthService {
   
   
   func createNewUser(withEmail email: String, andPassword password: String, onCompletion: @escaping (Result<User, Error>) -> Void) {
-    // TODO: Add Implementation
     firebaseAuth.createUser(withEmail: email, password: password) { (result, error) in
       if let createdUser = result?.user {
         onCompletion(.success(createdUser))
@@ -52,7 +48,6 @@ class FirebaseAuthService {
   
   // MARK: Private initializers
   private init() {}
-
 }
 
 

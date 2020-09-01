@@ -15,16 +15,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-screen-image" translatesAutoresizingMaskIntoConstraints="NO" id="Ww3-As-7hN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cook-book-drawing" translatesAutoresizingMaskIntoConstraints="NO" id="Ww3-As-7hN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CN-12-TJ2">
+                                <rect key="frame" x="50" y="414.5" width="314" height="195.5"/>
+                                <string key="text">Recipe
+Box</string>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="90"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Ww3-As-7hN" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="52M-5x-y4y"/>
                             <constraint firstItem="Ww3-As-7hN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="7hY-KO-zE7"/>
                             <constraint firstAttribute="trailing" secondItem="Ww3-As-7hN" secondAttribute="trailing" id="Gr6-wL-pU3"/>
+                            <constraint firstItem="7CN-12-TJ2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="I8L-Ls-ser"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7CN-12-TJ2" secondAttribute="bottom" constant="252" id="LxW-2r-rQY"/>
                             <constraint firstAttribute="bottom" secondItem="Ww3-As-7hN" secondAttribute="bottom" id="MpA-fx-U7I"/>
+                            <constraint firstItem="7CN-12-TJ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="qe7-7r-hGy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -35,6 +46,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch-screen-image" width="1000" height="650"/>
+        <image name="cook-book-drawing" width="1001" height="1600"/>
     </resources>
 </document>

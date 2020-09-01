@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController {
   private func configureViewController() {
     view.backgroundColor = .systemBackground
     
-    let addSignOutButton = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(signOutButtonTapped))
+    let addSignOutButton = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(signOutButtonPressed))
     navigationItem.leftBarButtonItem = addSignOutButton
     navigationItem.leftBarButtonItem?.tintColor = Constants.AppColorPalette.uaRed
     
@@ -31,7 +31,11 @@ class ProfileViewController: UIViewController {
      dismiss(animated: true)
    }
   
-  @objc func signOutButtonTapped() {
-     print("buttonTapped")
+  @objc func signOutButtonPressed() {
+    do {
+      try FirebaseAuthService.manager.signOutUser()
+    } catch let error {
+      print("\(error.localizedDescription)")
+    }
    }
 }

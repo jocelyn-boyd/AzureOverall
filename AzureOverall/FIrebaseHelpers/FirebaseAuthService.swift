@@ -46,6 +46,18 @@ class FirebaseAuthService {
     }
   }
   
+  func signOutUser() throws {
+    try firebaseAuth.signOut()
+    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+      let sceneDelegate = windowScene.delegate as? SceneDelegate,
+      let window = sceneDelegate.window else { return }
+    
+    UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
+      let homeAuthVC = HomeAuthViewController()
+      window.rootViewController = homeAuthVC
+    }, completion: nil)
+  }
+  
   // MARK: Private initializers
   private init() {}
 }

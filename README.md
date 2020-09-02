@@ -7,7 +7,7 @@
 ## Screens
 (Screenshots coming soon)
 
-- The **Auth Screen**
+- The **Auth Screens** include the Home Screen, Sign Up Screen and Login Screen. 
 
 - The **Browse Screen** has a search bar and a collection view. Searching for a keyword in the search bar will load a list of recipes into the Collection View. Each cell displays the recipe's image with a bookmark icon in the upper right corner, the recipe's title and the number of servings.
 

@@ -20,7 +20,7 @@
 - THe **Profile Screen**
 
 ## Screenshots
-![image](images/SearchScreen.png)
+![image](images/HomeScreen.png) ![image](images/SearchScreen.png)
 
 ## Future Implementations
 - Dark Mode

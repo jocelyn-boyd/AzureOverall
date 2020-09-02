@@ -29,15 +29,16 @@ class SignupAuthViewController: UIViewController {
     return (email, password)
   }
   
-  // MARK: Lifecycle Methods
+  // MARK: - Lifecycle Methods
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViewController()
-    configureTextFields()
-    configureCallToActionButton()
+    configureInputTextFields()
+    configureSignupAuthActionButton()
     createDismissKeyboardTapGesture()
   }
   
+  // MARK: - Private Methods
   private func presentGenericAlert(withTitle: String, andMessage message: String) {
     let alertVC = UIAlertController(title: withTitle, message: message, preferredStyle: .alert)
     alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -67,20 +68,20 @@ class SignupAuthViewController: UIViewController {
     view.addGestureRecognizer(tap)
   }
     
-  // MARK: FirebaseAuth Methods
+  // MARK: - FirebaseAuth Methods
   private func handleCreateUserResponse(withResult result: Result<User, Error>) {
     switch result {
-    case .success:
+    case let .success(user):
       transitionToSearchVC()
+      print("Logged in user with email \(user.email ?? "no email") and \(user.uid)")
     case let .failure(error):
-      let alertTitle = "Error"
-      let alertMessage = "\(error.localizedDescription)"
+      let alertTitle = "Login Failure"
+      let alertMessage = "An error occured while signing in: \(error.localizedDescription)"
       presentGenericAlert(withTitle: alertTitle, andMessage: alertMessage)
     }
   }
   
   private func createNewUserAccount(_ sender: Any) {
-    
     guard let validCredentials = validUserCredentials else { return }
     
     guard validCredentials.email.isValidEmail else {
@@ -94,20 +95,19 @@ class SignupAuthViewController: UIViewController {
     }
   }
   
-  // MARK: Private Configuration Methods
+  // MARK: - Private Configuration Methods
   private func configureViewController() {
     view.backgroundColor = .systemBackground
     titleLabel.text = "Create An Account"
     titleLabel.numberOfLines = 0
-    
-    emailTextField.delegate = self
-    passwordTextField.delegate = self
-    
+  
     let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissSignupAuthVC))
     navigationItem.rightBarButtonItem = cancelButton
   }
   
-  private func configureTextFields() {
+  private func configureInputTextFields() {
+    emailTextField.delegate = self
+    passwordTextField.delegate = self
     passwordTextField.isSecureTextEntry = true
     
     let itemViews = [titleLabel, emailTextField, passwordTextField]
@@ -128,7 +128,7 @@ class SignupAuthViewController: UIViewController {
     ])
   }
   
-  func configureCallToActionButton() {
+  func configureSignupAuthActionButton() {
     view.addSubview(authActionButton)
     authActionButton.backgroundColor = Constants.AppColorPalette.uaRed
     authActionButton.addTarget(self, action: #selector(signupAuthButtonPressed), for: .touchUpInside)

@@ -19,6 +19,7 @@ struct Constants {
     static let signup = "Sign Up"
   }
   
+  // MARK: - ToDO: Refactor Color Palette for color-blind users
   struct AppColorPalette {
     static let richBlackFOGRA39 = UIColor(red: 12 / 255, green: 9 / 255, blue: 12 / 255, alpha: 1)
     static let uaRed = UIColor(red: 224 / 255, green: 26 / 255, blue: 79 / 255, alpha: 1)

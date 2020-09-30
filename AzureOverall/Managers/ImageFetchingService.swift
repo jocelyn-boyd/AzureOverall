@@ -19,9 +19,7 @@ class ImageFetchingService {
   
   //MARK: - Internal Methods
   func fetchImage(using recipeID: Int, completionHandler: @escaping (Result<UIImage, NetworkError>) -> Void) {
-    
     let endpoint = baseURL + "/\(recipeID)-556x370.jpg"
-    
     NetworkManager.shared.getData(from: endpoint) { (result) in
       switch result {
       case let .success(data):
@@ -30,14 +28,12 @@ class ImageFetchingService {
           return
         }
         completionHandler(.success(onlineImage))
-        
       case let .failure(error):
         completionHandler(.failure(error))
       }
     }
   }
   
-
   func fetchImage(using urlString: String, completionHandler: @escaping (Result<UIImage, NetworkError>) -> Void) {
     NetworkManager.shared.getData(from: urlString) { (result) in
       switch result {
@@ -47,7 +43,6 @@ class ImageFetchingService {
           return
         }
         completionHandler(.success(onlineImage))
-        
       case let .failure(error):
         completionHandler(.failure(error))
       }

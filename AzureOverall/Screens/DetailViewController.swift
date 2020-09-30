@@ -42,13 +42,13 @@ class DetailViewController: UIViewController {
   // MARK: - Private Methods
   private func loadRecipeDetails(from recipeInfo: RecipeInformation) {
     recipeTitleLabel.text = recipeInfo.title
-    sourceNameLabel.text = "Source: \(recipeInfo.sourceName ?? "")"
+    sourceNameLabel.text = "Source: \(recipeInfo.sourceName ?? "Name Unavailable")"
     recipeImageView.downloadImage(fromURL: recipeInfo.id)
   }
   
   private func loadDietaryDetails(from dietInfo: RecipeInformation) {
     if dietInfo.vegan {
-      veganLabel.text = "✅ Vegan"
+      veganLabel.text = "✅ Vegan" 
     } else {
       veganLabel.text = "❎ Vegan"
     }
@@ -165,7 +165,7 @@ class DetailViewController: UIViewController {
   }
   
   // MARK: - @objc Methods
-   @objc func dismissDetailVC() {
-     dismiss(animated: true)
-   }
+  @objc func dismissDetailVC() {
+    dismiss(animated: true)
+  }
 }

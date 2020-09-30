@@ -9,7 +9,6 @@
 import UIKit
 
 class AOBookmarkButton: UIButton {
-
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -27,15 +26,9 @@ class AOBookmarkButton: UIButton {
     contentEdgeInsets = UIEdgeInsets(top: 2.5, left: 2.5, bottom: 2.5, right: 2.5)
     backgroundColor = Constants.AppColorPalette.fireOpalHalfOpacity
     tintColor = .white
+    isUserInteractionEnabled = true
     
     let imageConfig = UIImage.SymbolConfiguration(scale: .large)
     setImage(UIImage(systemName: "bookmark", withConfiguration: imageConfig), for: .normal)
-    addTarget(self, action: #selector(favButtonPressed), for: .touchUpInside)
-    
   }
-  
-  @objc private func favButtonPressed() {
-    //
-  }
-
 }

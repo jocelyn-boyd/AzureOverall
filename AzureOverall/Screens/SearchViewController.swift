@@ -38,12 +38,11 @@ class SearchViewController: UIViewController {
       updateDataSource(with: recipes)
     }
   }
-  var searchTerm: String? = "" {
+  private var searchTerm: String? = "" {
     didSet {
       loadAllRecipesData()
     }
   }
-  
   
   // MARK: - Lifecyle Methods
   override func viewDidLoad() {
@@ -52,7 +51,6 @@ class SearchViewController: UIViewController {
     configureLayoutUI()
     configureDataSource()
   }
-  
   
   //MARK: - Networking Methods
   private func loadAllRecipesData() {
@@ -66,17 +64,16 @@ class SearchViewController: UIViewController {
           self.recipes = fetchedRecipes
         case .failure:
           let alertVC = UIAlertController(title: "Error",
-                                          message: "An error fetching recipes occured. Your daily points limit of 150 has been reached.",
-                                          preferredStyle: .alert)
+                                        message: "An error fetching recipes occured. Your daily points limit of 150 has been reached.",
+                                        preferredStyle: .alert)
           alertVC.addAction(UIAlertAction(title: "OK",
-                                          style: .default,
-                                          handler: nil))
+                                        style: .default,
+                                        handler: nil))
           self.present(alertVC, animated:  true, completion: nil)
         }
       }
     }
   }
-  
   
   // MARK: - Configuration Methods
   private func configureViewController() {
@@ -95,7 +92,6 @@ class SearchViewController: UIViewController {
     navigationItem.title = "Recipes"
   }
   
-  
   private func configurePortraitLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(0.9))
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -108,15 +104,12 @@ class SearchViewController: UIViewController {
     return UICollectionViewCompositionalLayout(section: section)
   }
   
-  
   private func configureLayoutUI() {
     let itemViews = [recipeSearchBar, recipeCollectionView]
-    
     for itemView in itemViews {
       view.addSubview(itemView)
       itemView.translatesAutoresizingMaskIntoConstraints = false
     }
-    
     NSLayoutConstraint.activate([
       recipeSearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       recipeSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -140,7 +133,6 @@ class SearchViewController: UIViewController {
     }
   }
   
-  
   private func updateDataSource(with recipes: [Recipe]) {
     var snapshot = NSDiffableDataSourceSnapshot<Section, Recipe>()
     snapshot.appendSections([.main])
@@ -148,14 +140,12 @@ class SearchViewController: UIViewController {
     dataSource?.apply(snapshot, animatingDifferences: true)
   }
   
-  
   // MARK: @objc Methods
   @objc func profileButtonTapped() {
     let profileVC = ProfileViewController()
     let navController = UINavigationController(rootViewController: profileVC)
     present(navController, animated: true)
   }
-  
   
   @objc func clearButtonPressed() {
     updateDataSource(with: [])
@@ -165,16 +155,13 @@ class SearchViewController: UIViewController {
   }
 }
 
-
 // MARK: - UICollectionViewDelegate
 extension SearchViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let selectedRecipe = recipes[indexPath.row]
     let detailVC = DetailViewController()
-    
     let navController = UINavigationController(rootViewController: detailVC)
     detailVC.recipe = selectedRecipe
-    
     present(navController, animated: true)
   }
 }

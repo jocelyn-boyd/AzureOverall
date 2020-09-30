@@ -19,9 +19,7 @@ class RecipeFetchingService {
 
   //MARK: - Internal Methods
   func fetchAllRecipes(from query: String, completionHandler: @escaping (Result<[Recipe],NetworkError>) -> Void) {
-    
     let endpoint = baseURL + "search?query=\(query.lowercased())&apiKey=\(Secret.apiKey.rawValue)"
-    
     NetworkManager.shared.getData(from: endpoint) { (result) in
       switch result {
       case let .success(data):
@@ -32,7 +30,6 @@ class RecipeFetchingService {
           completionHandler(.failure(.unableToDecodeJSON(error)))
           print(error.localizedDescription)
         }
-       
       case let .failure(error):
         completionHandler(.failure(.unableToDecodeJSON(error)))
         print(error.localizedDescription)
@@ -40,11 +37,8 @@ class RecipeFetchingService {
     }
   }
   
-  
   func fetchSingleRecipe(from recipeId: Int, completionHandler: @escaping (Result<RecipeInformation,NetworkError>) -> Void) {
-    
     let endpoint = baseURL + "\(recipeId)/information?apiKey=\(Secret.apiKey.rawValue)"
-    
     NetworkManager.shared.getData(from: endpoint) { (result) in
       switch result {
       case let .success(data):
@@ -54,7 +48,6 @@ class RecipeFetchingService {
         } catch {
           completionHandler(.failure(.unableToDecodeJSON(error)))
         }
-       
       case .failure:
         completionHandler(.failure(.unableToComplete))
       }

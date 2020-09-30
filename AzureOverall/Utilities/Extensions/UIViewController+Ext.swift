@@ -15,6 +15,4 @@ extension UIViewController {
     safariVC.preferredBarTintColor = Constants.AppColorPalette.uaRed
     present(safariVC, animated: true)
   }
-  
-  
 }

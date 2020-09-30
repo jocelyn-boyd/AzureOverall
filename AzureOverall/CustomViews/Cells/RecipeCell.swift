@@ -9,6 +9,12 @@ import UIKit
 class RecipeCell: UICollectionViewCell {
   static let reuseIdentifier = String(describing: RecipeCell.self)
   
+  enum BookmarkStatus {
+    case filled
+    case unfilled
+  }
+  var bookmarkStatus: BookmarkStatus = .unfilled
+  var delegate: RecipeFavoriteDelegate?
   
   let recipeImageView = AOFoodImageView()
   let favButton = AOBookmarkButton()
@@ -16,17 +22,14 @@ class RecipeCell: UICollectionViewCell {
   let prepTimeLabel = AOSubheadingLabel(textAlignment: .left, fontSize: 15)
   let servingsLabel = AOSecondaryTitleLabel(textAlignment: .left, fontSize: 13)
   
-  
   override init(frame: CGRect) {
     super.init(frame: frame)
     configure()
   }
   
-  
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
   
   func setCell(with recipe: Recipe) {
     recipeTitleLabel.text = recipe.title
@@ -38,13 +41,13 @@ class RecipeCell: UICollectionViewCell {
     recipeImageView.downloadImage(fromURL: recipe.id)
   }
   
-  
   private func configure() {
     let padding: CGFloat = 5
     let itemViews = [recipeImageView, recipeTitleLabel, prepTimeLabel, servingsLabel]
     for itemView in itemViews { contentView.addSubview(itemView) }
     
-    recipeImageView.addSubview(favButton)
+      contentView.addSubview(favButton)
+      favButton.addTarget(self, action: #selector(favButtonPressed), for: .touchUpInside)
     
     NSLayoutConstraint.activate([
       favButton.topAnchor.constraint(equalTo: recipeImageView.topAnchor, constant: padding),
@@ -70,5 +73,28 @@ class RecipeCell: UICollectionViewCell {
       servingsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       servingsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
     ])
+  }
+  
+    @objc private func favButtonPressed(sender: UIButton) {
+      switch bookmarkStatus {
+      case .unfilled:
+        fillBookmark()
+      case .filled:
+        unfillBookmark()
+      }
+    }
+  
+  func fillBookmark() {
+    let imageConfig = UIImage.SymbolConfiguration(scale: .large)
+    let bookmark = UIImage(systemName: "bookmark.fill", withConfiguration: imageConfig)
+    favButton.setImage(bookmark, for: .normal)
+    bookmarkStatus = .filled
+  }
+  
+  func unfillBookmark() {
+    let imageConfig = UIImage.SymbolConfiguration(scale: .large)
+    let bookmark = UIImage(systemName: "bookmark", withConfiguration: imageConfig)
+    favButton.setImage(bookmark, for: .normal)
+    bookmarkStatus = .unfilled
   }
 }

@@ -13,12 +13,6 @@
 
 - The **Detail Screen** has the recipe's image, title and listed dietary categories. 
 
-- The **Favorited Recipes Screen**
-
-- The **Saved Recipes Screen**
-
-- THe **Profile Screen**
-
 ## Screenshots
 ![image](images/HomeScreen.png) ![image](images/SearchScreen.png)
 

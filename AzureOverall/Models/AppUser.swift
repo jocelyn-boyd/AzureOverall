@@ -21,10 +21,7 @@ struct AppUser {
     self.dateCreated = user.metadata.creationDate
   }
   
-  var fieldsDict: [String: Any] {
-    return [
-      "email": email ?? ""
-      
-    ]
+  private var fieldsDict: [String: Any] {
+    return [ "email" : email ?? "" ]
   }
 }

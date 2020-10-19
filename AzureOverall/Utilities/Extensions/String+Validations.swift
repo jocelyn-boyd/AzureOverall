@@ -6,7 +6,6 @@
 
 import Foundation
 
-import Foundation
 extension String {
   var isValidEmail: Bool {
     // this pattern requires that an email use the following format:

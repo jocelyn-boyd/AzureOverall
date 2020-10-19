@@ -11,14 +11,12 @@ class ImageFetchingService {
   //MARK: - Static Properties
   static let manager = ImageFetchingService()
 
-    
   // MARK: - Private Properties and Initializers
   private let baseURL = "https://spoonacular.com/recipeImages"
   private init() {}
   
-  
-  //MARK: - Internal Methods
-  func fetchImage(using recipeID: Int, completionHandler: @escaping (Result<UIImage, NetworkError>) -> Void) {
+  //MARK: - Methods
+  internal func fetchImage(using recipeID: Int, completionHandler: @escaping (Result<UIImage, NetworkError>) -> Void) {
     let endpoint = baseURL + "/\(recipeID)-556x370.jpg"
     NetworkManager.shared.getData(from: endpoint) { (result) in
       switch result {
@@ -34,7 +32,7 @@ class ImageFetchingService {
     }
   }
   
-  func fetchImage(using urlString: String, completionHandler: @escaping (Result<UIImage, NetworkError>) -> Void) {
+    internal func fetchImage(using urlString: String, completionHandler: @escaping (Result<UIImage, NetworkError>) -> Void) {
     NetworkManager.shared.getData(from: urlString) { (result) in
       switch result {
       case let .success(data):

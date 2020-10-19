@@ -7,8 +7,8 @@
 import Foundation
 
 // the enum conforms to the Error protocol and lists some of the potential things that can go wrong when getting data
-enum NetworkError: CustomStringConvertible, Error {
-  var description: String {
+public enum NetworkError: CustomStringConvertible, Error {
+    public var description: String {
     switch self {
     case .unableToComplete:
      return "Unable to complete your request. Please check your internet connection."

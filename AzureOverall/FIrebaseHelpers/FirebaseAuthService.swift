@@ -7,25 +7,25 @@
 import Foundation
 import FirebaseAuth
 
-enum GenericError: Error {
+fileprivate enum GenericError: Error {
   case unknown
 }
 
 class FirebaseAuthService {
   
   // MARK: Static Properties
-   static let manager = FirebaseAuthService()
+static let manager = FirebaseAuthService()
   
   // MARK: Private Properties
   private let firebaseAuth = Auth.auth()
   
   // MARK: Internal Properties
-  var currentUser: User? {
+  public var currentUser: User? {
     return firebaseAuth.currentUser
   }
   
   // MARK: Internal Functions
-  func createNewUser(withEmail email: String, andPassword password: String, onCompletion: @escaping (Result<User, Error>) -> Void) {
+    public func createNewUser(withEmail email: String, andPassword password: String, onCompletion: @escaping (Result<User, Error>) -> Void) {
     firebaseAuth.createUser(withEmail: email, password: password) { (result, error) in
       if let createdUser = result?.user {
         onCompletion(.success(createdUser))
@@ -35,7 +35,7 @@ class FirebaseAuthService {
     }
   }
   
-  func loginUser(withEmail email: String, andPassword password: String, onCompletion: @escaping (Result<User, Error>) -> Void) {
+ public func loginUser(withEmail email: String, andPassword password: String, onCompletion: @escaping (Result<User, Error>) -> Void) {
     firebaseAuth.signIn(withEmail: email, password: password) { (result, error) in
       if let user = result?.user {
         onCompletion(.success(user))
@@ -45,7 +45,7 @@ class FirebaseAuthService {
     }
   }
   
-  func signOutUser() throws {
+ public func signOutUser() throws {
     try firebaseAuth.signOut()
     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
       let sceneDelegate = windowScene.delegate as? SceneDelegate,

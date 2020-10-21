@@ -11,7 +11,7 @@ class DetailViewController: UIViewController {
     public var recipe: Recipe?
     private var recipeInformation = [RecipeInformation]()
     
-    // MARK: UI
+    // MARK: UI elements
     private let recipeTitleLabel = AOTitleLabel(textAlignment: .center, fontSize: 20)
     private let recipeImageView = AOFoodImageView()
     

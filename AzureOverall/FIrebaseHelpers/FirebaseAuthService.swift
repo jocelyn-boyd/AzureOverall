@@ -20,12 +20,12 @@ static let manager = FirebaseAuthService()
   private let firebaseAuth = Auth.auth()
   
   // MARK: Internal Properties
-  public var currentUser: User? {
+  internal var currentUser: User? {
     return firebaseAuth.currentUser
   }
   
   // MARK: Internal Functions
-    public func createNewUser(withEmail email: String, andPassword password: String, onCompletion: @escaping (Result<User, Error>) -> Void) {
+    internal func createNewUser(withEmail email: String, andPassword password: String, onCompletion: @escaping (Result<User, Error>) -> Void) {
     firebaseAuth.createUser(withEmail: email, password: password) { (result, error) in
       if let createdUser = result?.user {
         onCompletion(.success(createdUser))
@@ -35,7 +35,7 @@ static let manager = FirebaseAuthService()
     }
   }
   
- public func loginUser(withEmail email: String, andPassword password: String, onCompletion: @escaping (Result<User, Error>) -> Void) {
+ internal func loginUser(withEmail email: String, andPassword password: String, onCompletion: @escaping (Result<User, Error>) -> Void) {
     firebaseAuth.signIn(withEmail: email, password: password) { (result, error) in
       if let user = result?.user {
         onCompletion(.success(user))
@@ -45,7 +45,7 @@ static let manager = FirebaseAuthService()
     }
   }
   
- public func signOutUser() throws {
+ internal func signOutUser() throws {
     try firebaseAuth.signOut()
     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
       let sceneDelegate = windowScene.delegate as? SceneDelegate,
@@ -60,6 +60,3 @@ static let manager = FirebaseAuthService()
   // MARK: Private initializers
   private init() {}
 }
-
-
-

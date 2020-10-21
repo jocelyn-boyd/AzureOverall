@@ -129,7 +129,7 @@ class SearchViewController: UIViewController {
             
             guard let cell = self.recipeCollectionView.dequeueReusableCell(withReuseIdentifier: RecipeCell.reuseIdentifier, for: indexPath) as? RecipeCell else {return UICollectionViewCell() }
             
-            cell.setCell(with: recipeData)
+            cell.setRecipeCell(with: recipeData)
             return cell
         }
     }

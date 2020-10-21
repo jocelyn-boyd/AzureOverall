@@ -6,16 +6,17 @@
 
 import UIKit
 
+fileprivate enum BookmarkStatus {
+    case filled
+    case unfilled
+}
+
 class RecipeCell: UICollectionViewCell {
-    internal enum BookmarkStatus {
-        case filled
-        case unfilled
-    }
-    
+
     //MARK: Properties
     static let reuseIdentifier = String(describing: RecipeCell.self)
-    
     private var bookmarkStatus: BookmarkStatus = .unfilled
+    
     private let recipeImageView = AOFoodImageView()
     private let favButton = AOBookmarkButton()
     private let recipeTitleLabel = AOTitleLabel(textAlignment: .left, fontSize: 18)
@@ -33,7 +34,7 @@ class RecipeCell: UICollectionViewCell {
     }
     
     // MARK: Methods
-    public func setCell(with recipe: Recipe) {
+    public func setRecipeCell(with recipe: Recipe) {
         recipeTitleLabel.text = recipe.title
         recipeTitleLabel.numberOfLines = 2
         recipeTitleLabel.lineBreakMode = .byTruncatingTail

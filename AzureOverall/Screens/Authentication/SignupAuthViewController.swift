@@ -10,10 +10,10 @@ import FirebaseAuth
 class SignupAuthViewController: UIViewController {
     
     // MARK: - UI Element Properties
-    let titleLabel = AOTitleLabel(textAlignment: .center, fontSize: 25)
-    let emailTextField = AOTextField(placeholder: Constants.SetTitle.email)
-    let passwordTextField = AOTextField(placeholder: Constants.SetTitle.password)
-    let authActionButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: Constants.SetTitle.signup)
+    let titleLabel = RBTitleLabel(textAlignment: .center, fontSize: 25)
+    let emailTextField = RBTextField(placeholder: Constants.SetTitle.email)
+    let passwordTextField = RBTextField(placeholder: Constants.SetTitle.password)
+    let authActionButton = RBButton(backgroundColor: Constants.AppColorPalette.uaRed, title: Constants.SetTitle.signup)
     
     // MARK: - Private Properties
     private let padding: CGFloat = 25

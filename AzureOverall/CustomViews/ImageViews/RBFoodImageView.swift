@@ -6,7 +6,7 @@
 
 import UIKit
 
-class AOFoodImageView: UIImageView {
+class RBFoodImageView: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -1,12 +1,14 @@
 //
-//  AOSubheadingLabel.swift
+//  AOButton.swift
 //  AzureOverall
+//
+//  Created by Jocelyn Boyd on 8/29/20.
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
 import UIKit
 
-class AOSubheadingLabel: UILabel {
+class RBButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,16 +19,15 @@ class AOSubheadingLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public convenience init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
+    convenience init(backgroundColor: UIColor, title: String) {
         self.init(frame: .zero)
-        self.textAlignment = textAlignment
-        self.font = UIFont.systemFont(ofSize: fontSize, weight: .regular)
+        self.backgroundColor = backgroundColor
+        self.setTitle(title, for: .normal)
+        configure()
     }
     
-    func configure() {
-        textColor = Constants.AppColorPalette.maximumBlue
-        numberOfLines = 0
-        lineBreakMode = .byWordWrapping
+    private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
+        layer.cornerRadius = 15
     }
 }

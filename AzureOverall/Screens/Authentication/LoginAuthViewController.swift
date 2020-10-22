@@ -12,9 +12,9 @@ import FirebaseAuth
 class LoginAuthViewController: UIViewController {
     
     // MARK: Properties
-    private let emailTextField = AOTextField(placeholder: Constants.SetTitle.email)
-    private let passwordTextField = AOTextField(placeholder: Constants.SetTitle.password)
-    private let loginAuthButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: Constants.SetTitle.login)
+    private let emailTextField = RBTextField(placeholder: Constants.SetTitle.email)
+    private let passwordTextField = RBTextField(placeholder: Constants.SetTitle.password)
+    private let loginAuthButton = RBButton(backgroundColor: Constants.AppColorPalette.uaRed, title: Constants.SetTitle.login)
     
     private let padding: CGFloat = 25
     

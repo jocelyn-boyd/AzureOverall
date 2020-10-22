@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AOBookmarkButton: UIButton {
+class RBBookmarkButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

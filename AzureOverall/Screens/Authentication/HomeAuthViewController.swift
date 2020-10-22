@@ -12,9 +12,9 @@ import AVKit
 class HomeAuthViewController: UIViewController {
     
     // MARK: - Properties
-    private let titleLabel = AOTitleLabel(textAlignment: .center, fontSize: 50)
-    private let signupButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: Constants.SetTitle.signup)
-    private let loginButton = AOButton(backgroundColor: .clear, title: Constants.SetTitle.login)
+    private let titleLabel = RBTitleLabel(textAlignment: .center, fontSize: 50)
+    private let signupButton = RBButton(backgroundColor: Constants.AppColorPalette.uaRed, title: Constants.SetTitle.signup)
+    private let loginButton = RBButton(backgroundColor: .clear, title: Constants.SetTitle.login)
     
     // MARK: - Lifecyle Methods
     override func viewDidLoad() {

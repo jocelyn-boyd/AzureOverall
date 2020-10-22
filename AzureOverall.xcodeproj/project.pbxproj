@@ -20,18 +20,18 @@
 		D838BF5724CB7E3D009B056E /* RecipeFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */; };
 		D83B5A6324DA07ED00B1CF4E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B5A6224DA07ED00B1CF4E /* ProfileViewController.swift */; };
 		D874000124D9BAAB000A19AF /* AOTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D874000024D9BAAB000A19AF /* AOTabBarController.swift */; };
-		D874FFFD24D92824000A19AF /* AOBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D874FFFC24D92824000A19AF /* AOBodyLabel.swift */; };
+		D874FFFD24D92824000A19AF /* RBBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D874FFFC24D92824000A19AF /* RBBodyLabel.swift */; };
 		D877734824D8D90A001C8FF7 /* RecipeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877734724D8D90A001C8FF7 /* RecipeInformation.swift */; };
 		D877734C24D8E060001C8FF7 /* AORecipeInformoationModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877734B24D8E060001C8FF7 /* AORecipeInformoationModelTest.swift */; };
-		D877734E24D8EA56001C8FF7 /* AOTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877734D24D8EA56001C8FF7 /* AOTitleLabel.swift */; };
-		D877735024D8ED26001C8FF7 /* AOSubheadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877734F24D8ED26001C8FF7 /* AOSubheadingLabel.swift */; };
-		D877735824D8F384001C8FF7 /* AOFoodImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877735724D8F384001C8FF7 /* AOFoodImageView.swift */; };
-		D877735A24D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877735924D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift */; };
+		D877734E24D8EA56001C8FF7 /* RBTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877734D24D8EA56001C8FF7 /* RBTitleLabel.swift */; };
+		D877735024D8ED26001C8FF7 /* RBSubheadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877734F24D8ED26001C8FF7 /* RBSubheadingLabel.swift */; };
+		D877735824D8F384001C8FF7 /* RBFoodImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877735724D8F384001C8FF7 /* RBFoodImageView.swift */; };
+		D877735A24D8F95A001C8FF7 /* RBSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877735924D8F95A001C8FF7 /* RBSecondaryTitleLabel.swift */; };
 		D88BC64E24D779BD00F3E5BF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88BC64D24D779BD00F3E5BF /* DetailViewController.swift */; };
 		D8AD611D24D45B6C007CDE9E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD611C24D45B6C007CDE9E /* NetworkError.swift */; };
 		D8AD612224D45DC2007CDE9E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD612124D45DC2007CDE9E /* NetworkManager.swift */; };
 		D8B6316D24D50C7400CF6DF7 /* ImageFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6316C24D50C7400CF6DF7 /* ImageFetchingService.swift */; };
-		D8BEE76A24FA5E9D00DB77D9 /* AOTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BEE76924FA5E9D00DB77D9 /* AOTextField.swift */; };
+		D8BEE76A24FA5E9D00DB77D9 /* RBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BEE76924FA5E9D00DB77D9 /* RBTextField.swift */; };
 		D8BEE76E24FADC0A00DB77D9 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BEE76D24FADC0A00DB77D9 /* AppUser.swift */; };
 		D8BEE77024FAE02200DB77D9 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BEE76F24FAE02200DB77D9 /* FirebaseAuthService.swift */; };
 		D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */; };
@@ -39,14 +39,14 @@
 		D8C12EDE24C0BBB3006F98C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */; };
 		D8C12EE124C0BBB3006F98C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDF24C0BBB3006F98C1 /* LaunchScreen.storyboard */; };
 		D8C12EEC24C0BBB4006F98C1 /* AORecipeModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12EEB24C0BBB4006F98C1 /* AORecipeModelTest.swift */; };
-		D8CD39D824FA29570093514B /* AOButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD39D724FA29570093514B /* AOButton.swift */; };
+		D8CD39D824FA29570093514B /* RBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD39D724FA29570093514B /* RBButton.swift */; };
 		D8CD39DA24FA2B7B0093514B /* HomeAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD39D924FA2B7B0093514B /* HomeAuthViewController.swift */; };
 		D8CD39DC24FA39B50093514B /* SignupAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD39DB24FA39B50093514B /* SignupAuthViewController.swift */; };
 		D8D3A07924C2704800AA8D26 /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = D8D3A07824C2704800AA8D26 /* Recipes.json */; };
 		D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D3A07C24C359FA00AA8D26 /* Recipe.swift */; };
 		D8E8F78A24DDF54C0077E6E6 /* RecipeInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = D8E8F78924DDF54C0077E6E6 /* RecipeInformation.json */; };
 		D8FB3A5824FDD8E40039FF84 /* String+Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FB3A5724FDD8E40039FF84 /* String+Validations.swift */; };
-		D8FCACC624F9E739009231F4 /* AOBookmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FCACC524F9E739009231F4 /* AOBookmarkButton.swift */; };
+		D8FCACC624F9E739009231F4 /* RBBookmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FCACC524F9E739009231F4 /* RBBookmarkButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,18 +76,18 @@
 		D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFetchingService.swift; sourceTree = "<group>"; };
 		D83B5A6224DA07ED00B1CF4E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D874000024D9BAAB000A19AF /* AOTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOTabBarController.swift; sourceTree = "<group>"; };
-		D874FFFC24D92824000A19AF /* AOBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOBodyLabel.swift; sourceTree = "<group>"; };
+		D874FFFC24D92824000A19AF /* RBBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBBodyLabel.swift; sourceTree = "<group>"; };
 		D877734724D8D90A001C8FF7 /* RecipeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformation.swift; sourceTree = "<group>"; };
 		D877734B24D8E060001C8FF7 /* AORecipeInformoationModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AORecipeInformoationModelTest.swift; sourceTree = "<group>"; };
-		D877734D24D8EA56001C8FF7 /* AOTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOTitleLabel.swift; sourceTree = "<group>"; };
-		D877734F24D8ED26001C8FF7 /* AOSubheadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOSubheadingLabel.swift; sourceTree = "<group>"; };
-		D877735724D8F384001C8FF7 /* AOFoodImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOFoodImageView.swift; sourceTree = "<group>"; };
-		D877735924D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		D877734D24D8EA56001C8FF7 /* RBTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTitleLabel.swift; sourceTree = "<group>"; };
+		D877734F24D8ED26001C8FF7 /* RBSubheadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBSubheadingLabel.swift; sourceTree = "<group>"; };
+		D877735724D8F384001C8FF7 /* RBFoodImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBFoodImageView.swift; sourceTree = "<group>"; };
+		D877735924D8F95A001C8FF7 /* RBSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		D88BC64D24D779BD00F3E5BF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D8AD611C24D45B6C007CDE9E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D8AD612124D45DC2007CDE9E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D8B6316C24D50C7400CF6DF7 /* ImageFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchingService.swift; sourceTree = "<group>"; };
-		D8BEE76924FA5E9D00DB77D9 /* AOTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOTextField.swift; sourceTree = "<group>"; };
+		D8BEE76924FA5E9D00DB77D9 /* RBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTextField.swift; sourceTree = "<group>"; };
 		D8BEE76D24FADC0A00DB77D9 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		D8BEE76F24FAE02200DB77D9 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		D8C12ED124C0BBB2006F98C1 /* Recipe Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,14 +99,14 @@
 		D8C12EE724C0BBB4006F98C1 /* AzureOverallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AzureOverallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C12EEB24C0BBB4006F98C1 /* AORecipeModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AORecipeModelTest.swift; sourceTree = "<group>"; };
 		D8C12EED24C0BBB4006F98C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8CD39D724FA29570093514B /* AOButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOButton.swift; sourceTree = "<group>"; };
+		D8CD39D724FA29570093514B /* RBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBButton.swift; sourceTree = "<group>"; };
 		D8CD39D924FA2B7B0093514B /* HomeAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAuthViewController.swift; sourceTree = "<group>"; };
 		D8CD39DB24FA39B50093514B /* SignupAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAuthViewController.swift; sourceTree = "<group>"; };
 		D8D3A07824C2704800AA8D26 /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
 		D8D3A07C24C359FA00AA8D26 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		D8E8F78924DDF54C0077E6E6 /* RecipeInformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipeInformation.json; sourceTree = "<group>"; };
 		D8FB3A5724FDD8E40039FF84 /* String+Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validations.swift"; sourceTree = "<group>"; };
-		D8FCACC524F9E739009231F4 /* AOBookmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOBookmarkButton.swift; sourceTree = "<group>"; };
+		D8FCACC524F9E739009231F4 /* RBBookmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBBookmarkButton.swift; sourceTree = "<group>"; };
 		EABE98CCAD91140C0A669763 /* Pods-AzureOverallTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AzureOverallTests.release.xcconfig"; path = "Target Support Files/Pods-AzureOverallTests/Pods-AzureOverallTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,10 +179,10 @@
 		D877735324D8F194001C8FF7 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
-				D877734D24D8EA56001C8FF7 /* AOTitleLabel.swift */,
-				D877734F24D8ED26001C8FF7 /* AOSubheadingLabel.swift */,
-				D877735924D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift */,
-				D874FFFC24D92824000A19AF /* AOBodyLabel.swift */,
+				D877734D24D8EA56001C8FF7 /* RBTitleLabel.swift */,
+				D877734F24D8ED26001C8FF7 /* RBSubheadingLabel.swift */,
+				D877735924D8F95A001C8FF7 /* RBSecondaryTitleLabel.swift */,
+				D874FFFC24D92824000A19AF /* RBBodyLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -190,7 +190,7 @@
 		D877735624D8F349001C8FF7 /* ImageViews */ = {
 			isa = PBXGroup;
 			children = (
-				D877735724D8F384001C8FF7 /* AOFoodImageView.swift */,
+				D877735724D8F384001C8FF7 /* RBFoodImageView.swift */,
 			);
 			path = ImageViews;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 		D8BEE76B24FA697000DB77D9 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
-				D8BEE76924FA5E9D00DB77D9 /* AOTextField.swift */,
+				D8BEE76924FA5E9D00DB77D9 /* RBTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -338,8 +338,8 @@
 		D8FCACC724F9EBBC009231F4 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				D8FCACC524F9E739009231F4 /* AOBookmarkButton.swift */,
-				D8CD39D724FA29570093514B /* AOButton.swift */,
+				D8FCACC524F9E739009231F4 /* RBBookmarkButton.swift */,
+				D8CD39D724FA29570093514B /* RBButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -516,11 +516,11 @@
 			files = (
 				D8CD39DA24FA2B7B0093514B /* HomeAuthViewController.swift in Sources */,
 				D88BC64E24D779BD00F3E5BF /* DetailViewController.swift in Sources */,
-				D874FFFD24D92824000A19AF /* AOBodyLabel.swift in Sources */,
+				D874FFFD24D92824000A19AF /* RBBodyLabel.swift in Sources */,
 				D83B5A6324DA07ED00B1CF4E /* ProfileViewController.swift in Sources */,
-				D8BEE76A24FA5E9D00DB77D9 /* AOTextField.swift in Sources */,
+				D8BEE76A24FA5E9D00DB77D9 /* RBTextField.swift in Sources */,
 				D81C557124C0BEC70093A5A5 /* SearchViewController.swift in Sources */,
-				D877734E24D8EA56001C8FF7 /* AOTitleLabel.swift in Sources */,
+				D877734E24D8EA56001C8FF7 /* RBTitleLabel.swift in Sources */,
 				D805059724FA19C600A239C1 /* Constants.swift in Sources */,
 				D8BEE76E24FADC0A00DB77D9 /* AppUser.swift in Sources */,
 				083101F2253E049A0076C1CE /* BookmarkedRecipesListViewController.swift in Sources */,
@@ -533,17 +533,17 @@
 				D8CD39DC24FA39B50093514B /* SignupAuthViewController.swift in Sources */,
 				D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */,
 				D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */,
-				D8FCACC624F9E739009231F4 /* AOBookmarkButton.swift in Sources */,
-				D877735024D8ED26001C8FF7 /* AOSubheadingLabel.swift in Sources */,
+				D8FCACC624F9E739009231F4 /* RBBookmarkButton.swift in Sources */,
+				D877735024D8ED26001C8FF7 /* RBSubheadingLabel.swift in Sources */,
 				D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */,
 				D877734824D8D90A001C8FF7 /* RecipeInformation.swift in Sources */,
 				D8160A1C24FA3C7E0042163D /* LoginAuthViewController.swift in Sources */,
 				D8FB3A5824FDD8E40039FF84 /* String+Validations.swift in Sources */,
 				D8B6316D24D50C7400CF6DF7 /* ImageFetchingService.swift in Sources */,
 				D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */,
-				D877735824D8F384001C8FF7 /* AOFoodImageView.swift in Sources */,
-				D8CD39D824FA29570093514B /* AOButton.swift in Sources */,
-				D877735A24D8F95A001C8FF7 /* AOSecondaryTitleLabel.swift in Sources */,
+				D877735824D8F384001C8FF7 /* RBFoodImageView.swift in Sources */,
+				D8CD39D824FA29570093514B /* RBButton.swift in Sources */,
+				D877735A24D8F95A001C8FF7 /* RBSecondaryTitleLabel.swift in Sources */,
 				D874000124D9BAAB000A19AF /* AOTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,12 +1,12 @@
 //
-//  AOBodyLabel.swift
+//  AOSubheadingLabel.swift
 //  AzureOverall
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
 import UIKit
 
-class AOBodyLabel: UILabel {
+class RBSubheadingLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,8 +23,8 @@ class AOBodyLabel: UILabel {
         self.font = UIFont.systemFont(ofSize: fontSize, weight: .regular)
     }
     
-    private func configure() {
-        textColor = .label
+    func configure() {
+        textColor = Constants.AppColorPalette.maximumBlue
         numberOfLines = 0
         lineBreakMode = .byWordWrapping
         translatesAutoresizingMaskIntoConstraints = false

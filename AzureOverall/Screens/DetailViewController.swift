@@ -12,16 +12,17 @@ class DetailViewController: UIViewController {
     private var recipeInformation = [RecipeInformation]()
     
     // MARK: UI elements
-    private let recipeTitleLabel = AOTitleLabel(textAlignment: .center, fontSize: 20)
-    private let recipeImageView = AOFoodImageView()
+    private let recipeTitleLabel = RBTitleLabel(textAlignment: .center, fontSize: 20)
+    private let recipeImageView = RBFoodImageView()
     
-    private let veganLabel = AOBodyLabel(textAlignment: .left, fontSize: 18)
-    private let vegetarianLabel = AOBodyLabel(textAlignment: .left, fontSize: 18)
-    private let glutenFreeLabel = AOBodyLabel(textAlignment: .left, fontSize: 18)
-    private let dairyFreeLabel = AOBodyLabel(textAlignment: .left, fontSize: 18)
+    // Recfactor into a collectionView
+    private let veganLabel = RBBodyLabel(textAlignment: .left, fontSize: 18)
+    private let vegetarianLabel = RBBodyLabel(textAlignment: .left, fontSize: 18)
+    private let glutenFreeLabel = RBBodyLabel(textAlignment: .left, fontSize: 18)
+    private let dairyFreeLabel = RBBodyLabel(textAlignment: .left, fontSize: 18)
     
-    private let sourceNameLabel = AOBodyLabel(textAlignment: .right, fontSize: 20)
-    private let sourceURLButton = AOButton(backgroundColor: Constants.AppColorPalette.uaRed, title: "Go To Instructions")
+    private let sourceNameLabel = RBBodyLabel(textAlignment: .right, fontSize: 20)
+    private let sourceURLButton = RBButton(backgroundColor: Constants.AppColorPalette.uaRed, title: "Go To Instructions")
     
     // MARK: - Private Properties
     private let padding: CGFloat = 20

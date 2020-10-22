@@ -17,11 +17,11 @@ class RecipeCell: UICollectionViewCell {
     static let reuseIdentifier = String(describing: RecipeCell.self)
     private var bookmarkStatus: BookmarkStatus = .unfilled
     
-    private let recipeImageView = AOFoodImageView()
-    private let favButton = AOBookmarkButton()
-    private let recipeTitleLabel = AOTitleLabel(textAlignment: .left, fontSize: 18)
-    private let prepTimeLabel = AOSubheadingLabel(textAlignment: .left, fontSize: 15)
-    private let servingsLabel = AOSecondaryTitleLabel(textAlignment: .left, fontSize: 13)
+    private let recipeImageView = RBFoodImageView()
+    private let favButton = RBBookmarkButton()
+    private let recipeTitleLabel = RBTitleLabel(textAlignment: .left, fontSize: 18)
+    private let prepTimeLabel = RBSubheadingLabel(textAlignment: .left, fontSize: 15)
+    private let servingsLabel = RBSecondaryTitleLabel(textAlignment: .left, fontSize: 13)
     
     // MARK: Initializers
     override init(frame: CGRect) {

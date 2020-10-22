@@ -1,14 +1,12 @@
 //
-//  AOButton.swift
+//  AOBodyLabel.swift
 //  AzureOverall
-//
-//  Created by Jocelyn Boyd on 8/29/20.
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
 import UIKit
 
-class AOButton: UIButton {
+class RBBodyLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,15 +17,16 @@ class AOButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(backgroundColor: UIColor, title: String) {
+    public convenience init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
         self.init(frame: .zero)
-        self.backgroundColor = backgroundColor
-        self.setTitle(title, for: .normal)
-        configure()
+        self.textAlignment = textAlignment
+        self.font = UIFont.systemFont(ofSize: fontSize, weight: .regular)
     }
     
     private func configure() {
+        textColor = .label
+        numberOfLines = 0
+        lineBreakMode = .byWordWrapping
         translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius = 15
     }
 }

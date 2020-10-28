@@ -6,7 +6,7 @@
 
 ## Currently Working on
 - Refactor the dietary labels and method in the Detail Screen.
-- Implement SafariServices which allows web views in app. When the "Cooking Instructions" button is pressed in the detail screen, it will navigate to the recipe on line. 
+- Implement SafariServices which allows web views in app. When the "Cooking Instructions" button is pressed in the Detail Screen, it will navigate to the recipe online. 
 - Add summary of the dish to the Detail Screen. 
 - Persist bookmarked recipes and populating the items in the BookmarkedItems Screen. 
 

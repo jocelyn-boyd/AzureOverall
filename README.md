@@ -10,7 +10,7 @@
 - Add summary of the dish to the Detail Screen. 
 - Persist bookmarked recipes and populating the items in the BookmarkedItems Screen. 
 
-## Screenshots
+## Screenshots (More coming soon...)
 ![image](images/HomeScreen.png) ![image](images/SearchScreen.png)
 
 ## Future Implementations

@@ -4,7 +4,7 @@
 - Recipes are fetched from the Spoonacular Recipe API: https://spoonacular.com/food-api
 - A native Swift iOS application using UIKit.
 
-## Currently Working on
+## Currently Working On The Following Features
 - Refactor the dietary labels and method in the Detail Screen.
 - Implement SafariServices which allows web views in app. When the "Cooking Instructions" button is pressed in the Detail Screen, it will navigate to the recipe online. 
 - Add summary of the dish to the Detail Screen. 

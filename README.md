@@ -12,7 +12,7 @@
 ![image](images/HomeScreen.png) ![image](images/SearchScreen.png)
 
 ## Language
-Swift 5.3
+- Swift 5.3
 
 ## Third-Party Frameworks
 - Firebase/Auth

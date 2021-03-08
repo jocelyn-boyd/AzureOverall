@@ -1,30 +1,18 @@
 # My Recipe Box (MVP in Progress)
 
 ## Overview
-- Recipes are fetched from the Spoonacular Recipe API: https://spoonacular.com/food-api
-- A native Swift iOS application using UIKit.
+- A native Swift iOS application implementing UIKit. 
+- Recipes are fetched from the Spoonacular Recipe API: https://spoonacular.com/food-api.
 
-## Currently Working On The Following Features
-- Refactor the dietary labels and method in the Detail Screen.
-- Implement SafariServices which allows web views in app. When the "Cooking Instructions" button is pressed in the Detail Screen, it will navigate to the recipe online. 
-- Add summary of the dish to the Detail Screen. 
-- Persist bookmarked recipes and populating the items in the BookmarkedItems Screen. 
+## Current Updates
+- As of March 8, 2021, refactoring the app to be App Store ready.
+- Projected launch date May 2021.
 
-## Screenshots (More coming soon...)
+## Screenshots
 ![image](images/HomeScreen.png) ![image](images/SearchScreen.png)
 
-## Future Implementations
-- Dark Mode
-- Landscape Mode
-- Create own recipe card
-- Share favorited recipes with others
-
 ## Language
-Swift 5
-
-## Cocoa Frameworks
-- Foundation
-- UIKit
+Swift 5.3
 
 ## Third-Party Frameworks
 - Firebase/Auth

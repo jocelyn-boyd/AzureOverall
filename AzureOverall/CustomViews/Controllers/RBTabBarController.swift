@@ -6,7 +6,7 @@
 
 import UIKit
 
-class AOTabBarController: UITabBarController {
+class RBTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,7 +14,10 @@ class AOTabBarController: UITabBarController {
     }
     
     private func configureTabBarController() {
-        viewControllers = [createSearchVC(), createBookmarkedRecipeListVC()]
+        viewControllers = [createSearchVC(),
+                           createBookmarkedRecipeListVC(),
+                           createFavRecipeListVC()]
+        
         UITabBar.appearance().tintColor = Constants.AppColorPalette.uaRed
     }
     
@@ -30,5 +33,12 @@ class AOTabBarController: UITabBarController {
         bookmarkedRecipesListVC.title = "Saved"
         bookmarkedRecipesListVC.tabBarItem = UITabBarItem(title: "Saved", image: UIImage(systemName: "bookmark.fill"), tag: 1)
         return UINavigationController(rootViewController: bookmarkedRecipesListVC)
+    }
+    
+    private func createFavRecipeListVC() -> UINavigationController {
+        let favRecipesListVC = FavRecipesListViewController()
+        favRecipesListVC.title = "Favorites"
+        favRecipesListVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "star.fill"), tag: 2)
+        return UINavigationController(rootViewController: favRecipesListVC)
     }
 }

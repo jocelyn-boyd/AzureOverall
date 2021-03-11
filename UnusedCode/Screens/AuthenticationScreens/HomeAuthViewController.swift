@@ -6,9 +6,9 @@
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
-import UIKit
-import AVKit
-
+/*
+import UIKIt
+ 
 class HomeAuthViewController: UIViewController {
     
     // MARK: - Properties
@@ -75,3 +75,4 @@ class HomeAuthViewController: UIViewController {
         present(navController, animated: true)
     }
 }
+*/

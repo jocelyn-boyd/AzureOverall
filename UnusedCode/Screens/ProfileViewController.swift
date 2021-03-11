@@ -6,10 +6,10 @@
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
+/*
 import UIKit
 
 class ProfileViewController: UIViewController {
-    
     // MARK: - Lifecyle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,3 +42,4 @@ class ProfileViewController: UIViewController {
         }
     }
 }
+*/

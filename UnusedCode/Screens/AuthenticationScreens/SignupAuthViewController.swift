@@ -4,6 +4,7 @@
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
+/*
 import UIKit
 import FirebaseAuth
 
@@ -53,10 +54,10 @@ class SignupAuthViewController: UIViewController {
         }
         UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromTop, animations: {
             if FirebaseAuthService.manager.currentUser != nil {
-                window.rootViewController = AOTabBarController()
+                window.rootViewController = RBTabBarController()
             } else {
-                window.rootViewController = { () -> AOTabBarController in
-                    let searchVC = AOTabBarController()
+                window.rootViewController = { () -> RBTabBarController in
+                    let searchVC = RBTabBarController()
                     return searchVC
                 }()
             }
@@ -150,10 +151,11 @@ class SignupAuthViewController: UIViewController {
     }
 }
 
-// MARK: Extensions
+// MARK: UITextFieldDelegate Extension
 extension SignupAuthViewController: UITextFieldDelegate {
-    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 }
+*/

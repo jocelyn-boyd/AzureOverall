@@ -18,7 +18,7 @@ class RecipeFetchingService {
   
 
   //MARK: - Methods
-  internal func fetchAllRecipes(from query: String, completionHandler: @escaping (Result<[Recipe],NetworkError>) -> Void) {
+  func fetchAllRecipes(from query: String, completionHandler: @escaping (Result<[Recipe],NetworkError>) -> Void) {
     let endpoint = baseURL + "search?query=\(query.lowercased())&apiKey=\(Secret.apiKey.rawValue)"
     NetworkManager.shared.getData(from: endpoint) { (result) in
       switch result {
@@ -37,7 +37,7 @@ class RecipeFetchingService {
     }
   }
   
-  internal func fetchSingleRecipe(from recipeId: Int, completionHandler: @escaping (Result<RecipeInformation,NetworkError>) -> Void) {
+ func fetchSingleRecipe(from recipeId: Int, completionHandler: @escaping (Result<RecipeInformation,NetworkError>) -> Void) {
     let endpoint = baseURL + "\(recipeId)/information?apiKey=\(Secret.apiKey.rawValue)"
     NetworkManager.shared.getData(from: endpoint) { (result) in
       switch result {

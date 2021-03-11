@@ -5,8 +5,39 @@
 //
 
 import Foundation
-
 struct RecipeInformation: Codable {
+
+    enum DietType: String {
+        case vegan = "Is Vegan"
+        case vegetarian = "Is Vegetarian"
+        case containsDairy = "Contains Diary"
+        case constainsGluten = "Contains Gluten"
+        case nonVegan = "Non-vegan"
+        case nonVegetarian = "Non-Vegetarian"
+        case dairyFree = "Dairy-Free"
+        case glutenFree = "Gluten-Free"
+    }
+    
+    private var dietTypes: [DietType] {
+        if let diets = self.diets {
+            var allDiets = [DietType]()
+            for diet in diets {
+                let dietType = DietType(rawValue: diet) ?? .constainsGluten
+                allDiets.append(dietType)
+            }
+            return allDiets
+        }
+        return []
+    }
+    
+    public var stringifyDiets: String {
+        var str = ""
+        for dietType in self.dietTypes {
+            str.append("\(dietType.rawValue)\n")
+        }
+        return str
+    }
+    
   let vegetarian: Bool
   let vegan: Bool
   let glutenFree: Bool

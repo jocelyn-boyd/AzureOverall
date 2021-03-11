@@ -34,7 +34,7 @@ class RecipeCell: UICollectionViewCell {
     }
     
     // MARK: Methods
-    public func setRecipeCell(with recipe: Recipe) {
+    func setRecipeCell(with recipe: Recipe) {
         recipeTitleLabel.text = recipe.title
         recipeTitleLabel.numberOfLines = 2
         recipeTitleLabel.lineBreakMode = .byTruncatingTail

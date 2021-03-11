@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import AzureOverall
+@testable import Recipe_Box
 
 class AORecipeInformoationModelTest: XCTestCase {
 
@@ -45,6 +45,4 @@ class AORecipeInformoationModelTest: XCTestCase {
        //Assert
        
      }
- 
-  
 }

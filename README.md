@@ -10,5 +10,5 @@
 - Currently working on updating the recipe's detail screen.
 
 ## Screenshots
-![image](images/SearchScreenVC.png)
+![image](images/SearchVC.png)
 

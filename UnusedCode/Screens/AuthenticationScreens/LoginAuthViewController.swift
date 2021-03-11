@@ -6,6 +6,7 @@
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
+/*
 import UIKit
 import FirebaseAuth
 
@@ -156,3 +157,4 @@ extension LoginAuthViewController: UITextFieldDelegate {
         return true
     }
 }
+*/

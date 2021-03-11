@@ -4,6 +4,7 @@
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
+/*
 import Foundation
 import FirebaseAuth
 
@@ -60,3 +61,4 @@ class FirebaseAuthService {
     // MARK: Private initializers
     private init() {}
 }
+*/

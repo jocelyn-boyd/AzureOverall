@@ -8,7 +8,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     // MARK: - Properties  & UI Elements
-    public var recipe: Recipe?
+    private let recipe: Recipe
     private var recipeInformation = [RecipeInformation]()
     
     // MARK: UI elements
@@ -24,8 +24,17 @@ class DetailViewController: UIViewController {
     private let sourceNameLabel = RBBodyLabel(textAlignment: .right, fontSize: 20)
     private let sourceURLButton = RBButton(backgroundColor: Constants.AppColorPalette.uaRed, title: "Go To Instructions")
     
-    // MARK: - Private Properties
     private let padding: CGFloat = 20
+    
+    // MARK: Initializers
+    init(recipe: Recipe) {
+        self.recipe = recipe
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -48,35 +57,13 @@ class DetailViewController: UIViewController {
         recipeImageView.downloadImage(fromURL: recipeInfo.id)
     }
     
+    
+    //TODO: Refactor Bug
     private func loadDietaryDetails(from dietInfo: RecipeInformation) {
-        //TODO: Clean this up
-        if dietInfo.vegan {
-            veganLabel.text = "✅ Vegan"
-        } else {
-            veganLabel.text = "❎ Vegan"
-        }
-        
-        if dietInfo.vegetarian {
-            vegetarianLabel.text = "✅ Vegetarian"
-        } else {
-            vegetarianLabel.text = "❎ Vegetarian"
-        }
-        
-        if dietInfo.glutenFree {
-            glutenFreeLabel.text = "✅ Gluten Free"
-        } else {
-            glutenFreeLabel.text = "❎ Gluten Free"
-        }
-        
-        if dietInfo.dairyFree {
-            dairyFreeLabel.text = "✅ Dairy Free"
-        } else {
-            dairyFreeLabel.text = "❎ Dairy Free"
-        }
+        veganLabel.text = dietInfo.stringifyDiets
     }
     
     private func loadSingleRecipeDetails() {
-        guard let recipe = recipe else { return }
         RecipeFetchingService.manager.fetchSingleRecipe(from: recipe.id) { [weak self] (result) in
             guard let self = self else { return }
             DispatchQueue.main.async {

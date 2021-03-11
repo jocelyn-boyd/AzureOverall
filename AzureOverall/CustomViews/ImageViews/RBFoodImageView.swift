@@ -28,7 +28,7 @@ class RBFoodImageView: UIImageView {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    public func downloadImage(fromURL recipeID: Int) {
+    func downloadImage(fromURL recipeID: Int) {
         ImageFetchingService.manager.fetchImage(using: recipeID) { [weak self] (result) in
             guard let self = self else { return }
             DispatchQueue.main.async {

@@ -19,8 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
-    window?.rootViewController = AOTabBarController()
-//    window?.rootViewController = HomeAuthViewController()
+    window?.rootViewController = RBTabBarController()
     window?.makeKeyAndVisible()
   }
 

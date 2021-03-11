@@ -19,7 +19,7 @@ class RBTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public convenience init(placeholder: String) {
+    convenience init(placeholder: String) {
         self.init(frame: .zero)
         self.placeholder = placeholder
         configure()
@@ -44,5 +44,6 @@ class RBTextField: UITextField {
         returnKeyType                 = .done
         keyboardType                  = .emailAddress
         keyboardAppearance            = .light
+        
     }
 }

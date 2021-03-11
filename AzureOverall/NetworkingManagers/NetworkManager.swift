@@ -18,7 +18,7 @@ class NetworkManager {
   
   
   // MARK: - Methods
-  internal func getData(from urlString: String, completionHandler: @escaping (Result<Data, NetworkError>) -> Void) {
+  func getData(from urlString: String, completionHandler: @escaping (Result<Data, NetworkError>) -> Void) {
     
     guard let url = URL(string: urlString) else {
       completionHandler(.failure(.unableToComplete))

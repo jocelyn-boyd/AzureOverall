@@ -1,4 +1,4 @@
-# My Recipe Box (MVP in Progress)
+# Recipe Box (MVP in Progress)
 
 ## Overview
 - A native Swift iOS application implementing UIKit. Utilizing Swift 5 and Xcode 12.

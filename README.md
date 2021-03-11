@@ -14,10 +14,5 @@
 ## Language
 - Swift 5.3
 
-## Third-Party Frameworks
-- Firebase/Auth
-- Firebase/Firestore
-- Firebase/Storage
-
 ## Development Tools
 - Xcode 11

@@ -143,11 +143,11 @@ class SearchViewController: UIViewController {
     }
     
     // MARK: - @objc Methods
-    @objc private func profileButtonTapped() {
-        let profileVC = ProfileViewController()
-        let navController = UINavigationController(rootViewController: profileVC)
-        present(navController, animated: true)
-    }
+    //@objc private func profileButtonTapped() {
+        //let profileVC = ProfileViewController()
+       // let navController = UINavigationController(rootViewController: profileVC)
+        //present(navController, animated: true)
+    //}
     
     @objc private func clearButtonPressed() {
         updateDataSource(with: [])

@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04D448B375D96AB6593AE396 /* Pods_AzureOverall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7428EBB9F4ADED372EEA5C0E /* Pods_AzureOverall.framework */; };
 		083101F2253E049A0076C1CE /* BookmarkedRecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */; };
+		0843CAE425F9E45500D4EBE0 /* FavRecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843CAE325F9E45500D4EBE0 /* FavRecipesListViewController.swift */; };
+		0843CAF925F9E83300D4EBE0 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843CAF825F9E83300D4EBE0 /* Notes.swift */; };
 		08D76E49252978BE0062D59A /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D76E48252978BE0062D59A /* Secret.swift */; };
 		08D76E64252978F10062D59A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08D76E63252978F10062D59A /* GoogleService-Info.plist */; };
-		A03EB540264AF691C88F1764 /* Pods_AzureOverallTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3922FF49C42E2DC82D38E649 /* Pods_AzureOverallTests.framework */; };
 		D805059724FA19C600A239C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805059624FA19C600A239C1 /* Constants.swift */; };
 		D8160A1C24FA3C7E0042163D /* LoginAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */; };
 		D81C557124C0BEC70093A5A5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C557024C0BEC70093A5A5 /* SearchViewController.swift */; };
@@ -61,13 +61,10 @@
 
 /* Begin PBXFileReference section */
 		083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedRecipesListViewController.swift; sourceTree = "<group>"; };
+		0843CAE325F9E45500D4EBE0 /* FavRecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavRecipesListViewController.swift; sourceTree = "<group>"; };
+		0843CAF825F9E83300D4EBE0 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		08D76E48252978BE0062D59A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		08D76E63252978F10062D59A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3922FF49C42E2DC82D38E649 /* Pods_AzureOverallTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AzureOverallTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A2C0EB760FCC53FF791D394 /* Pods-AzureOverall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AzureOverall.release.xcconfig"; path = "Target Support Files/Pods-AzureOverall/Pods-AzureOverall.release.xcconfig"; sourceTree = "<group>"; };
-		7428EBB9F4ADED372EEA5C0E /* Pods_AzureOverall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AzureOverall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A890CF63FE2FA5D44B97797 /* Pods-AzureOverallTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AzureOverallTests.release.xcconfig"; path = "Target Support Files/Pods-AzureOverallTests/Pods-AzureOverallTests.release.xcconfig"; sourceTree = "<group>"; };
-		80A078B387D0437849042998 /* Pods-AzureOverall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AzureOverall.debug.xcconfig"; path = "Target Support Files/Pods-AzureOverall/Pods-AzureOverall.debug.xcconfig"; sourceTree = "<group>"; };
 		D805059624FA19C600A239C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthViewController.swift; sourceTree = "<group>"; };
 		D81C557024C0BEC70093A5A5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +104,6 @@
 		D8E8F78924DDF54C0077E6E6 /* RecipeInformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipeInformation.json; sourceTree = "<group>"; };
 		D8FB3A5724FDD8E40039FF84 /* String+Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validations.swift"; sourceTree = "<group>"; };
 		D8FCACC524F9E739009231F4 /* RBBookmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBBookmarkButton.swift; sourceTree = "<group>"; };
-		E19182816BFB12CB9F7673AD /* Pods-AzureOverallTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AzureOverallTests.debug.xcconfig"; path = "Target Support Files/Pods-AzureOverallTests/Pods-AzureOverallTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D448B375D96AB6593AE396 /* Pods_AzureOverall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,32 +118,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A03EB540264AF691C88F1764 /* Pods_AzureOverallTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		915E2ED019F90B23D473AACA /* Pods */ = {
+		0843CAEF25F9E70500D4EBE0 /* UnusedCode */ = {
 			isa = PBXGroup;
 			children = (
-				80A078B387D0437849042998 /* Pods-AzureOverall.debug.xcconfig */,
-				6A2C0EB760FCC53FF791D394 /* Pods-AzureOverall.release.xcconfig */,
-				E19182816BFB12CB9F7673AD /* Pods-AzureOverallTests.debug.xcconfig */,
-				7A890CF63FE2FA5D44B97797 /* Pods-AzureOverallTests.release.xcconfig */,
+				0843CAF425F9E78100D4EBE0 /* Extensions */,
+				D8BEE76C24FADBE700DB77D9 /* FIrebaseHelpers */,
+				0843CAF725F9E7F100D4EBE0 /* Screens */,
+				0843CAF825F9E83300D4EBE0 /* Notes.swift */,
 			);
-			path = Pods;
+			path = UnusedCode;
 			sourceTree = "<group>";
 		};
-		D8160A1D24FA41410042163D /* Authentication */ = {
+		0843CAF425F9E78100D4EBE0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8FB3A5724FDD8E40039FF84 /* String+Validations.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0843CAF725F9E7F100D4EBE0 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D8160A1D24FA41410042163D /* AuthenticationScreens */,
+				D83B5A6224DA07ED00B1CF4E /* ProfileViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D8160A1D24FA41410042163D /* AuthenticationScreens */ = {
 			isa = PBXGroup;
 			children = (
 				D8CD39D924FA2B7B0093514B /* HomeAuthViewController.swift */,
 				D8CD39DB24FA39B50093514B /* SignupAuthViewController.swift */,
 				D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */,
 			);
-			path = Authentication;
+			path = AuthenticationScreens;
 			sourceTree = "<group>";
 		};
 		D837CCB824C2265800BE1F1B /* Cells */ = {
@@ -240,10 +251,9 @@
 			isa = PBXGroup;
 			children = (
 				D8C12ED324C0BBB2006F98C1 /* AzureOverall */,
+				0843CAEF25F9E70500D4EBE0 /* UnusedCode */,
 				D8C12EEA24C0BBB4006F98C1 /* AzureOverallTests */,
 				D8C12ED224C0BBB2006F98C1 /* Products */,
-				915E2ED019F90B23D473AACA /* Pods */,
-				F35F13EDEAA34314FE7E1A2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,13 +269,12 @@
 		D8C12ED324C0BBB2006F98C1 /* AzureOverall */ = {
 			isa = PBXGroup;
 			children = (
-				D8BEE76C24FADBE700DB77D9 /* FIrebaseHelpers */,
 				D8AD611E24D45BAB007CDE9E /* Utilities */,
 				D8AD612024D45C08007CDE9E /* NetworkingManagers */,
 				D8D3A07524C267AF00AA8D26 /* Models */,
 				D8AD611F24D45BDB007CDE9E /* CustomViews */,
 				D8C12EF724C0BDA3006F98C1 /* Screens */,
-				D8C12EF624C0BD87006F98C1 /* Support */,
+				D8C12EF624C0BD87006F98C1 /* SupportingFiles */,
 				D8C12EE224C0BBB3006F98C1 /* Info.plist */,
 				08D76E63252978F10062D59A /* GoogleService-Info.plist */,
 			);
@@ -284,7 +293,7 @@
 			path = AzureOverallTests;
 			sourceTree = "<group>";
 		};
-		D8C12EF624C0BD87006F98C1 /* Support */ = {
+		D8C12EF624C0BD87006F98C1 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */,
@@ -292,7 +301,7 @@
 				D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */,
 				D8C12EDF24C0BBB3006F98C1 /* LaunchScreen.storyboard */,
 			);
-			path = Support;
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		D8C12EF724C0BDA3006F98C1 /* Screens */ = {
@@ -301,8 +310,7 @@
 				D81C557024C0BEC70093A5A5 /* SearchViewController.swift */,
 				D88BC64D24D779BD00F3E5BF /* DetailViewController.swift */,
 				083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */,
-				D83B5A6224DA07ED00B1CF4E /* ProfileViewController.swift */,
-				D8160A1D24FA41410042163D /* Authentication */,
+				0843CAE325F9E45500D4EBE0 /* FavRecipesListViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -320,7 +328,6 @@
 		D8FB3A5624FDD8CD0039FF84 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D8FB3A5724FDD8E40039FF84 /* String+Validations.swift */,
 				D8366DB924FF573300579CF2 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
@@ -335,15 +342,6 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		F35F13EDEAA34314FE7E1A2D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7428EBB9F4ADED372EEA5C0E /* Pods_AzureOverall.framework */,
-				3922FF49C42E2DC82D38E649 /* Pods_AzureOverallTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,11 +349,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8C12EF024C0BBB4006F98C1 /* Build configuration list for PBXNativeTarget "AzureOverall" */;
 			buildPhases = (
-				8BE2FA3F847CC23F2AD10C39 /* [CP] Check Pods Manifest.lock */,
 				D8C12ECD24C0BBB2006F98C1 /* Sources */,
 				D8C12ECE24C0BBB2006F98C1 /* Frameworks */,
 				D8C12ECF24C0BBB2006F98C1 /* Resources */,
-				2B138C53AAF3ADCEFAEFCBA8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -370,7 +366,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8C12EF324C0BBB4006F98C1 /* Build configuration list for PBXNativeTarget "AzureOverallTests" */;
 			buildPhases = (
-				47B7315FD96569EE3AD4DEAB /* [CP] Check Pods Manifest.lock */,
 				D8C12EE324C0BBB4006F98C1 /* Sources */,
 				D8C12EE424C0BBB4006F98C1 /* Frameworks */,
 				D8C12EE524C0BBB4006F98C1 /* Resources */,
@@ -445,75 +440,12 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2B138C53AAF3ADCEFAEFCBA8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AzureOverall/Pods-AzureOverall-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AzureOverall/Pods-AzureOverall-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AzureOverall/Pods-AzureOverall-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		47B7315FD96569EE3AD4DEAB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AzureOverallTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8BE2FA3F847CC23F2AD10C39 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AzureOverall-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		D8C12ECD24C0BBB2006F98C1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0843CAE425F9E45500D4EBE0 /* FavRecipesListViewController.swift in Sources */,
 				D8CD39DA24FA2B7B0093514B /* HomeAuthViewController.swift in Sources */,
 				D88BC64E24D779BD00F3E5BF /* DetailViewController.swift in Sources */,
 				D874FFFD24D92824000A19AF /* RBBodyLabel.swift in Sources */,
@@ -539,6 +471,7 @@
 				D877734824D8D90A001C8FF7 /* RecipeInformation.swift in Sources */,
 				D8160A1C24FA3C7E0042163D /* LoginAuthViewController.swift in Sources */,
 				D8FB3A5824FDD8E40039FF84 /* String+Validations.swift in Sources */,
+				0843CAF925F9E83300D4EBE0 /* Notes.swift in Sources */,
 				D8B6316D24D50C7400CF6DF7 /* ImageFetchingService.swift in Sources */,
 				D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */,
 				D877735824D8F384001C8FF7 /* RBFoodImageView.swift in Sources */,
@@ -697,7 +630,6 @@
 		};
 		D8C12EF124C0BBB4006F98C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80A078B387D0437849042998 /* Pods-AzureOverall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -716,7 +648,6 @@
 		};
 		D8C12EF224C0BBB4006F98C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A2C0EB760FCC53FF791D394 /* Pods-AzureOverall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -735,7 +666,6 @@
 		};
 		D8C12EF424C0BBB4006F98C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E19182816BFB12CB9F7673AD /* Pods-AzureOverallTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -758,7 +688,6 @@
 		};
 		D8C12EF524C0BBB4006F98C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A890CF63FE2FA5D44B97797 /* Pods-AzureOverallTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

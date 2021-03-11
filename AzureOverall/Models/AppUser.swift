@@ -6,6 +6,7 @@
 //  Copyright © 2020 Jocelyn Boyd. All rights reserved.
 //
 
+/*
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
@@ -25,3 +26,4 @@ struct AppUser {
     return [ "email" : email ?? "" ]
   }
 }
+ */

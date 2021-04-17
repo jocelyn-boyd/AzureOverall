@@ -5,8 +5,7 @@
 - Recipes are fetched from the Spoonacular Recipe API: https://spoonacular.com/food-api.
 
 ## Current Updates
-- As of March 8, 2021, refactoring the app to be App Store ready. Projected launch date May 2021.
-- Currently working on updating the recipe's detail screen.
+- Refactoring the app to be App Store ready.
 
 ## Screenshots
 ![image](images/SearchVC.png)

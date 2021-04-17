@@ -14,9 +14,7 @@ class RBTabBarController: UITabBarController {
     }
     
     private func configureTabBarController() {
-        viewControllers = [createSearchVC(),
-                           createBookmarkedRecipeListVC(),
-                           createFavRecipeListVC()]
+        viewControllers = [createSearchVC(), createBookmarkedRecipeListVC()]
         
         UITabBar.appearance().tintColor = Constants.AppColorPalette.uaRed
     }
@@ -33,12 +31,5 @@ class RBTabBarController: UITabBarController {
         bookmarkedRecipesListVC.title = "Saved"
         bookmarkedRecipesListVC.tabBarItem = UITabBarItem(title: "Saved", image: UIImage(systemName: "bookmark.fill"), tag: 1)
         return UINavigationController(rootViewController: bookmarkedRecipesListVC)
-    }
-    
-    private func createFavRecipeListVC() -> UINavigationController {
-        let favRecipesListVC = FavRecipesListViewController()
-        favRecipesListVC.title = "Favorites"
-        favRecipesListVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "star.fill"), tag: 2)
-        return UINavigationController(rootViewController: favRecipesListVC)
     }
 }

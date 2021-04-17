@@ -131,6 +131,7 @@
 				D8BEE76C24FADBE700DB77D9 /* FIrebaseHelpers */,
 				0843CAF725F9E7F100D4EBE0 /* Screens */,
 				0843CAF825F9E83300D4EBE0 /* Notes.swift */,
+				08D76E63252978F10062D59A /* GoogleService-Info.plist */,
 			);
 			path = UnusedCode;
 			sourceTree = "<group>";
@@ -276,7 +277,6 @@
 				D8C12EF724C0BDA3006F98C1 /* Screens */,
 				D8C12EF624C0BD87006F98C1 /* SupportingFiles */,
 				D8C12EE224C0BBB3006F98C1 /* Info.plist */,
-				08D76E63252978F10062D59A /* GoogleService-Info.plist */,
 			);
 			path = AzureOverall;
 			sourceTree = "<group>";

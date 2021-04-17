@@ -20,7 +20,7 @@ class SearchViewController: UIViewController {
         sb.layer.borderWidth = 1
         sb.layer.borderColor = UIColor.white.cgColor
         sb.tintColor = Constants.AppColorPalette.uaRed
-        sb.placeholder = "search recipes"
+        sb.placeholder = "I'm in the mood for...."
         return sb
     }()
     
@@ -56,7 +56,6 @@ class SearchViewController: UIViewController {
     //MARK: - Networking Methods
     private func loadAllRecipesData() {
         guard let searchTerm = searchTerm else { return }
-        
         RecipeFetchingService.manager.fetchAllRecipes(from: searchTerm) { [weak self] (result) in
             guard let self = self else { return }
             DispatchQueue.main.async {
@@ -81,17 +80,13 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .systemBackground
         recipeSearchBar.showsCancelButton = true
         
-        // Will not include in MVP. Implement in future versions.
-        // let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButtonTapped))
-        // navigationItem.rightBarButtonItem = profileButton
-        
         let clearButton = UIBarButtonItem(title: "Clear", style: .done, target: self, action: #selector(clearButtonPressed))
         navigationItem.rightBarButtonItem = clearButton
         navigationItem.rightBarButtonItem?.isEnabled = false
         
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Recipes"
+        navigationItem.title = "Search Recipes"
     }
     
     private func configurePortraitLayout() -> UICollectionViewCompositionalLayout {
@@ -143,12 +138,6 @@ class SearchViewController: UIViewController {
     }
     
     // MARK: - @objc Methods
-    //@objc private func profileButtonTapped() {
-        //let profileVC = ProfileViewController()
-       // let navController = UINavigationController(rootViewController: profileVC)
-        //present(navController, animated: true)
-    //}
-    
     @objc private func clearButtonPressed() {
         updateDataSource(with: [])
         recipeSearchBar.text = nil

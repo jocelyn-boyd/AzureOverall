@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		083101F2253E049A0076C1CE /* BookmarkedRecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */; };
-		0843CAE425F9E45500D4EBE0 /* FavRecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843CAE325F9E45500D4EBE0 /* FavRecipesListViewController.swift */; };
 		0843CAF925F9E83300D4EBE0 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843CAF825F9E83300D4EBE0 /* Notes.swift */; };
 		08D76E49252978BE0062D59A /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D76E48252978BE0062D59A /* Secret.swift */; };
 		08D76E64252978F10062D59A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08D76E63252978F10062D59A /* GoogleService-Info.plist */; };
@@ -61,7 +60,6 @@
 
 /* Begin PBXFileReference section */
 		083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedRecipesListViewController.swift; sourceTree = "<group>"; };
-		0843CAE325F9E45500D4EBE0 /* FavRecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavRecipesListViewController.swift; sourceTree = "<group>"; };
 		0843CAF825F9E83300D4EBE0 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		08D76E48252978BE0062D59A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		08D76E63252978F10062D59A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -310,7 +308,6 @@
 				D81C557024C0BEC70093A5A5 /* SearchViewController.swift */,
 				D88BC64D24D779BD00F3E5BF /* DetailViewController.swift */,
 				083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */,
-				0843CAE325F9E45500D4EBE0 /* FavRecipesListViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -445,7 +442,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0843CAE425F9E45500D4EBE0 /* FavRecipesListViewController.swift in Sources */,
 				D8CD39DA24FA2B7B0093514B /* HomeAuthViewController.swift in Sources */,
 				D88BC64E24D779BD00F3E5BF /* DetailViewController.swift in Sources */,
 				D874FFFD24D92824000A19AF /* RBBodyLabel.swift in Sources */,

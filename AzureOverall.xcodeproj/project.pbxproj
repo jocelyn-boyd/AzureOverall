@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				0843CAF425F9E78100D4EBE0 /* Extensions */,
-				D8BEE76C24FADBE700DB77D9 /* FIrebaseHelpers */,
+				D8BEE76C24FADBE700DB77D9 /* FirebaseHelpers */,
 				0843CAF725F9E7F100D4EBE0 /* Screens */,
 				0843CAF825F9E83300D4EBE0 /* Notes.swift */,
 				08D76E63252978F10062D59A /* GoogleService-Info.plist */,
@@ -238,12 +238,13 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
-		D8BEE76C24FADBE700DB77D9 /* FIrebaseHelpers */ = {
+		D8BEE76C24FADBE700DB77D9 /* FirebaseHelpers */ = {
 			isa = PBXGroup;
 			children = (
 				D8BEE76F24FAE02200DB77D9 /* FirebaseAuthService.swift */,
+				D8BEE76D24FADC0A00DB77D9 /* AppUser.swift */,
 			);
-			path = FIrebaseHelpers;
+			path = FirebaseHelpers;
 			sourceTree = "<group>";
 		};
 		D8C12EC824C0BBB2006F98C1 = {
@@ -317,7 +318,6 @@
 			children = (
 				D8D3A07C24C359FA00AA8D26 /* Recipe.swift */,
 				D877734724D8D90A001C8FF7 /* RecipeInformation.swift */,
-				D8BEE76D24FADC0A00DB77D9 /* AppUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

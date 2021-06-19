@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class SearchViewController: UIViewController {
     // MARK: - DiffableDataSource Enum
@@ -107,16 +108,30 @@ class SearchViewController: UIViewController {
             view.addSubview(itemView)
             itemView.translatesAutoresizingMaskIntoConstraints = false
         }
-        NSLayoutConstraint.activate([
-            recipeSearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            recipeSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            recipeSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+		
+			recipeSearchBar.snp.makeConstraints { make in
+				make.top.equalTo(self.view.safeAreaLayoutGuide)
+				make.leading.equalToSuperview()
+				make.trailing.equalToSuperview()
+			}
+			
+			recipeCollectionView.backgroundColor = .green
+			recipeCollectionView.snp.makeConstraints { make in
+				make.bottom.equalToSuperview()
+				make.leading.equalToSuperview()
+				make.trailing.equalToSuperview()
+				make.centerX.equalToSuperview()
+			}
+//        NSLayoutConstraint.activate([
+//            recipeSearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            recipeSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            recipeSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            recipeCollectionView.topAnchor.constraint(equalTo: recipeSearchBar.bottomAnchor),
-            recipeCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            recipeCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            recipeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
+//            recipeCollectionView.topAnchor.constraint(equalTo: recipeSearchBar.bottomAnchor),
+//            recipeCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+//            recipeCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+//            recipeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+//        ])
     }
     
     // MARK: - DiffableDataSource Methods

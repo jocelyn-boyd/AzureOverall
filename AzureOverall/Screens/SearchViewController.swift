@@ -106,32 +106,18 @@ class SearchViewController: UIViewController {
         let itemViews = [recipeSearchBar, recipeCollectionView]
         for itemView in itemViews {
             view.addSubview(itemView)
-            itemView.translatesAutoresizingMaskIntoConstraints = false
         }
 		
 			recipeSearchBar.snp.makeConstraints { make in
-				make.top.equalTo(self.view.safeAreaLayoutGuide)
-				make.leading.equalToSuperview()
-				make.trailing.equalToSuperview()
+				make.top.equalTo(view.safeAreaLayoutGuide)
+				make.leading.trailing.equalToSuperview()
 			}
 			
 			recipeCollectionView.backgroundColor = .green
 			recipeCollectionView.snp.makeConstraints { make in
-				make.bottom.equalToSuperview()
-				make.leading.equalToSuperview()
-				make.trailing.equalToSuperview()
-				make.centerX.equalToSuperview()
+				make.top.equalTo(recipeSearchBar.snp.bottom)
+				make.bottom.leading.trailing.equalToSuperview()
 			}
-//        NSLayoutConstraint.activate([
-//            recipeSearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-//            recipeSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            recipeSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-//            recipeCollectionView.topAnchor.constraint(equalTo: recipeSearchBar.bottomAnchor),
-//            recipeCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-//            recipeCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-//            recipeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-//        ])
     }
     
     // MARK: - DiffableDataSource Methods

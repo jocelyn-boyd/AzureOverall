@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		0843CAF925F9E83300D4EBE0 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843CAF825F9E83300D4EBE0 /* Notes.swift */; };
 		08D76E49252978BE0062D59A /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D76E48252978BE0062D59A /* Secret.swift */; };
 		08D76E64252978F10062D59A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08D76E63252978F10062D59A /* GoogleService-Info.plist */; };
+		08F6FACC26827F7C0029857B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08F6FACB26827F7C0029857B /* SnapKit */; };
 		D805059724FA19C600A239C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805059624FA19C600A239C1 /* Constants.swift */; };
 		D8160A1C24FA3C7E0042163D /* LoginAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */; };
 		D81C557124C0BEC70093A5A5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C557024C0BEC70093A5A5 /* SearchViewController.swift */; };
@@ -63,6 +64,8 @@
 		0843CAF825F9E83300D4EBE0 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		08D76E48252978BE0062D59A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		08D76E63252978F10062D59A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		08F6FAC826827F150029857B /* Recipe Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Recipe Box.app"; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/Recipe Box.app"; sourceTree = "<absolute>"; };
+		08F6FAC926827F150029857B /* AzureOverallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AzureOverallTests.xctest; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/AzureOverallTests.xctest"; sourceTree = "<absolute>"; };
 		D805059624FA19C600A239C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthViewController.swift; sourceTree = "<group>"; };
 		D81C557024C0BEC70093A5A5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -85,13 +88,11 @@
 		D8BEE76924FA5E9D00DB77D9 /* RBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTextField.swift; sourceTree = "<group>"; };
 		D8BEE76D24FADC0A00DB77D9 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		D8BEE76F24FAE02200DB77D9 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
-		D8C12ED124C0BBB2006F98C1 /* Recipe Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8C12EE024C0BBB3006F98C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8C12EE224C0BBB3006F98C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8C12EE724C0BBB4006F98C1 /* AzureOverallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AzureOverallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C12EEB24C0BBB4006F98C1 /* AORecipeModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AORecipeModelTest.swift; sourceTree = "<group>"; };
 		D8C12EED24C0BBB4006F98C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8CD39D724FA29570093514B /* RBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBButton.swift; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F6FACC26827F7C0029857B /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,17 +255,7 @@
 				D8C12ED324C0BBB2006F98C1 /* AzureOverall */,
 				0843CAEF25F9E70500D4EBE0 /* UnusedCode */,
 				D8C12EEA24C0BBB4006F98C1 /* AzureOverallTests */,
-				D8C12ED224C0BBB2006F98C1 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		D8C12ED224C0BBB2006F98C1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D8C12ED124C0BBB2006F98C1 /* Recipe Box.app */,
-				D8C12EE724C0BBB4006F98C1 /* AzureOverallTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		D8C12ED324C0BBB2006F98C1 /* AzureOverall */ = {
@@ -355,8 +347,11 @@
 			dependencies = (
 			);
 			name = AzureOverall;
+			packageProductDependencies = (
+				08F6FACB26827F7C0029857B /* SnapKit */,
+			);
 			productName = AzureOverall;
-			productReference = D8C12ED124C0BBB2006F98C1 /* Recipe Box.app */;
+			productReference = 08F6FAC826827F150029857B /* Recipe Box.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D8C12EE624C0BBB4006F98C1 /* AzureOverallTests */ = {
@@ -374,7 +369,7 @@
 			);
 			name = AzureOverallTests;
 			productName = AzureOverallTests;
-			productReference = D8C12EE724C0BBB4006F98C1 /* AzureOverallTests.xctest */;
+			productReference = 08F6FAC926827F150029857B /* AzureOverallTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -405,7 +400,10 @@
 				Base,
 			);
 			mainGroup = D8C12EC824C0BBB2006F98C1;
-			productRefGroup = D8C12ED224C0BBB2006F98C1 /* Products */;
+			packageReferences = (
+				08F6FACA26827F7C0029857B /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = D8C12EC824C0BBB2006F98C1;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -735,6 +733,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08F6FACA26827F7C0029857B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08F6FACB26827F7C0029857B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08F6FACA26827F7C0029857B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D8C12EC924C0BBB2006F98C1 /* Project object */;
 }

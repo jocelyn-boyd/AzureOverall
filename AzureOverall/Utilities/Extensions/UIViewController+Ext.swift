@@ -10,9 +10,9 @@ import Foundation
 import SafariServices
 
 extension UIViewController {
-  func presentSafairVC(with url: URL) {
-    let safariVC = SFSafariViewController(url: url)
-    safariVC.preferredBarTintColor = Constants.AppColorPalette.uaRed
-    present(safariVC, animated: true)
-  }
+	func presentSafairVC(with url: URL) {
+		let safariVC = SFSafariViewController(url: url)
+		safariVC.preferredBarTintColor = .systemBlue
+		present(safariVC, animated: true)
+	}
 }

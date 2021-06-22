@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		083101F2253E049A0076C1CE /* BookmarkedRecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */; };
+		083101F2253E049A0076C1CE /* SavedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083101F1253E049A0076C1CE /* SavedListViewController.swift */; };
 		0843CAF925F9E83300D4EBE0 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843CAF825F9E83300D4EBE0 /* Notes.swift */; };
 		08D76E49252978BE0062D59A /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D76E48252978BE0062D59A /* Secret.swift */; };
 		08D76E64252978F10062D59A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08D76E63252978F10062D59A /* GoogleService-Info.plist */; };
@@ -60,12 +60,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedRecipesListViewController.swift; sourceTree = "<group>"; };
+		083101F1253E049A0076C1CE /* SavedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedListViewController.swift; sourceTree = "<group>"; };
 		0843CAF825F9E83300D4EBE0 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		085BAED8268284C7005458E7 /* Recipe Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Recipe Box.app"; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/Recipe Box.app"; sourceTree = "<absolute>"; };
+		085BAED9268284C7005458E7 /* AzureOverallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AzureOverallTests.xctest; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/AzureOverallTests.xctest"; sourceTree = "<absolute>"; };
 		08D76E48252978BE0062D59A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		08D76E63252978F10062D59A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		08F6FAC826827F150029857B /* Recipe Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Recipe Box.app"; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/Recipe Box.app"; sourceTree = "<absolute>"; };
-		08F6FAC926827F150029857B /* AzureOverallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AzureOverallTests.xctest; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/AzureOverallTests.xctest"; sourceTree = "<absolute>"; };
 		D805059624FA19C600A239C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthViewController.swift; sourceTree = "<group>"; };
 		D81C557024C0BEC70093A5A5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -300,7 +300,7 @@
 			children = (
 				D81C557024C0BEC70093A5A5 /* SearchViewController.swift */,
 				D88BC64D24D779BD00F3E5BF /* DetailViewController.swift */,
-				083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */,
+				083101F1253E049A0076C1CE /* SavedListViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -351,7 +351,7 @@
 				08F6FACB26827F7C0029857B /* SnapKit */,
 			);
 			productName = AzureOverall;
-			productReference = 08F6FAC826827F150029857B /* Recipe Box.app */;
+			productReference = 085BAED8268284C7005458E7 /* Recipe Box.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D8C12EE624C0BBB4006F98C1 /* AzureOverallTests */ = {
@@ -369,7 +369,7 @@
 			);
 			name = AzureOverallTests;
 			productName = AzureOverallTests;
-			productReference = 08F6FAC926827F150029857B /* AzureOverallTests.xctest */;
+			productReference = 085BAED9268284C7005458E7 /* AzureOverallTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -449,7 +449,7 @@
 				D877734E24D8EA56001C8FF7 /* RBTitleLabel.swift in Sources */,
 				D805059724FA19C600A239C1 /* Constants.swift in Sources */,
 				D8BEE76E24FADC0A00DB77D9 /* AppUser.swift in Sources */,
-				083101F2253E049A0076C1CE /* BookmarkedRecipesListViewController.swift in Sources */,
+				083101F2253E049A0076C1CE /* SavedListViewController.swift in Sources */,
 				D8BEE77024FAE02200DB77D9 /* FirebaseAuthService.swift in Sources */,
 				D8AD612224D45DC2007CDE9E /* NetworkManager.swift in Sources */,
 				D8AD611D24D45B6C007CDE9E /* NetworkError.swift in Sources */,

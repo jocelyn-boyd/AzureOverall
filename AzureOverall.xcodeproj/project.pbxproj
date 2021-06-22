@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		083101F2253E049A0076C1CE /* SavedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083101F1253E049A0076C1CE /* SavedListViewController.swift */; };
 		0843CAF925F9E83300D4EBE0 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843CAF825F9E83300D4EBE0 /* Notes.swift */; };
+		08B7D009267E817100338E41 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08B7D008267E817100338E41 /* SnapKit */; };
 		08D76E49252978BE0062D59A /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D76E48252978BE0062D59A /* Secret.swift */; };
 		08D76E64252978F10062D59A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08D76E63252978F10062D59A /* GoogleService-Info.plist */; };
 		08F6FACC26827F7C0029857B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08F6FACB26827F7C0029857B /* SnapKit */; };
@@ -110,7 +111,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				08F6FACC26827F7C0029857B /* SnapKit in Frameworks */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +351,9 @@
 			);
 			name = AzureOverall;
 			packageProductDependencies = (
+
 				08F6FACB26827F7C0029857B /* SnapKit */,
+
 			);
 			productName = AzureOverall;
 			productReference = 085BAED8268284C7005458E7 /* Recipe Box.app */;
@@ -401,9 +406,11 @@
 			);
 			mainGroup = D8C12EC824C0BBB2006F98C1;
 			packageReferences = (
+
 				08F6FACA26827F7C0029857B /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = D8C12EC824C0BBB2006F98C1;
+
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -735,7 +742,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+
 		08F6FACA26827F7C0029857B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -746,9 +755,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+
 		08F6FACB26827F7C0029857B /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 08F6FACA26827F7C0029857B /* XCRemoteSwiftPackageReference "SnapKit" */;
+
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

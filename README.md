@@ -1,38 +1,12 @@
-# My Recipe Box (MVP in Progress)
+# Recipe Box (MVP in Progress)
 
 ## Overview
-- Recipes are fetched from the Spoonacular Recipe API: https://spoonacular.com/food-api
-- A native Swift iOS application using UIKit.
+- A native Swift iOS application implementing UIKit. Utilizing Swift 5 and Xcode 12.
+- Recipes are fetched from the Spoonacular Recipe API: https://spoonacular.com/food-api.
 
-## Screens
-(Screenshots coming soon)
-
-- The **Auth Screens** include the Home Screen, Sign Up Screen and Login Screen. 
-
-- The **Browse Screen** has a search bar and a collection view. Searching for a keyword in the search bar will load a list of recipes into the Collection View. Each cell displays the recipe's image with a bookmark icon in the upper right corner, the recipe's title and the number of servings.
-
-- The **Detail Screen** has the recipe's image, title and listed dietary categories. 
+## Current Updates
+- Refactoring the app to be App Store ready.
 
 ## Screenshots
-![image](images/HomeScreen.png) ![image](images/SearchScreen.png)
+![image](images/SearchVC.png)
 
-## Future Implementations
-- Dark Mode
-- Landscape Mode
-- Create own recipe card
-- Share favorited recipes with others
-
-## Language
-Swift 5
-
-## Cocoa Frameworks
-- Foundation
-- UIKit
-
-## Third-Party Frameworks
-- Firebase/Auth
-- Firebase/Firestore
-- Firebase/Storage
-
-## Development Tools
-- Xcode 11

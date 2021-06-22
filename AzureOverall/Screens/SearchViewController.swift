@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class SearchViewController: UIViewController {
     // MARK: - DiffableDataSource Enum
@@ -20,7 +21,7 @@ class SearchViewController: UIViewController {
         sb.layer.borderWidth = 1
         sb.layer.borderColor = UIColor.white.cgColor
         sb.tintColor = Constants.AppColorPalette.uaRed
-        sb.placeholder = "search recipes"
+        sb.placeholder = "I'm in the mood for...."
         return sb
     }()
     
@@ -56,7 +57,6 @@ class SearchViewController: UIViewController {
     //MARK: - Networking Methods
     private func loadAllRecipesData() {
         guard let searchTerm = searchTerm else { return }
-        
         RecipeFetchingService.manager.fetchAllRecipes(from: searchTerm) { [weak self] (result) in
             guard let self = self else { return }
             DispatchQueue.main.async {
@@ -81,17 +81,13 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .systemBackground
         recipeSearchBar.showsCancelButton = true
         
-        // Will not include in MVP. Implement in future versions.
-        // let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButtonTapped))
-        // navigationItem.rightBarButtonItem = profileButton
-        
         let clearButton = UIBarButtonItem(title: "Clear", style: .done, target: self, action: #selector(clearButtonPressed))
         navigationItem.rightBarButtonItem = clearButton
         navigationItem.rightBarButtonItem?.isEnabled = false
         
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Recipes"
+        navigationItem.title = "Search Recipes"
     }
     
     private func configurePortraitLayout() -> UICollectionViewCompositionalLayout {
@@ -110,18 +106,18 @@ class SearchViewController: UIViewController {
         let itemViews = [recipeSearchBar, recipeCollectionView]
         for itemView in itemViews {
             view.addSubview(itemView)
-            itemView.translatesAutoresizingMaskIntoConstraints = false
         }
-        NSLayoutConstraint.activate([
-            recipeSearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            recipeSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            recipeSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-            recipeCollectionView.topAnchor.constraint(equalTo: recipeSearchBar.bottomAnchor),
-            recipeCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            recipeCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            recipeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
+		
+			recipeSearchBar.snp.makeConstraints { make in
+				make.top.equalTo(view.safeAreaLayoutGuide)
+				make.leading.trailing.equalToSuperview()
+			}
+			
+			recipeCollectionView.backgroundColor = .green
+			recipeCollectionView.snp.makeConstraints { make in
+				make.top.equalTo(recipeSearchBar.snp.bottom)
+				make.bottom.leading.trailing.equalToSuperview()
+			}
     }
     
     // MARK: - DiffableDataSource Methods
@@ -143,12 +139,6 @@ class SearchViewController: UIViewController {
     }
     
     // MARK: - @objc Methods
-    //@objc private func profileButtonTapped() {
-        //let profileVC = ProfileViewController()
-       // let navController = UINavigationController(rootViewController: profileVC)
-        //present(navController, animated: true)
-    //}
-    
     @objc private func clearButtonPressed() {
         updateDataSource(with: [])
         recipeSearchBar.text = nil

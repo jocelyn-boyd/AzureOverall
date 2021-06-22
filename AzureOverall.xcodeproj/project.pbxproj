@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		083101F2253E049A0076C1CE /* BookmarkedRecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */; };
-		0843CAE425F9E45500D4EBE0 /* FavRecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843CAE325F9E45500D4EBE0 /* FavRecipesListViewController.swift */; };
 		0843CAF925F9E83300D4EBE0 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843CAF825F9E83300D4EBE0 /* Notes.swift */; };
+		08B7D009267E817100338E41 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08B7D008267E817100338E41 /* SnapKit */; };
 		08D76E49252978BE0062D59A /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D76E48252978BE0062D59A /* Secret.swift */; };
 		08D76E64252978F10062D59A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08D76E63252978F10062D59A /* GoogleService-Info.plist */; };
 		D805059724FA19C600A239C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805059624FA19C600A239C1 /* Constants.swift */; };
@@ -61,7 +61,6 @@
 
 /* Begin PBXFileReference section */
 		083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedRecipesListViewController.swift; sourceTree = "<group>"; };
-		0843CAE325F9E45500D4EBE0 /* FavRecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavRecipesListViewController.swift; sourceTree = "<group>"; };
 		0843CAF825F9E83300D4EBE0 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		08D76E48252978BE0062D59A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		08D76E63252978F10062D59A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08B7D009267E817100338E41 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,9 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				0843CAF425F9E78100D4EBE0 /* Extensions */,
-				D8BEE76C24FADBE700DB77D9 /* FIrebaseHelpers */,
+				D8BEE76C24FADBE700DB77D9 /* FirebaseHelpers */,
 				0843CAF725F9E7F100D4EBE0 /* Screens */,
 				0843CAF825F9E83300D4EBE0 /* Notes.swift */,
+				08D76E63252978F10062D59A /* GoogleService-Info.plist */,
 			);
 			path = UnusedCode;
 			sourceTree = "<group>";
@@ -239,12 +240,13 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
-		D8BEE76C24FADBE700DB77D9 /* FIrebaseHelpers */ = {
+		D8BEE76C24FADBE700DB77D9 /* FirebaseHelpers */ = {
 			isa = PBXGroup;
 			children = (
 				D8BEE76F24FAE02200DB77D9 /* FirebaseAuthService.swift */,
+				D8BEE76D24FADC0A00DB77D9 /* AppUser.swift */,
 			);
-			path = FIrebaseHelpers;
+			path = FirebaseHelpers;
 			sourceTree = "<group>";
 		};
 		D8C12EC824C0BBB2006F98C1 = {
@@ -276,7 +278,6 @@
 				D8C12EF724C0BDA3006F98C1 /* Screens */,
 				D8C12EF624C0BD87006F98C1 /* SupportingFiles */,
 				D8C12EE224C0BBB3006F98C1 /* Info.plist */,
-				08D76E63252978F10062D59A /* GoogleService-Info.plist */,
 			);
 			path = AzureOverall;
 			sourceTree = "<group>";
@@ -310,7 +311,6 @@
 				D81C557024C0BEC70093A5A5 /* SearchViewController.swift */,
 				D88BC64D24D779BD00F3E5BF /* DetailViewController.swift */,
 				083101F1253E049A0076C1CE /* BookmarkedRecipesListViewController.swift */,
-				0843CAE325F9E45500D4EBE0 /* FavRecipesListViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -320,7 +320,6 @@
 			children = (
 				D8D3A07C24C359FA00AA8D26 /* Recipe.swift */,
 				D877734724D8D90A001C8FF7 /* RecipeInformation.swift */,
-				D8BEE76D24FADC0A00DB77D9 /* AppUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -358,6 +357,9 @@
 			dependencies = (
 			);
 			name = AzureOverall;
+			packageProductDependencies = (
+				08B7D008267E817100338E41 /* SnapKit */,
+			);
 			productName = AzureOverall;
 			productReference = D8C12ED124C0BBB2006F98C1 /* Recipe Box.app */;
 			productType = "com.apple.product-type.application";
@@ -408,6 +410,9 @@
 				Base,
 			);
 			mainGroup = D8C12EC824C0BBB2006F98C1;
+			packageReferences = (
+				08B7D007267E817100338E41 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = D8C12ED224C0BBB2006F98C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -445,7 +450,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0843CAE425F9E45500D4EBE0 /* FavRecipesListViewController.swift in Sources */,
 				D8CD39DA24FA2B7B0093514B /* HomeAuthViewController.swift in Sources */,
 				D88BC64E24D779BD00F3E5BF /* DetailViewController.swift in Sources */,
 				D874FFFD24D92824000A19AF /* RBBodyLabel.swift in Sources */,
@@ -739,6 +743,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08B7D007267E817100338E41 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08B7D008267E817100338E41 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08B7D007267E817100338E41 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D8C12EC924C0BBB2006F98C1 /* Project object */;
 }

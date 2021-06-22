@@ -37,7 +37,7 @@ class RBFoodImageView: UIImageView {
                     self.image = image
                 case let .failure(error):
                     print(error)
-                }
+                } 
             }
         }
     }

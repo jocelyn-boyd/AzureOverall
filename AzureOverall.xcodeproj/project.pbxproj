@@ -8,16 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		083101F2253E049A0076C1CE /* SavedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083101F1253E049A0076C1CE /* SavedListViewController.swift */; };
-		0843CAF925F9E83300D4EBE0 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843CAF825F9E83300D4EBE0 /* Notes.swift */; };
 		08D76E49252978BE0062D59A /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D76E48252978BE0062D59A /* Secret.swift */; };
 		08F6FACC26827F7C0029857B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08F6FACB26827F7C0029857B /* SnapKit */; };
 		D805059724FA19C600A239C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805059624FA19C600A239C1 /* Constants.swift */; };
-		D8160A1C24FA3C7E0042163D /* LoginAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */; };
 		D81C557124C0BEC70093A5A5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C557024C0BEC70093A5A5 /* SearchViewController.swift */; };
 		D8366DBA24FF573300579CF2 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8366DB924FF573300579CF2 /* UIViewController+Ext.swift */; };
 		D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837CCB924C2267C00BE1F1B /* RecipeCell.swift */; };
 		D838BF5724CB7E3D009B056E /* RecipeFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */; };
-		D83B5A6324DA07ED00B1CF4E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B5A6224DA07ED00B1CF4E /* ProfileViewController.swift */; };
 		D874000124D9BAAB000A19AF /* RBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D874000024D9BAAB000A19AF /* RBTabBarController.swift */; };
 		D874FFFD24D92824000A19AF /* RBBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D874FFFC24D92824000A19AF /* RBBodyLabel.swift */; };
 		D877734824D8D90A001C8FF7 /* RecipeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877734724D8D90A001C8FF7 /* RecipeInformation.swift */; };
@@ -31,20 +28,15 @@
 		D8AD612224D45DC2007CDE9E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD612124D45DC2007CDE9E /* NetworkManager.swift */; };
 		D8B6316D24D50C7400CF6DF7 /* ImageFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6316C24D50C7400CF6DF7 /* ImageFetchingService.swift */; };
 		D8BEE76A24FA5E9D00DB77D9 /* RBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BEE76924FA5E9D00DB77D9 /* RBTextField.swift */; };
-		D8BEE76E24FADC0A00DB77D9 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BEE76D24FADC0A00DB77D9 /* AppUser.swift */; };
-		D8BEE77024FAE02200DB77D9 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BEE76F24FAE02200DB77D9 /* FirebaseAuthService.swift */; };
 		D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */; };
 		D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */; };
 		D8C12EDE24C0BBB3006F98C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */; };
 		D8C12EE124C0BBB3006F98C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C12EDF24C0BBB3006F98C1 /* LaunchScreen.storyboard */; };
 		D8C12EEC24C0BBB4006F98C1 /* AORecipeModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C12EEB24C0BBB4006F98C1 /* AORecipeModelTest.swift */; };
 		D8CD39D824FA29570093514B /* RBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD39D724FA29570093514B /* RBButton.swift */; };
-		D8CD39DA24FA2B7B0093514B /* HomeAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD39D924FA2B7B0093514B /* HomeAuthViewController.swift */; };
-		D8CD39DC24FA39B50093514B /* SignupAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD39DB24FA39B50093514B /* SignupAuthViewController.swift */; };
 		D8D3A07924C2704800AA8D26 /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = D8D3A07824C2704800AA8D26 /* Recipes.json */; };
 		D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D3A07C24C359FA00AA8D26 /* Recipe.swift */; };
 		D8E8F78A24DDF54C0077E6E6 /* RecipeInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = D8E8F78924DDF54C0077E6E6 /* RecipeInformation.json */; };
-		D8FB3A5824FDD8E40039FF84 /* String+Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FB3A5724FDD8E40039FF84 /* String+Validations.swift */; };
 		D8FCACC624F9E739009231F4 /* RBBookmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FCACC524F9E739009231F4 /* RBBookmarkButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,15 +54,12 @@
 		083101F1253E049A0076C1CE /* SavedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedListViewController.swift; sourceTree = "<group>"; };
 		0833C5552683B4F400CE367E /* Recipe Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Recipe Box.app"; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/Recipe Box.app"; sourceTree = "<absolute>"; };
 		0833C5562683B4F400CE367E /* AzureOverallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AzureOverallTests.xctest; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/AzureOverallTests.xctest"; sourceTree = "<absolute>"; };
-		0843CAF825F9E83300D4EBE0 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		08D76E48252978BE0062D59A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		D805059624FA19C600A239C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthViewController.swift; sourceTree = "<group>"; };
 		D81C557024C0BEC70093A5A5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D8366DB924FF573300579CF2 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		D837CCB924C2267C00BE1F1B /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		D838BF5624CB7E3D009B056E /* RecipeFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFetchingService.swift; sourceTree = "<group>"; };
-		D83B5A6224DA07ED00B1CF4E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D874000024D9BAAB000A19AF /* RBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTabBarController.swift; sourceTree = "<group>"; };
 		D874FFFC24D92824000A19AF /* RBBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBBodyLabel.swift; sourceTree = "<group>"; };
 		D877734724D8D90A001C8FF7 /* RecipeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformation.swift; sourceTree = "<group>"; };
@@ -84,8 +73,6 @@
 		D8AD612124D45DC2007CDE9E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D8B6316C24D50C7400CF6DF7 /* ImageFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchingService.swift; sourceTree = "<group>"; };
 		D8BEE76924FA5E9D00DB77D9 /* RBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTextField.swift; sourceTree = "<group>"; };
-		D8BEE76D24FADC0A00DB77D9 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
-		D8BEE76F24FAE02200DB77D9 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		D8C12ED424C0BBB2006F98C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C12ED624C0BBB2006F98C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D8C12EDD24C0BBB3006F98C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,12 +81,9 @@
 		D8C12EEB24C0BBB4006F98C1 /* AORecipeModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AORecipeModelTest.swift; sourceTree = "<group>"; };
 		D8C12EED24C0BBB4006F98C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8CD39D724FA29570093514B /* RBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBButton.swift; sourceTree = "<group>"; };
-		D8CD39D924FA2B7B0093514B /* HomeAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAuthViewController.swift; sourceTree = "<group>"; };
-		D8CD39DB24FA39B50093514B /* SignupAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAuthViewController.swift; sourceTree = "<group>"; };
 		D8D3A07824C2704800AA8D26 /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
 		D8D3A07C24C359FA00AA8D26 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		D8E8F78924DDF54C0077E6E6 /* RecipeInformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipeInformation.json; sourceTree = "<group>"; };
-		D8FB3A5724FDD8E40039FF84 /* String+Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validations.swift"; sourceTree = "<group>"; };
 		D8FCACC524F9E739009231F4 /* RBBookmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBBookmarkButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,44 +106,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0843CAEF25F9E70500D4EBE0 /* UnusedCode */ = {
-			isa = PBXGroup;
-			children = (
-				0843CAF425F9E78100D4EBE0 /* Extensions */,
-				D8BEE76C24FADBE700DB77D9 /* FirebaseHelpers */,
-				0843CAF725F9E7F100D4EBE0 /* Screens */,
-				0843CAF825F9E83300D4EBE0 /* Notes.swift */,
-			);
-			path = UnusedCode;
-			sourceTree = "<group>";
-		};
-		0843CAF425F9E78100D4EBE0 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D8FB3A5724FDD8E40039FF84 /* String+Validations.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		0843CAF725F9E7F100D4EBE0 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				D8160A1D24FA41410042163D /* AuthenticationScreens */,
-				D83B5A6224DA07ED00B1CF4E /* ProfileViewController.swift */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		D8160A1D24FA41410042163D /* AuthenticationScreens */ = {
-			isa = PBXGroup;
-			children = (
-				D8CD39D924FA2B7B0093514B /* HomeAuthViewController.swift */,
-				D8CD39DB24FA39B50093514B /* SignupAuthViewController.swift */,
-				D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */,
-			);
-			path = AuthenticationScreens;
-			sourceTree = "<group>";
-		};
 		D837CCB824C2265800BE1F1B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,20 +183,10 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
-		D8BEE76C24FADBE700DB77D9 /* FirebaseHelpers */ = {
-			isa = PBXGroup;
-			children = (
-				D8BEE76F24FAE02200DB77D9 /* FirebaseAuthService.swift */,
-				D8BEE76D24FADC0A00DB77D9 /* AppUser.swift */,
-			);
-			path = FirebaseHelpers;
-			sourceTree = "<group>";
-		};
 		D8C12EC824C0BBB2006F98C1 = {
 			isa = PBXGroup;
 			children = (
 				D8C12ED324C0BBB2006F98C1 /* AzureOverall */,
-				0843CAEF25F9E70500D4EBE0 /* UnusedCode */,
 				D8C12EEA24C0BBB4006F98C1 /* AzureOverallTests */,
 			);
 			sourceTree = "<group>";
@@ -436,32 +372,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8CD39DA24FA2B7B0093514B /* HomeAuthViewController.swift in Sources */,
 				D88BC64E24D779BD00F3E5BF /* DetailViewController.swift in Sources */,
 				D874FFFD24D92824000A19AF /* RBBodyLabel.swift in Sources */,
-				D83B5A6324DA07ED00B1CF4E /* ProfileViewController.swift in Sources */,
 				D8BEE76A24FA5E9D00DB77D9 /* RBTextField.swift in Sources */,
 				D81C557124C0BEC70093A5A5 /* SearchViewController.swift in Sources */,
 				D877734E24D8EA56001C8FF7 /* RBTitleLabel.swift in Sources */,
 				D805059724FA19C600A239C1 /* Constants.swift in Sources */,
-				D8BEE76E24FADC0A00DB77D9 /* AppUser.swift in Sources */,
 				083101F2253E049A0076C1CE /* SavedListViewController.swift in Sources */,
-				D8BEE77024FAE02200DB77D9 /* FirebaseAuthService.swift in Sources */,
 				D8AD612224D45DC2007CDE9E /* NetworkManager.swift in Sources */,
 				D8AD611D24D45B6C007CDE9E /* NetworkError.swift in Sources */,
 				08D76E49252978BE0062D59A /* Secret.swift in Sources */,
 				D8366DBA24FF573300579CF2 /* UIViewController+Ext.swift in Sources */,
 				D838BF5724CB7E3D009B056E /* RecipeFetchingService.swift in Sources */,
-				D8CD39DC24FA39B50093514B /* SignupAuthViewController.swift in Sources */,
 				D8C12ED524C0BBB2006F98C1 /* AppDelegate.swift in Sources */,
 				D8D3A07D24C359FA00AA8D26 /* Recipe.swift in Sources */,
 				D8FCACC624F9E739009231F4 /* RBBookmarkButton.swift in Sources */,
 				D877735024D8ED26001C8FF7 /* RBSubheadingLabel.swift in Sources */,
 				D8C12ED724C0BBB2006F98C1 /* SceneDelegate.swift in Sources */,
 				D877734824D8D90A001C8FF7 /* RecipeInformation.swift in Sources */,
-				D8160A1C24FA3C7E0042163D /* LoginAuthViewController.swift in Sources */,
-				D8FB3A5824FDD8E40039FF84 /* String+Validations.swift in Sources */,
-				0843CAF925F9E83300D4EBE0 /* Notes.swift in Sources */,
 				D8B6316D24D50C7400CF6DF7 /* ImageFetchingService.swift in Sources */,
 				D837CCBA24C2267C00BE1F1B /* RecipeCell.swift in Sources */,
 				D877735824D8F384001C8FF7 /* RBFoodImageView.swift in Sources */,

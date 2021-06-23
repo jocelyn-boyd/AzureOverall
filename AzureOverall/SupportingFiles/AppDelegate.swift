@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func configureNavigationBar() {
-    UINavigationBar.appearance().tintColor = Constants.AppColorPalette.uaRed
+		UINavigationBar.appearance().tintColor = .systemBlue
   }
   
   // MARK: UISceneSession Lifecycle

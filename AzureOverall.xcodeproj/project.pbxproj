@@ -60,9 +60,9 @@
 
 /* Begin PBXFileReference section */
 		083101F1253E049A0076C1CE /* SavedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedListViewController.swift; sourceTree = "<group>"; };
+		0833C5552683B4F400CE367E /* Recipe Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Recipe Box.app"; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/Recipe Box.app"; sourceTree = "<absolute>"; };
+		0833C5562683B4F400CE367E /* AzureOverallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AzureOverallTests.xctest; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/AzureOverallTests.xctest"; sourceTree = "<absolute>"; };
 		0843CAF825F9E83300D4EBE0 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
-		085BAEDA2682A680005458E7 /* Recipe Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Recipe Box.app"; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/Recipe Box.app"; sourceTree = "<absolute>"; };
-		085BAEDB2682A680005458E7 /* AzureOverallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AzureOverallTests.xctest; path = "/Users/jocelynboyd/Desktop/projects/solo-projects/AzureOverall/build/Debug-iphoneos/AzureOverallTests.xctest"; sourceTree = "<absolute>"; };
 		08D76E48252978BE0062D59A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		D805059624FA19C600A239C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D8160A1B24FA3C7E0042163D /* LoginAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthViewController.swift; sourceTree = "<group>"; };
@@ -348,7 +348,7 @@
 				08F6FACB26827F7C0029857B /* SnapKit */,
 			);
 			productName = AzureOverall;
-			productReference = 085BAEDA2682A680005458E7 /* Recipe Box.app */;
+			productReference = 0833C5552683B4F400CE367E /* Recipe Box.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D8C12EE624C0BBB4006F98C1 /* AzureOverallTests */ = {
@@ -366,7 +366,7 @@
 			);
 			name = AzureOverallTests;
 			productName = AzureOverallTests;
-			productReference = 085BAEDB2682A680005458E7 /* AzureOverallTests.xctest */;
+			productReference = 0833C5562683B4F400CE367E /* AzureOverallTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
